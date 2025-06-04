@@ -1,24 +1,21 @@
 <!--
-Karnaugh-Map Two-Player Game (Gray-code view, correct grouping)
---------------------------------------------------------------
-• Power-of-two K-map sizes up to 16×16.
-• Display order now **truly Gray-code** while the internal minterm index
-  remains the natural binary row|col. This fixes incorrect outlines.
-• Implicant rectangles exclude all 0-cells. Wrap-around groups work.
-• A plain-text rendering of the board appears under the log so you can
-  copy-paste the current state into ChatGPT.
-
-Save this file and open it in a modern browser. No build step needed.
+Karnaugh‑Map Two‑Player Game (Debug‑enabled v3)
+---------------------------------------------
+• Adds a dedicated **Debug log** at the bottom that records every move as
+  JSON – including player, value, cell index, Gray‑code coordinates,
+  current complexity, and any caught exception message.
+• Copy‑paste the JSON snippets back to ChatGPT for post‑mortem analysis.
+• Prior bug‑hardening (try/catch) retained.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>K-Map Two-Player</title>
+<title>K‑Map Two‑Player (Debug)</title>
 <style>
 :root{--cell:48px}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;display:flex;flex-direction:column;align-items:center;padding:1rem 0 3rem}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;display:flex;flex-direction:column;align-items:center;padding:1rem 0 4rem}
 #info{margin-bottom:0.75rem;font-size:1.1rem}
 #kmap-wrapper{position:relative;display:inline-block}
 #kmap{border-collapse:collapse;user-select:none}
@@ -29,138 +26,53 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-se
 #kmap td:hover{cursor:pointer;background:#ffe}
 #overlay{position:absolute;top:0;left:0;pointer-events:none}
 #over{margin-top:0.8rem;font-size:1.15rem;font-weight:600}
-#log{margin-top:1rem;max-height:220px;overflow-y:auto;border:1px solid #ccc;padding:6px 10px;width:min(92vw,440px);font-family:monospace;font-size:0.9rem;white-space:pre}
-#boardtxt{margin-top:1rem;border:1px dashed #aaa;padding:6px 10px;font-family:monospace;font-size:0.9rem;white-space:pre}
+.box{max-height:220px;overflow-y:auto;border:1px solid #ccc;padding:6px 10px;width:min(92vw,460px);font-family:monospace;font-size:0.9rem;white-space:pre}
+#log{margin-top:1rem}
+#boardtxt{margin-top:1rem;border-style:dashed}
+#debug{margin-top:1rem;border-style:dotted}
 </style>
 </head>
 <body>
-<div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">–</span></div>
+<div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">–</span></div>
 <div id="kmap-wrapper">
-  <table id="kmap" aria-label="K-map"></table>
+  <table id="kmap" aria-label="K‑map"></table>
   <svg id="overlay"></svg>
 </div>
 <div id="over" hidden></div>
-<div id="log" aria-label="Complexity history"></div>
-<pre id="boardtxt" aria-label="Text board"></pre>
+<pre id="log" class="box" aria-label="Complexity history"></pre>
+<pre id="boardtxt" class="box" aria-label="Text board"></pre>
+<pre id="debug" class="box" aria-label="Debug log"></pre>
 
 <script>
 (()=>{
-/* ===== 1. Prompt size ============================================== */
-let K;
-while(true){
-  const i = prompt("Grid size? Enter power-of-two (2,4,8,16)", "4");
-  if(i===null){ alert("Refresh to start."); return; }
-  K = +i; if(K>0 && (K & (K-1))===0 && K<=16) break;
-  alert("Please enter 2,4,8 or 16.");
-}
-const d = Math.log2(K);
-const CELL=Math.max(30,60-4*d);
-document.documentElement.style.setProperty('--cell',CELL+'px');
-
-/* ===== 2. Gray-code display order BUT natural binary indices ======= */
-function gray(x){return x^(x>>1);}                 // Gray of nat
-const natRows=[...Array(K).keys()];
-const natCols=[...Array(K).keys()];
-const rowDisplay=natRows.slice().sort((a,b)=>gray(a)-gray(b));
-const colDisplay=natCols.slice().sort((a,b)=>gray(a)-gray(b));
-const rowPosByNat=new Array(K); rowDisplay.forEach((nat,pos)=>rowPosByNat[nat]=pos);
-const colPosByNat=new Array(K); colDisplay.forEach((nat,pos)=>colPosByNat[nat]=pos);
-
-/* ===== 3. DOM refs ================================================== */
-const grid=Array(K*K).fill(null); // index = (rowNat<<d)|colNat
-let currentPlayer=1;
-const turnEl=document.getElementById('turn');
-const cmpxEl=document.getElementById('cmpx');
-const overEl=document.getElementById('over');
-const logEl=document.getElementById('log');
-const boardTxt=document.getElementById('boardtxt');
-const tbl=document.getElementById('kmap');
-const wrapper=document.getElementById('kmap-wrapper');
-const overlay=document.getElementById('overlay');
-const cellEls=[];
-
-/* ===== 4. Build table ============================================== */
-function bin(n,len){return n.toString(2).padStart(len,'0');}
-const h=tbl.insertRow(); h.insertCell();
-colDisplay.forEach(nat=>{const th=document.createElement('th'); th.textContent=bin(gray(nat),d); h.appendChild(th);});
-rowDisplay.forEach(rowNat=>{
-  const tr=tbl.insertRow(); const th=document.createElement('th'); th.textContent=bin(gray(rowNat),d); tr.appendChild(th);
-  colDisplay.forEach(colNat=>{
-    const td=tr.insertCell(); const idx=(rowNat<<d)|colNat; td.dataset.index=idx;
-    td.textContent='·'; td.addEventListener('click',()=>click(td)); cellEls[idx]=td;
-  });
-});
-
-/* ===== 5. Interaction ============================================== */
-function click(td){
-  const idx=+td.dataset.index; if(grid[idx]!==null) return;
-  const val=currentPlayer===1?0:1; grid[idx]=val;
-  td.textContent=val; td.className=val?'one':'zero';
-  const res=minimalCover(grid); cmpxEl.textContent=`${res.terms}t ${res.lits}l`;
-  logEl.textContent=`${res.terms}t ${res.lits}l – P${currentPlayer}→${idx}\n`+logEl.textContent;
-  drawGroups(res.cover); renderTextBoard();
-  if(grid.every(v=>v!==null)){turnEl.textContent='– Game Over –'; overEl.hidden=false; return;}
-  currentPlayer=3-currentPlayer; turnEl.textContent=`Player ${currentPlayer}`;
-}
-
-/* ===== 6. Text board =============================================== */
-function renderTextBoard(){
-  let s=' '.repeat(d+1);
-  colDisplay.forEach(nat=> s+=bin(gray(nat),d)+' ');
-  s+='\n';
-  rowDisplay.forEach(rowNat=>{
-    s+=bin(gray(rowNat),d)+' ';
-    colDisplay.forEach(colNat=>{
-      const v=grid[(rowNat<<d)|colNat]; s+=(v===null?'·':v)+' '.repeat(d);
-    });
-    s+='\n';
-  });
-  boardTxt.textContent=s;
-}
-renderTextBoard();
-
-/* ===== 7. Minimisation (unchanged) ================================= */
-function minimalCover(cells){
-  const nVars=2*d, ones=[], dcs=[];
-  cells.forEach((v,i)=>{if(v===1)ones.push(i); else if(v===null)dcs.push(i);});
-  if(!ones.length) return {terms:0,lits:0,cover:[]};
-  if(ones.length+dcs.length===cells.length) return {terms:1,lits:0,cover:[{bits:'-'.repeat(nVars)}]};
-  const primes=primeImplicants(ones,dcs,nVars);
-  const cover=(primes.length<=32)?petrick(ones,primes):greedyCover(ones,primes);
-  const lits=cover.reduce((s,p)=>s+p.bits.replace(/-/g,'').length,0);
-  return {terms:cover.length,lits,cover};
-}
-function bitStr(n,l){return n.toString(2).padStart(l,'0');}
-function combine(a,b){let d=-1;for(let i=0;i<a.length;i++){if(a[i]!==b[i]){if(d!==-1)return null;d=i;}}return d===-1?null:a.slice(0,d)+'-'+a.slice(d+1);}  
-function primeImplicants(ones,dcs,n){
-  let terms=[...ones,...dcs].map(i=>({bits:bitStr(i,n),src:[i]})); const primes=[];
-  while(true){const nxt=[],used=new Set(),b={};terms.forEach(t=>{const k=(t.bits.match(/1/g)||[]).length;(b[k]=b[k]||[]).push(t);});
-    Object.keys(b).map(Number).sort((a,b)=>a-b).forEach(k=>{(b[k+1]||[]).forEach(u=>{});});
-    for(const k in b){const A=b[k],B=b[+k+1]||[];A.forEach(a=>B.forEach(c=>{const cb=combine(a.bits,c.bits);if(cb){used.add(a);used.add(c);if(!nxt.some(t=>t.bits===cb))nxt.push({bits:cb,src:[...new Set([...a.src,...c.src])]});}}));}
-    terms.forEach(t=>{if(!used.has(t)&&!primes.some(p=>p.bits===t.bits))primes.push(t);}); if(!nxt.length)break; terms=nxt;
-  }
-  return primes.filter(p=>p.src.some(i=>ones.includes(i)));
-}
-function petrick(minterms,primes){let prod=[{}];minterms.forEach(m=>{const cover=primes.map((p,i)=>p.src.includes(m)?i:null).filter(x=>x!==null);const newP=[];prod.forEach(t=>cover.forEach(i=>newP.push({...t,[i]:true})));prod=reduce(newP);});prod.sort((a,b)=>lit(a)-lit(b)||Object.keys(a).length-Object.keys(b).length);return Object.keys(prod[0]).map(i=>primes[i]);function lit(o){return Object.keys(o).reduce((s,i)=>s+primes[i].bits.replace(/-/g,'').length,0);}function reduce(arr){return arr.filter((t,i)=>!arr.some((o,j)=>j!==i&&sub(o,t)));}function sub(a,b){return Object.keys(a).every(k=>k in b);}}
-function greedyCover(ms,ps){const ch=[];let un=[...ms];while(un.length){let best=null,sc=1e9;ps.forEach(p=>{if(ch.includes(p))return;const cov=un.filter(m=>p.src.includes(m)).length;if(!cov)return;const lit=p.bits.replace(/-/g,'').length;const s=lit-cov*0.2;if(s<sc){sc=s;best=p;}});if(!best)break;ch.push(best);un=un.filter(m=>!best.src.includes(m));}return ch;}
-
-/* ===== 8. Draw groups ============================================== */
+/* ===== 1. Prompt map size ===== */
+let K; while(true){const inp=prompt("Grid size? Enter power‑of‑two (2,4,8,16)","4");if(inp===null){alert("Refresh to start.");return;}K=+inp;if(K>0&&(K&(K-1))===0&&K<=16)break;alert("Please enter 2,4,8 or 16.");}
+const d=Math.log2(K);const CELL=Math.max(30,60-4*d);document.documentElement.style.setProperty('--cell',CELL+'px');
+/* ===== 2. Gray‑code ordering ===== */
+const gray=x=>x^(x>>1);const nat=[...Array(K).keys()];const rowDisplay=[...nat].sort((a,b)=>gray(a)-gray(b));const colDisplay=[...nat].sort((a,b)=>gray(a)-gray(b));const rowPosByNat=new Array(K);rowDisplay.forEach((n,p)=>rowPosByNat[n]=p);const colPosByNat=new Array(K);colDisplay.forEach((n,p)=>colPosByNat[n]=p);
+/* ===== 3. DOM & State refs ===== */
+const grid=Array(K*K).fill(null);let currentPlayer=1,moveNo=0;const $=id=>document.getElementById(id);const turnEl=$("turn"),cmpxEl=$("cmpx"),overEl=$("over"),logEl=$("log"),boardTxt=$("boardtxt"),debugEl=$("debug"),tbl=$("kmap"),wrap=$("kmap-wrapper"),overlay=$("overlay");const cellEls=[];const bin=(n,l)=>n.toString(2).padStart(l,'0');
+/* ===== 4. Build table ===== */
+{const h=tbl.insertRow();h.insertCell();colDisplay.forEach(n=>{const th=document.createElement('th');th.textContent=bin(gray(n),d);h.appendChild(th);});rowDisplay.forEach(rN=>{const tr=tbl.insertRow();const th=document.createElement('th');th.textContent=bin(gray(rN),d);tr.appendChild(th);colDisplay.forEach(cN=>{const td=tr.insertCell();const idx=(rN<<d)|cN;td.dataset.i=idx;td.textContent='·';td.addEventListener('click',()=>move(td));cellEls[idx]=td;});});renderText();}
+/* ===== 5. Move handler ===== */
+function move(td){const idx=+td.dataset.i;if(grid[idx]!==null)return;const val=currentPlayer===1?0:1;grid[idx]=val;td.textContent=val;td.className=val?'one':'zero';let res={terms:0,lits:0,cover:[]},err=null;try{res=minCover(grid);cmpxEl.textContent=`${res.terms}t ${res.lits}l`;draw(res.cover);}catch(e){err=e.toString();console.error(e);cmpxEl.textContent='?';}
+  logEl.textContent=`${res.terms}t ${res.lits}l • P${currentPlayer}→${idx}\n`+logEl.textContent;
+  renderText();
+  debugEl.textContent=JSON.stringify({move:moveNo++,player:currentPlayer,val,idx,rowNat:idx>>d,colNat:idx&(K-1),complexity:res,error:err},null,2)+'\n'+debugEl.textContent;
+  if(grid.every(v=>v!==null)){turnEl.textContent='– Game Over –';overEl.hidden=false;return;}
+  currentPlayer=3-currentPlayer;turnEl.textContent=`Player ${currentPlayer}`;}
+/* ===== 6. Text board ===== */
+function renderText(){let out=' '.repeat(d+1);colDisplay.forEach(n=>out+=bin(gray(n),d)+' ');out+='\n';rowDisplay.forEach(r=>{out+=bin(gray(r),d)+' ';colDisplay.forEach(c=>{const v=grid[(r<<d)|c];out+=(v===null?'·':v)+' '.repeat(d);});out+='\n';});boardTxt.textContent=out;}
+/* ===== 7. Minimisation & helpers ===== */
+const bitStr=(n,l)=>n.toString(2).padStart(l,'0');function combine(a,b){let diff=-1;for(let i=0;i<a.length;i++){if(a[i]!==b[i]){if(diff!==-1)return null;diff=i;}}return diff===-1?null:a.slice(0,diff)+'-'+a.slice(diff+1);}function primeImps(ones,dcs,n){let terms=[...ones,...dcs].map(i=>({bits:bitStr(i,n),src:[i]})),pr=[];while(true){const nxt=[],used=new Set(),b={};terms.forEach(t=>{const k=(t.bits.match(/1/g)||[]).length;(b[k]=b[k]||[]).push(t);});for(const k in b){const A=b[k],B=b[+k+1]||[];A.forEach(a=>B.forEach(c=>{const cb=combine(a.bits,c.bits);if(cb){used.add(a);used.add(c);if(!nxt.some(x=>x.bits===cb))nxt.push({bits:cb,src:[...new Set([...a.src,...c.src])]});}}));}terms.forEach(t=>{if(!used.has(t)&&!pr.some(p=>p.bits===t.bits))pr.push(t);});if(!nxt.length)break;terms=nxt;}return pr.filter(p=>p.src.some(i=>ones.includes(i)));}
+function petrick(ms,pr){let prod=[{}];ms.forEach(m=>{const idxs=pr.map((p,i)=>p.src.includes(m)?i:null).filter(i=>i!==null);const next=[];prod.forEach(t=>idxs.forEach(i=>next.push({...t,[i]:true})));prod=prodRed(next);});prod.sort((a,b)=>lit(a)-lit(b)||Object.keys(a).length-Object.keys(b).length);return Object.keys(prod[0]).map(i=>pr[i]);function lit(o){return Object.keys(o).reduce((s,i)=>s+pr[i].bits.replace(/-/g,'').length,0);}function prodRed(lst){return lst.filter((t,i)=>!lst.some((o,j)=>j!==i&&Object.keys(o).every(k=>k in t)));}}
+function greedy(ms,pr){const chosen=[];let uncovered=[...ms];while(uncovered.length){let best=null,bScore=1e9;pr.forEach(p=>{if(chosen.includes(p))return;const cov=uncovered.filter(m=>p.src.includes(m)).length;if(!cov)return;const lit=p.bits.replace(/-/g,'').length;const s=lit-cov*0.2;if(s<bScore){bScore=s;best=p;}});if(!best)break;chosen.push(best);uncovered=uncovered.filter(m=>!best.src.includes(m));}return chosen;}
+function minCover(cells){const nVars=2*d,ones=[],dcs=[];cells.forEach((v,i)=>{if(v===1)ones.push(i);else if(v===null)dcs.push(i);} );if(!ones.length)return{terms:0,lits:0,cover:[]};if(ones.length+dcs.length===cells.length)return{terms:1,lits:0,cover:[{bits:'-'.repeat(nVars)}]};const primes=primeImps(ones,dcs,nVars);const cover=(primes.length<=32)?petrick(ones,primes):greedy(ones,primes);const lits=cover.reduce((s,p)=>s+p.bits.replace(/-/g,'').length,0);return{terms:cover.length,lits,cover};}
+/* ===== 8. Draw implicant rectangles ===== */
 const COLORS=['#e31','#06a','#0a0','#c0c','#f70','#099','#b60','#309'];
-function drawGroups(groups){
-  overlay.innerHTML='';
-  const tblRect=tbl.getBoundingClientRect(); overlay.setAttribute('width',tblRect.width); overlay.setAttribute('height',tblRect.height);
-  const wrapRect=wrapper.getBoundingClientRect();
-  groups.forEach((imp,i)=>{
-    const cells=memberCells(imp.bits); if(!cells.length)return;
-    const rCoords=[...new Set(cells.map(idx=>rowPosByNat[idx>>d]))];
-    const cCoords=[...new Set(cells.map(idx=>colPosByNat[idx&(K-1)]))];
-    const rInts=intervals(rCoords); const cInts=intervals(cCoords);
-    rInts.forEach(r=>cInts.forEach(c=>drawRect(r,c,COLORS[i%COLORS.length])));
-  });
-  function intervals(arr){const s=[...arr].sort((a,b)=>a-b);const res=[];let st=s[0],pv=s[0];for(let i=1;i<s.length;i++){const cur=s[i];if(cur===pv+1){pv=cur;continue;}res.push([st,pv]);st=pv=cur;}res.push([st,pv]);if(res.length>1&&res[0][0]===0&&res.at(-1)[1]===K-1){const last=res.pop();const first=res.shift();res.push([0,first[1]]);res.push([last[0],last[1]]);}return res;}
-  function drawRect(rI,cI,color){const [r0,r1]=rI,[c0,c1]=cI;const td1=cellEls[(rowDisplay[r0]<<d)|colDisplay[c0]];const td2=cellEls[(rowDisplay[r1]<<d)|colDisplay[c1]];const b1=td1.getBoundingClientRect(),b2=td2.getBoundingClientRect();const x=b1.left-wrapRect.left,y=b1.top-wrapRect.top,w=b2.right-b1.left,h=b2.bottom-b1.top;const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');rect.setAttribute('x',x);rect.setAttribute('y',y);rect.setAttribute('width',w);rect.setAttribute('height',h);rect.setAttribute('fill','none');rect.setAttribute('stroke',color);rect.setAttribute('stroke-width','2');overlay.appendChild(rect);}  
-  function memberCells(bits){const res=[];for(let idx=0;idx<K*K;idx++){const bs=bitStr(idx,2*d);let ok=true;for(let i=0;i<bs.length;i++)if(bits[i]!=='-'&&bs[i]!==bits[i]){ok=false;break;}if(ok)res.push(idx);}return res;}
-}
+function draw(groups){overlay.innerHTML='';const tblR=tbl.getBoundingClientRect();overlay.setAttribute('width',tblR.width);overlay.setAttribute('height',tblR.height);const wrapR=wrap.getBoundingClientRect();groups.forEach((g,i)=>{const cells=memberCells(g.bits);if(!cells.length)return;const rows=[...new Set(cells.map(idx=>rowPosByNat[idx>>d]))],cols=[...new Set(cells.map(idx=>colPosByNat[idx&(K-1)]))];intv(rows).forEach(rI=>intv(cols).forEach(cI=>drawRect(rI,cI,COLORS[i%COLORS.length])));});
+function intv(arr){if(!arr.length)return[];const s=[...arr].sort((a,b)=>a-b),res=[];let st=s[0],pv=s[0];for(let i=1;i<s.length;i++){const cur=s[i];if(cur===pv+1){pv=cur;continue;}res.push([st,pv]);st=pv=cur;}res.push([st,pv]);if(res.length>1&&res[0][0]===0&&res.at(-1)[1]===K-1){const last=res.pop(),first=res.shift();res.push([0,first[1]]);res.push([last[0],last[1]]);}return res;}
+function drawRect(rI,cI,color){const[ra,rb]=rI,[ca,cb]=cI;const td1=cellEls[(rowDisplay[ra]<<d)|colDisplay[ca]],td2=cellEls[(rowDisplay[rb]<<d)|colDisplay[cb]];if(!(td1&&td2))return;const b1=td1.getBoundingClientRect(),b2=td2.getBoundingClientRect();const x=b1.left-wrapR.left,y=b1.top-wrapR.top,w=b2.right-b1.left,h=b2.bottom-b1.top;const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','none');r.setAttribute('stroke',color);r.setAttribute('stroke-width','2');overlay.appendChild(r);}function memberCells(bits){const res=[];for(let idx=0;idx<K*K;idx++){const bs=bitStr(idx,2*d);let ok=true;for(let j=0;j<bs.length;j++)if(bits[j]!=='-'&&bs[j]!==bits[j]){ok=false;break;}if(ok)res.push(idx);}return res;}}
 })();
 </script>
 </body>
