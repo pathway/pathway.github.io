@@ -1,0 +1,207 @@
+<!--
+  Variable‑Size Karnaugh Map Two‑Player Game
+  ------------------------------------------
+  • Power‑of‑two map sizes: 2×2, 4×4, 8×8, …
+  • Row/column labels are simple binary counts (00,01,10,11,…).
+  • Player 1 places **0** only; Player 2 places **1** only.
+  • After each move the app recomputes an approximate minimal DNF
+    using a Quine–McCluskey simplifier (≤ 8 variables = 16×16 grid).
+  • A running history of complexity (terms, literals) appears with
+    latest entry on top.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>K‑Map Two‑Player Game</title>
+  <style>
+    :root{--cell:48px}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;display:flex;flex-direction:column;align-items:center;padding:1rem 0 3rem}
+    #info{margin-bottom:0.75rem;font-size:1.1rem}
+    #kmap{border-collapse:collapse;user-select:none}
+    #kmap th,#kmap td{width:var(--cell);height:var(--cell);text-align:center;border:1.5px solid #444;font-size:1.1rem;line-height:1}
+    #kmap th{background:#f3f3f3;font-weight:600;padding:0 4px}
+    #kmap td.zero{background:#cfe3ff}
+    #kmap td.one {background:#ffd5d5}
+    #kmap td:hover{cursor:pointer;background:#ffe}
+    #over{margin-top:0.75rem;font-size:1.15rem;font-weight:600}
+    #log{margin-top:1rem;max-height:200px;overflow-y:auto;border:1px solid #ccc;padding:6px 10px;width:min(90vw,420px);font-family:monospace;font-size:0.9rem;white-space:pre}
+  </style>
+</head>
+<body>
+  <div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">0 terms / 0 lits</span></div>
+  <table id="kmap" aria-label="K‑map"></table>
+  <div id="over" hidden></div>
+  <div id="log" aria-label="Complexity history"></div>
+
+<script>
+(()=>{
+  /* ===== 1.  Map size prompt & derived constants ===================== */
+  let K;
+  while(true){
+    const input = prompt("Grid size? Enter power‑of‑two (2,4,8,16)", "4");
+    if(input===null){alert("Reload to start again.");return;}
+    K = parseInt(input,10);
+    if(K>0 && (K & (K-1))===0) break;
+    alert("Please enter a power‑of‑two number (2,4,8,16,…)");
+  }
+  const d = Math.log2(K);          // bits per dimension
+  document.documentElement.style.setProperty('--cell', Math.max(32, 64-4*d)+"px");
+
+  /* ===== 2.  State ==================================================== */
+  const grid = Array(K*K).fill(null);   // null = unknown, 0 or 1
+  let currentPlayer = 1;                // 1 or 2
+  const turnEl = document.getElementById('turn');
+  const cmpxEl = document.getElementById('cmpx');
+  const overEl = document.getElementById('over');
+  const logEl = document.getElementById('log');
+
+  /* ===== 3.  Build table ============================================= */
+  const tbl = document.getElementById('kmap');
+  // header row
+  const headRow = tbl.insertRow();
+  headRow.insertCell();        // corner blank
+  for(let c=0;c<K;c++){
+    const th = document.createElement('th');
+    th.textContent = bin(c,d);
+    headRow.appendChild(th);
+  }
+  // body rows
+  for(let r=0;r<K;r++){
+    const tr = tbl.insertRow();
+    const rowHdr = document.createElement('th');
+    rowHdr.textContent = bin(r,d);
+    tr.appendChild(rowHdr);
+    for(let c=0;c<K;c++){
+      const td = tr.insertCell();
+      td.dataset.index = r*K + c;
+      td.textContent = '·';
+      td.addEventListener('click', () => onCell(td));
+    }
+  }
+
+  /* ===== 4.  Interaction ============================================ */
+  function onCell(td){
+    const idx = +td.dataset.index;
+    if(grid[idx]!==null) return;   // already set
+    const val = currentPlayer===1 ? 0 : 1;
+    grid[idx] = val;
+    td.textContent = val;
+    td.className = val===0 ? 'zero' : 'one';
+
+    const {terms,lits} = complexity(grid);
+    cmpxEl.textContent = `${terms} terms / ${lits} lits`;
+    logEl.textContent = `${terms} t / ${lits} l  – P${currentPlayer} → cell ${idx} (${val})\n` + logEl.textContent;
+
+    if(grid.every(v=>v!==null)) return endGame();
+    currentPlayer = 3-currentPlayer;
+    turnEl.textContent = `Player ${currentPlayer}`;
+  }
+
+  function endGame(){
+    turnEl.textContent = '– Game Over –';
+    overEl.hidden=false;
+    overEl.textContent = 'Finished!';
+  }
+
+  /* ===== 5.  Complexity via Quine–McCluskey (greedy cover) =========== */
+  function complexity(cells){
+    const nVars = 2*d;
+    const minterms=[], dont=[];
+    cells.forEach((v,i)=>{
+      if(v===1) minterms.push(i);
+      else if(v===null) dont.push(i);
+    });
+    if(!minterms.length) return {terms:0,lits:0};
+    if(minterms.length+dont.length===cells.length) return {terms:1,lits:0};
+
+    const primes = getPrimeImplicants(minterms,dont,nVars);
+    const cover = chooseCover(minterms,primes);
+    const terms = cover.length;
+    const lits = cover.reduce((s,imp)=>s+imp.bits.replace(/-/g,'').length,0);
+    return {terms,lits};
+  }
+
+  /* ---- Quine–McCluskey helpers -------------------------------------- */
+  function bitsOf(num, n){return num.toString(2).padStart(n,'0');}
+  function combine(a,b){ // returns combined string or null
+    let diff=-1;
+    for(let i=0;i<a.length;i++){
+      if(a[i]!==b[i]){ if(diff!==-1) return null; diff=i; }
+    }
+    if(diff===-1) return null; // identical
+    return a.slice(0,diff)+'-'+a.slice(diff+1);
+  }
+
+  function getPrimeImplicants(minterms,dont,nVars){
+    let terms = [...minterms,...dont].map(i=>({bits:bitsOf(i,nVars),src:[i]}));
+    const primes=[];
+    while(true){
+      const used = new Set();
+      const next=[];
+      // group by ones count
+      const buckets = {};
+      terms.forEach(t=>{
+        const k=(t.bits.match(/1/g)||[]).length;
+        (buckets[k]=buckets[k]||[]).push(t);
+      });
+      const keys = Object.keys(buckets).map(Number).sort((a,b)=>a-b);
+      for(let k of keys){
+        const groupA = buckets[k], groupB = buckets[k+1]||[];
+        groupA.forEach(a=>{
+          groupB.forEach(b=>{
+            const cBits = combine(a.bits,b.bits);
+            if(cBits){
+              used.add(a); used.add(b);
+              // merge srcs removing duplicates
+              const combo = {bits:cBits, src:[...new Set([...a.src,...b.src])]};
+              // avoid duplicates in next
+              if(!next.some(t=>t.bits===combo.bits)) next.push(combo);
+            }
+          });
+        });
+      }
+      terms.forEach(t=>{ if(!used.has(t) && !primes.some(p=>p.bits===t.bits)) primes.push(t); });
+      if(!next.length) break;
+      terms = next;
+    }
+    return primes.filter(p=>p.src.some(i=>minterms.includes(i))); // remove implicants only covering dontcares
+  }
+
+  function chooseCover(minterms,primes){
+    // essential primes
+    const covers = new Map();   // minterm -> [implicants]
+    minterms.forEach(m=>covers.set(m,primes.filter(p=>p.src.includes(m))));
+    const essential=[];
+    covers.forEach((list,m)=>{ if(list.length===1){ essential.push(list[0]); } });
+    const chosen = [...new Set(essential)];
+    // mark covered minterms
+    let uncovered = minterms.filter(m=>!chosen.some(p=>p.src.includes(m)));
+    // greedy for remaining
+    while(uncovered.length){
+      // choose implicant with best (min lits, max cover)
+      let best=null,bScore=1e9;
+      primes.forEach(p=>{
+        if(chosen.includes(p)) return;
+        const coverCnt = uncovered.filter(m=>p.src.includes(m)).length;
+        if(!coverCnt) return;
+        const litCnt = p.bits.replace(/-/g,'').length;
+        const score = litCnt - coverCnt*0.01; // heuristic
+        if(score<bScore){best=p;bScore=score;}
+      });
+      if(!best){ // fallback
+        uncovered=[]; break;
+      }
+      chosen.push(best);
+      uncovered = uncovered.filter(m=>!best.src.includes(m));
+    }
+    return chosen;
+  }
+
+  /* ===== util ======================================================== */
+  function bin(num,len){return num.toString(2).padStart(len,'0');}
+})();
+</script>
+</body>
+</html>
