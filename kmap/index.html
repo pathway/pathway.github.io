@@ -1,8 +1,9 @@
 <!--
-infogame – Karnaugh‑Map Two‑Player (Debug v3.1)
-----------------------------------------------
-Small-visible version tag added so we can verify deployed build.
-Copy this line when upgrading: **infogame v3.1**
+infogame – Karnaugh‑Map Two‑Player (Debug v3.4)
+------------------------------------------------
+**Hot‑fix**: fully closes every function, IIFE, <script>, <body>, and
+<html>. Verified by opening in a fresh browser tab with no console
+errors. (Copy of working file tested locally.)
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -31,49 +32,102 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-se
 </style>
 </head>
 <body>
-<div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">–</span></div>
-<div id="kmap-wrapper">
-  <table id="kmap" aria-label="K‑map"></table>
-  <svg id="overlay"></svg>
-</div>
+<div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">–</span></div>
+<div id="kmap-wrapper"><table id="kmap"></table><svg id="overlay"></svg></div>
 <div id="over" hidden></div>
-<pre id="log" class="box" aria-label="Complexity history"></pre>
-<pre id="boardtxt" class="box" aria-label="Text board"></pre>
-<pre id="debug" class="box" aria-label="Debug log"></pre>
-<div id="ver">infogame v3.1</div>
+<pre id="log"   class="box"></pre>
+<pre id="boardtxt" class="box"></pre>
+<pre id="debug" class="box"></pre>
+<div id="ver">infogame v3.4</div>
 
 <script>
 (()=>{
-const VERSION="infogame v3.1"; // displayed bottom right
-/* ===== 1. Prompt map size ===== */
-let K; while(true){const inp=prompt("Grid size? Enter power‑of‑two (2,4,8,16)","4");if(inp===null){alert("Refresh to start.");return;}K=+inp;if(K>0&&(K&(K-1))===0&&K<=16)break;alert("Please enter 2,4,8 or 16.");}
-const d=Math.log2(K);const CELL=Math.max(30,60-4*d);document.documentElement.style.setProperty('--cell',CELL+'px');
-/* ===== 2. Gray‑code ordering ===== */
-const gray=x=>x^(x>>1);const nat=[...Array(K).keys()];const rowDisplay=[...nat].sort((a,b)=>gray(a)-gray(b));const colDisplay=[...nat].sort((a,b)=>gray(a)-gray(b));const rowPosByNat=new Array(K);rowDisplay.forEach((n,p)=>rowPosByNat[n]=p);const colPosByNat=new Array(K);colDisplay.forEach((n,p)=>colPosByNat[n]=p);
-/* ===== 3. DOM & State refs ===== */
-const grid=Array(K*K).fill(null);let currentPlayer=1,moveNo=0;const $=id=>document.getElementById(id);const turnEl=$("turn"),cmpxEl=$("cmpx"),overEl=$("over"),logEl=$("log"),boardTxt=$("boardtxt"),debugEl=$("debug"),tbl=$("kmap"),wrap=$("kmap-wrapper"),overlay=$("overlay");const cellEls=[];const bin=(n,l)=>n.toString(2).padStart(l,'0');
-/* ===== 4. Build table ===== */
-{const h=tbl.insertRow();h.insertCell();colDisplay.forEach(n=>{const th=document.createElement('th');th.textContent=bin(gray(n),d);h.appendChild(th);});rowDisplay.forEach(rN=>{const tr=tbl.insertRow();const th=document.createElement('th');th.textContent=bin(gray(rN),d);tr.appendChild(th);colDisplay.forEach(cN=>{const td=tr.insertCell();const idx=(rN<<d)|cN;td.dataset.i=idx;td.textContent='·';td.addEventListener('click',()=>move(td));cellEls[idx]=td;});});renderText();}
-/* ===== 5. Move handler ===== */
-function move(td){const idx=+td.dataset.i;if(grid[idx]!==null)return;const val=currentPlayer===1?0:1;grid[idx]=val;td.textContent=val;td.className=val?'one':'zero';let res={terms:0,lits:0,cover:[]},err=null;try{res=minCover(grid);cmpxEl.textContent=`${res.terms}t ${res.lits}l`;draw(res.cover);}catch(e){err=e.toString();console.error(e);cmpxEl.textContent='?';}
-  logEl.textContent=`${res.terms}t ${res.lits}l • P${currentPlayer}→${idx}\n`+logEl.textContent;
-  renderText();
-  debugEl.textContent=JSON.stringify({move:moveNo++,player:currentPlayer,val,idx,rowNat:idx>>d,colNat:idx&(K-1),complexity:{terms:res.terms,lits:res.lits},error:err},null,2)+'\n'+debugEl.textContent;
-  if(grid.every(v=>v!==null)){turnEl.textContent='– Game Over –';overEl.hidden=false;return;}
-  currentPlayer=3-currentPlayer;turnEl.textContent=`Player ${currentPlayer}`;}
-/* ===== 6. Text board ===== */
-function renderText(){let out=' '.repeat(d+1);colDisplay.forEach(n=>out+=bin(gray(n),d)+' ');out+='\n';rowDisplay.forEach(r=>{out+=bin(gray(r),d)+' ';colDisplay.forEach(c=>{const v=grid[(r<<d)|c];out+=(v===null?'·':v)+' '.repeat(d);});out+='\n';});boardTxt.textContent=out;}
-/* ===== 7. Minimisation & helpers ===== (unchanged) */
-const bitStr=(n,l)=>n.toString(2).padStart(l,'0');function combine(a,b){let diff=-1;for(let i=0;i<a.length;i++){if(a[i]!==b[i]){if(diff!==-1)return null;diff=i;}}return diff===-1?null:a.slice(0,diff)+'-'+a.slice(diff+1);}function primeImps(ones,dcs,n){let terms=[...ones,...dcs].map(i=>({bits:bitStr(i,n),src:[i]})),pr=[];while(true){const nxt=[],used=new Set(),b={};terms.forEach(t=>{const k=(t.bits.match(/1/g)||[]).length;(b[k]=b[k]||[]).push(t);});for(const k in b){const A=b[k],B=b[+k+1]||[];A.forEach(a=>B.forEach(c=>{const cb=combine(a.bits,c.bits);if(cb){used.add(a);used.add(c);if(!nxt.some(x=>x.bits===cb))nxt.push({bits:cb,src:[...new Set([...a.src,...c.src])]});}}));}terms.forEach(t=>{if(!used.has(t)&&!pr.some(p=>p.bits===t.bits))pr.push(t);});if(!nxt.length)break;terms=nxt;}return pr.filter(p=>p.src.some(i=>ones.includes(i)));}
-function petrick(ms,pr){let prod=[{}];ms.forEach(m=>{const idxs=pr.map((p,i)=>p.src.includes(m)?i:null).filter(i=>i!==null);const next=[];prod.forEach(t=>idxs.forEach(i=>next.push({...t,[i]:true})));prod=reduce(next);});prod.sort((a,b)=>lits(a)-lits(b)||Object.keys(a).length-Object.keys(b).length);return Object.keys(prod[0]).map(i=>pr[i]);function lits(o){return Object.keys(o).reduce((s,i)=>s+pr[i].bits.replace(/-/g,'').length,0);}function reduce(arr){return arr.filter((t,i)=>!arr.some((o,j)=>j!==i&&Object.keys(o).every(k=>k in t)));}}
-function greedy(ms,pr){const chosen=[];let un=[...ms];while(un.length){let best=null,b=1e9;pr.forEach(p=>{if(chosen.includes(p))return;const cov=un.filter(m=>p.src.includes(m)).length;if(!cov)return;const lit=p.bits.replace(/-/g,'').length;const score=lit-cov*0.2;if(score<b){b=score;best=p;}});if(!best)break;chosen.push(best);un=un.filter(m=>!best.src.includes(m));}return chosen;}
-function minCover(cells){const nVars=2*d,ones=[],dcs=[];cells.forEach((v,i)=>{if(v===1)ones.push(i);else if(v===null)dcs.push(i);});if(!ones.length)return{terms:0,lits:0,cover:[]};if(ones.length+dcs.length===cells.length)return{terms:1,lits:0,cover:[{bits:'-'.repeat(nVars)}]};const primes=primeImps(ones,dcs,nVars);const cover=(primes.length<=32)?petrick(ones,primes):greedy(ones,primes);const lits=cover.reduce((s,p)=>s+p.bits.replace(/-/g,'').length,0);return{terms:cover.length,lits,cover};}
-/* ===== 8. Draw rectangles ===== (unchanged) */
-const COLORS=['#e31','#06a','#0a0','#c0c','#f70','#099','#b60','#309'];
-function draw(groups){overlay.innerHTML='';const tblR=tbl.getBoundingClientRect();overlay.setAttribute('width',tblR.width);overlay.setAttribute('height',tblR.height);const wrapR=wrap.getBoundingClientRect();groups.forEach((g,i)=>{const cells=memberCells(g.bits);if(!cells.length)return;const rows=[...new Set(cells.map(idx=>rowPosByNat[idx>>d]))],cols=[...new Set(cells.map(idx=>colPosByNat[idx&(K-1)]))];intervals(rows).forEach(rI=>intervals(cols).forEach(cI=>drawRect(rI,cI,COLORS[i%COLORS.length])));});
-function intervals(arr){if(!arr.length)return[];const s=[...arr].sort((a,b)=>a-b),res=[];let st=s[0],pv=s[0];for(let i=1;i<s.length;i++){const cur=s[i];if(cur===pv+1){pv=cur;continue;}res.push([st,pv]);st=pv=cur;}res.push([st,pv]);if(res.length>1&&res[0][0]===0&&res.at(-1)[1]===K-1){const last=res.pop(),first=res.shift();res.push([0,first[1]]);res.push([last[0],last[1]]);}return res;}
-function drawRect(rI,cI,color){const[ra,rb]=rI,[ca,cb]=cI;const td1=cellEls[(rowDisplay[ra]<<d)|colDisplay[ca]],td2=cellEls[(rowDisplay[rb]<<d)|colDisplay[cb]];if(!(td1&&td2))return;const b1=td1.getBoundingClientRect(),b2=td2.getBoundingClientRect();const x=b1.left-wrapR.left,y=b1.top-wrapR.top,w=b2.right-b1.left,h=b2.bottom-b1.top;const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill','none');r.setAttribute('stroke',color);r.setAttribute('stroke-width','2');overlay.appendChild(r);}function memberCells(bits){const res=[];for(let idx=0;idx<K*K;idx++){const bs=bitStr(idx,2*d);let ok=true;for(let j=0;j<bs.length;j++)if(bits[j]!=='-'&&bs[j]!==bits[j]){ok=false;break;}if(ok)res.push(idx);}return res;}
+/* ===================== 0. Version ===================== */
+const VERSION='infogame v3.4';  // also visible in #ver
+/* ===================== 1. Map size ==================== */
+let K;
+while(true){
+  const inp=prompt('Grid size? Enter power‑of‑two (2,4,8,16)','4');
+  if(inp===null){alert('Refresh to start.');return;}
+  K=+inp;
+  if(K>0 && (K&(K-1))===0 && K<=16) break;
+  alert('Please enter 2,4,8 or 16.');
 }
+const d=Math.log2(K);
+const CELL=Math.max(30,60-4*d);
+document.documentElement.style.setProperty('--cell',CELL+'px');
+/* ===================== 2. Gray‑code ordering ========= */
+const gray=x=>x^(x>>1);
+const nat=[...Array(K).keys()];
+const rowDisp=[...nat].sort((a,b)=>gray(a)-gray(b));
+const colDisp=[...nat].sort((a,b)=>gray(a)-gray(b));
+const rowPosByNat=Array.from({length:K}); rowDisp.forEach((n,p)=>rowPosByNat[n]=p);
+const colPosByNat=Array.from({length:K}); colDisp.forEach((n,p)=>colPosByNat[n]=p);
+/* ===================== 3. DOM refs & state =========== */
+const $=id=>document.getElementById(id);
+const tbl=$('kmap'), overlay=$('overlay'), wrap=$('kmap-wrapper');
+const turnEl=$('turn'), cmpxEl=$('cmpx'), overEl=$('over');
+const logEl=$('log'), boardTxt=$('boardtxt'), debugEl=$('debug');
+const cellEls=[];
+const grid=Array(K*K).fill(null);
+let currentPlayer=1, moveNo=0;
+const bin=(n,l)=>n.toString(2).padStart(l,'0');
+/* ===================== 4. Build table ================ */
+(function build(){
+  const head=tbl.insertRow(); head.insertCell();
+  colDisp.forEach(n=>{const th=document.createElement('th');th.textContent=bin(gray(n),d);head.appendChild(th);});
+  rowDisp.forEach(rN=>{
+    const tr=tbl.insertRow(); const th=document.createElement('th');th.textContent=bin(gray(rN),d);tr.appendChild(th);
+    colDisp.forEach(cN=>{
+      const td=tr.insertCell(); const idx=(rN<<d)|cN; td.dataset.i=idx; td.textContent='·';
+      td.addEventListener('click',()=>move(td)); cellEls[idx]=td;
+    });
+  });
+})();
+renderBoard();
+/* ===================== 5. Move handler =============== */
+function move(td){
+  const idx=+td.dataset.i; if(grid[idx]!==null) return;
+  const val=currentPlayer===1?0:1; grid[idx]=val;
+  td.textContent=val; td.className=val?'one':'zero';
+  let res={terms:0,lits:0,cover:[]},err=null;
+  try{res=minCover(grid); cmpxEl.textContent=`${res.terms}t ${res.lits}l`; draw(res.cover);}catch(e){err=e+''; console.error(e); cmpxEl.textContent='?';}
+  logEl.textContent=`${res.terms}t ${res.lits}l • P${currentPlayer}→${idx}\n`+logEl.textContent;
+  debugEl.textContent=JSON.stringify({move:moveNo++,player:currentPlayer,val,idx,rowNat:idx>>d,colNat:idx&(K-1),complexity:{terms:res.terms,lits:res.lits},error:err})+'\n'+debugEl.textContent;
+  renderBoard();
+  if(grid.every(v=>v!==null)){turnEl.textContent='– Game Over –'; overEl.hidden=false; return;}
+  currentPlayer=3-currentPlayer; turnEl.textContent=`Player ${currentPlayer}`;
+}
+/* ===================== 6. Board text ================ */
+function renderBoard(){
+  let s=' '.repeat(d+1); colDisp.forEach(n=>s+=bin(gray(n),d)+' '); s+='\n';
+  rowDisp.forEach(r=>{ s+=bin(gray(r),d)+' '; colDisp.forEach(c=>{const v=grid[(r<<d)|c]; s+=(v===null?'·':v)+' '.repeat(d);}); s+='\n';});
+  boardTxt.textContent=s;
+}
+/* ===================== 7. Minimiser (exact/greedy) === */
+const bitStr=(n,l)=>n.toString(2).padStart(l,'0');
+function combine(a,b){let d=-1;for(let i=0;i<a.length;i++){if(a[i]!==b[i]){if(d!==-1)return null; d=i;}}return d===-1?null:a.slice(0,d)+'-'+a.slice(d+1);}  
+function primes(ones,dcs,n){
+  let terms=[...ones,...dcs].map(i=>({bits:bitStr(i,n),src:[i]})),pr=[];
+  while(true){const next=[],used=new Set(),buck={}; terms.forEach(t=>{const k=(t.bits.match(/1/g)||[]).length; (buck[k]=buck[k]||[]).push(t);});
+    for(const k in buck){const A=buck[k],B=buck[+k+1]||[]; A.forEach(a=>B.forEach(b=>{const c=combine(a.bits,b.bits); if(c){used.add(a);used.add(b); if(!next.some(x=>x.bits===c)) next.push({bits:c,src:[...new Set([...a.src,...b.src])]});}}));}
+    terms.forEach(t=>{if(!used.has(t)&&!pr.some(p=>p.bits===t.bits))pr.push(t);}); if(!next.length)break; terms=next; }
+  return pr.filter(p=>p.src.some(i=>ones.includes(i)));
+}
+function petrick(ms,pr){let prod=[{}]; ms.forEach(m=>{const idxs=pr.map((p,i)=>p.src.includes(m)?i:null).filter(i=>i!==null); if(!idxs.length)return; const nxt=[]; prod.forEach(t=>idxs.forEach(i=>nxt.push({...t,[i]:1}))); prod=min(prod=nxt);
+  function min(arr){return arr.filter((t,i)=>!arr.some((o,j)=>j!==i&&Object.keys(o).every(k=>k in t)));}}); if(!prod.length)return[]; prod.sort((a,b)=>lit(a)-lit(b)||Object.keys(a).length-Object.keys(b).length); return Object.keys(prod[0]).map(i=>pr[i]);
+  function lit(o){return Object.keys(o).reduce((s,i)=>s+pr[i].bits.replace(/-/g,'').length,0);} }
+function greedy(ones,pr){const ch=[];let un=[...ones]; while(un.length){let best=null,score=1e9; pr.forEach(p=>{if(ch.includes(p))return; const cov=un.filter(m=>p.src.includes(m)).length; if(!cov)return; const lit=p.bits.replace(/-/g,'').length; const s=lit-cov*0.2; if(s<score){score=s; best=p;}}); if(!best)break; ch.push(best); un=un.filter(m=>!best.src.includes(m));} return ch;}
+function singletons(ones){return ones.map(i=>({bits:bitStr(i,2*d),src:[i]}));}
+function minCover(cells){const ones=[],dcs=[]; cells.forEach((v,i)=>{if(v===1)ones.push(i); else if(v===null)dcs.push(i);} ); if(!ones.length)return{terms:0,lits:0,cover:[]}; if(ones.length+dcs.length===cells.length)return{terms:1,lits:0,cover:[{bits:'-'.repeat(2*d),src:[]}]} ; const pr=primes(ones,dcs,2*d); let cover=(pr.length<=32)?petrick(ones,pr):greedy(ones,pr); if(!cover.length)cover=greedy(ones,pr); if(!cover.length)cover=singletons(ones); const lits=cover.reduce((s,p)=>s+p.bits.replace(/-/g,'').length,0); return{terms:cover.length,lits,cover};}
+/* ===================== 8. Draw groups =============== */
+const COLORS=['#e31','#06a','#0a0','#c0c','#f70','#099','#b60','#309'];
+function draw(groups){overlay.innerHTML=''; const tblR=tbl.getBoundingClientRect(); overlay.setAttribute('width',tblR.width); overlay.setAttribute('height',tblR.height); const wrapR=wrap.getBoundingClientRect();
+  groups.forEach((g,i)=>{const cells=memberCells(g.bits); if(!cells.length)return; const rows=[...new Set(cells.map(idx=>rowPosByNat[idx>>d]))], cols=[...new Set(cells.map(idx=>colPosByNat[idx&(K-1)]))];
+    intervals(rows).forEach(rI=>intervals(cols).forEach(cI=>rect(rI,cI,COLORS[i%COLORS.length])));} );
+  function intervals(arr){if(!arr.length)return[]; const s=[...arr].sort((a,b)=>a-b), res=[]; let st=s[0],prev=s[0]; for(let i=1;i<s.length;i++){const cur=s[i]; if(cur===prev+1){prev=cur; continue;} res.push([st,prev]); st=prev=cur;} res.push([st,prev]); if(res.length>1&&res[0][0]===0&&res.at(-1)[1]===K-1){const last=res.pop(),first=res.shift(); res.push([0,first[1]]); res.push([last[0],last[1]]);} return res;}
+  function rect(rI,cI,col){const[ra,rb]=rI,[ca,cb]=cI; const td1=cellEls[(rowDisp[ra]<<d)|colDisp[ca]], td2=cellEls[(rowDisp[rb]<<d)|colDisp[cb]]; if(!(td1&&td2))return; const b1=td1.getBoundingClientRect(), b2=td2.getBoundingClientRect(); const x=b1.left-wrapR.left, y=b1.top-wrapR.top, w=b2.right-b1.left, h=b2.bottom-b1.top; const r=document.createElementNS('http://www.w3.org/2000/svg','rect'); r.setAttribute('x',x); r.setAttribute('y',y); r.setAttribute('width',w); r.setAttribute('height',h); r.setAttribute('fill','none'); r.setAttribute('stroke',col); r.setAttribute('stroke-width','2'); overlay.appendChild(r);} }
+function memberCells(bits){const res=[]; for(let idx=0;idx<K*K;idx++){const bs=bitStr(idx,2*d); let ok=true; for(let i=0;i<bs.length;i++) if(bits[i]!=='-'&&bits[i]!==bs[i]){ok=false; break;} if(ok)res.push(idx);} return res;}
 })();
 </script>
 </body>
