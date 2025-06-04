@@ -1,25 +1,21 @@
 <!--
-  Karnaugh‑Map Two‑Player Game — with Gray‑code layout & wrap‑around groups
-  ------------------------------------------------------------------------
-  • Any power‑of‑two size up to 16×16.
-  • Rows/columns arranged in **Gray‑code order** so every adjacent cell
-    differs by exactly one bit — group rectangles therefore match the true
-    K‑map adjacency rules.
-  • P1 places 0; P2 places 1.
-  • After each move the board is fully minimised (exact Quine‑McCluskey +
-    Petrick when ≤32 primes, otherwise high‑quality greedy). The minimal
-    implicants are outlined live, including groups that wrap across the
-    left/right or top/bottom edges.
-  • Complexity history log (latest entry on top).
+Karnaugh-Map Two-Player Game (Gray-code view, correct grouping)
+--------------------------------------------------------------
+• Power-of-two K-map sizes up to 16×16.
+• Display order now **truly Gray-code** while the internal minterm index
+  remains the natural binary row|col. This fixes incorrect outlines.
+• Implicant rectangles exclude all 0-cells. Wrap-around groups work.
+• A plain-text rendering of the board appears under the log so you can
+  copy-paste the current state into ChatGPT.
 
-  Save this file, open in any modern browser — no build step required.
+Save this file and open it in a modern browser. No build step needed.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>K‑Map Two‑Player</title>
+<title>K-Map Two-Player</title>
 <style>
 :root{--cell:48px}
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;display:flex;flex-direction:column;align-items:center;padding:1rem 0 3rem}
@@ -34,231 +30,136 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-se
 #overlay{position:absolute;top:0;left:0;pointer-events:none}
 #over{margin-top:0.8rem;font-size:1.15rem;font-weight:600}
 #log{margin-top:1rem;max-height:220px;overflow-y:auto;border:1px solid #ccc;padding:6px 10px;width:min(92vw,440px);font-family:monospace;font-size:0.9rem;white-space:pre}
+#boardtxt{margin-top:1rem;border:1px dashed #aaa;padding:6px 10px;font-family:monospace;font-size:0.9rem;white-space:pre}
 </style>
 </head>
 <body>
-<div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">–</span></div>
+<div id="info">Turn: <span id="turn">Player 1</span> | Complexity: <span id="cmpx">–</span></div>
 <div id="kmap-wrapper">
-  <table id="kmap" aria-label="K‑map"></table>
+  <table id="kmap" aria-label="K-map"></table>
   <svg id="overlay"></svg>
 </div>
 <div id="over" hidden></div>
 <div id="log" aria-label="Complexity history"></div>
+<pre id="boardtxt" aria-label="Text board"></pre>
 
 <script>
 (()=>{
-/* ==== 1.  Prompt for map size (power of two) ========================== */
+/* ===== 1. Prompt size ============================================== */
 let K;
 while(true){
-  const inp = prompt("Grid size? Enter power‑of‑two (2,4,8,16)", "4");
-  if(inp === null){ alert("Refresh to start."); return; }
-  K = +inp;
-  if(K>0 && (K & (K-1))===0 && K<=16) break;
-  alert("Please enter 2,4,8 or 16 (≤16×16 supported)");
+  const i = prompt("Grid size? Enter power-of-two (2,4,8,16)", "4");
+  if(i===null){ alert("Refresh to start."); return; }
+  K = +i; if(K>0 && (K & (K-1))===0 && K<=16) break;
+  alert("Please enter 2,4,8 or 16.");
 }
-const d = Math.log2(K);                  // bits per dimension
-const CELL = Math.max(30, 60-4*d);
-document.documentElement.style.setProperty('--cell', CELL+'px');
+const d = Math.log2(K);
+const CELL=Math.max(30,60-4*d);
+document.documentElement.style.setProperty('--cell',CELL+'px');
 
-/* ==== 2.  Generate Gray‑code orderings =============================== */
-function gray(i){ return i ^ (i >> 1); }
-const rowOrder = Array.from({length:K}, (_,i)=>gray(i));      // binary index per display row
-const colOrder = Array.from({length:K}, (_,i)=>gray(i));
-const rowPosByBin = new Array(K);  // binary‑row → display‑row
-const colPosByBin = new Array(K);
-rowOrder.forEach((bin, pos)=> rowPosByBin[bin]=pos);
-colOrder.forEach((bin, pos)=> colPosByBin[bin]=pos);
+/* ===== 2. Gray-code display order BUT natural binary indices ======= */
+function gray(x){return x^(x>>1);}                 // Gray of nat
+const natRows=[...Array(K).keys()];
+const natCols=[...Array(K).keys()];
+const rowDisplay=natRows.slice().sort((a,b)=>gray(a)-gray(b));
+const colDisplay=natCols.slice().sort((a,b)=>gray(a)-gray(b));
+const rowPosByNat=new Array(K); rowDisplay.forEach((nat,pos)=>rowPosByNat[nat]=pos);
+const colPosByNat=new Array(K); colDisplay.forEach((nat,pos)=>colPosByNat[nat]=pos);
 
-/* ==== 3.  Globals & DOM refs ======================================== */
-const grid = Array(K*K).fill(null); // indexed by minterm (binary row|col)
-let currentPlayer = 1;
-const turnEl = document.getElementById('turn');
-const cmpxEl  = document.getElementById('cmpx');
-const overEl  = document.getElementById('over');
-const logEl   = document.getElementById('log');
-const tbl     = document.getElementById('kmap');
-const wrapper = document.getElementById('kmap-wrapper');
-const overlay = document.getElementById('overlay');
-const cellEls = [];                       // mintermIdx → <td>
+/* ===== 3. DOM refs ================================================== */
+const grid=Array(K*K).fill(null); // index = (rowNat<<d)|colNat
+let currentPlayer=1;
+const turnEl=document.getElementById('turn');
+const cmpxEl=document.getElementById('cmpx');
+const overEl=document.getElementById('over');
+const logEl=document.getElementById('log');
+const boardTxt=document.getElementById('boardtxt');
+const tbl=document.getElementById('kmap');
+const wrapper=document.getElementById('kmap-wrapper');
+const overlay=document.getElementById('overlay');
+const cellEls=[];
 
-/* ==== 4.  Build K‑map table in Gray‑code order ======================= */
-function binStr(n,len){ return n.toString(2).padStart(len,'0'); }
-// header row
-const hRow = tbl.insertRow();
-hRow.insertCell();
-colOrder.forEach(bin=>{ const th=document.createElement('th'); th.textContent=binStr(bin,d); hRow.appendChild(th); });
-// body
-rowOrder.forEach((rowBin, rPos)=>{
-  const tr = tbl.insertRow();
-  const th = document.createElement('th'); th.textContent = binStr(rowBin,d); tr.appendChild(th);
-  colOrder.forEach((colBin,cPos)=>{
-    const td = tr.insertCell();
-    const minterm = (rowBin << d) | colBin;      //  row bits high, column bits low
-    td.dataset.index = minterm;
-    td.textContent='·';
-    td.addEventListener('click', ()=> onCellClick(td));
-    cellEls[minterm] = td;
+/* ===== 4. Build table ============================================== */
+function bin(n,len){return n.toString(2).padStart(len,'0');}
+const h=tbl.insertRow(); h.insertCell();
+colDisplay.forEach(nat=>{const th=document.createElement('th'); th.textContent=bin(gray(nat),d); h.appendChild(th);});
+rowDisplay.forEach(rowNat=>{
+  const tr=tbl.insertRow(); const th=document.createElement('th'); th.textContent=bin(gray(rowNat),d); tr.appendChild(th);
+  colDisplay.forEach(colNat=>{
+    const td=tr.insertCell(); const idx=(rowNat<<d)|colNat; td.dataset.index=idx;
+    td.textContent='·'; td.addEventListener('click',()=>click(td)); cellEls[idx]=td;
   });
 });
 
-/* ==== 5.  Gameplay handler ========================================== */
-function onCellClick(td){
-  const idx = +td.dataset.index;
-  if(grid[idx]!==null) return;            // already filled
-  const val = currentPlayer===1 ? 0 : 1;
-  grid[idx] = val;
-  td.textContent = val;
-  td.className = val? 'one' : 'zero';
-
-  const {terms,lits,cover} = minimalCover(grid);
-  cmpxEl.textContent = `${terms} t / ${lits} l`;
-  logEl.textContent = `${terms}t ${lits}l – P${currentPlayer} → ${idx}\n` + logEl.textContent;
-  drawGroups(cover);
-
-  if(grid.every(v=>v!==null)){ turnEl.textContent='– Game Over –'; overEl.hidden=false; return; }
-  currentPlayer = 3 - currentPlayer;
-  turnEl.textContent = `Player ${currentPlayer}`;
+/* ===== 5. Interaction ============================================== */
+function click(td){
+  const idx=+td.dataset.index; if(grid[idx]!==null) return;
+  const val=currentPlayer===1?0:1; grid[idx]=val;
+  td.textContent=val; td.className=val?'one':'zero';
+  const res=minimalCover(grid); cmpxEl.textContent=`${res.terms}t ${res.lits}l`;
+  logEl.textContent=`${res.terms}t ${res.lits}l – P${currentPlayer}→${idx}\n`+logEl.textContent;
+  drawGroups(res.cover); renderTextBoard();
+  if(grid.every(v=>v!==null)){turnEl.textContent='– Game Over –'; overEl.hidden=false; return;}
+  currentPlayer=3-currentPlayer; turnEl.textContent=`Player ${currentPlayer}`;
 }
 
-/* ==== 6.  Boolean minimisation ====================================== */
-function minimalCover(cells){
-  const nVars = 2*d;
-  const ones=[], dcs=[];
-  cells.forEach((v,i)=>{ if(v===1) ones.push(i); else if(v===null) dcs.push(i); });
-  if(!ones.length) return {terms:0,lits:0,cover:[]};
-  if(ones.length + dcs.length === cells.length) return {terms:1,lits:0,cover:[{bits:'-'.repeat(nVars)}]};
+/* ===== 6. Text board =============================================== */
+function renderTextBoard(){
+  let s=' '.repeat(d+1);
+  colDisplay.forEach(nat=> s+=bin(gray(nat),d)+' ');
+  s+='\n';
+  rowDisplay.forEach(rowNat=>{
+    s+=bin(gray(rowNat),d)+' ';
+    colDisplay.forEach(colNat=>{
+      const v=grid[(rowNat<<d)|colNat]; s+=(v===null?'·':v)+' '.repeat(d);
+    });
+    s+='\n';
+  });
+  boardTxt.textContent=s;
+}
+renderTextBoard();
 
-  const primes = primeImplicants(ones,dcs,nVars);
-  const cover  = (primes.length<=32) ? petrick(ones,primes) : greedyCover(ones,primes);
-  const lits   = cover.reduce((s,p)=>s + p.bits.replace(/-/g,'').length,0);
+/* ===== 7. Minimisation (unchanged) ================================= */
+function minimalCover(cells){
+  const nVars=2*d, ones=[], dcs=[];
+  cells.forEach((v,i)=>{if(v===1)ones.push(i); else if(v===null)dcs.push(i);});
+  if(!ones.length) return {terms:0,lits:0,cover:[]};
+  if(ones.length+dcs.length===cells.length) return {terms:1,lits:0,cover:[{bits:'-'.repeat(nVars)}]};
+  const primes=primeImplicants(ones,dcs,nVars);
+  const cover=(primes.length<=32)?petrick(ones,primes):greedyCover(ones,primes);
+  const lits=cover.reduce((s,p)=>s+p.bits.replace(/-/g,'').length,0);
   return {terms:cover.length,lits,cover};
 }
-
-/* ---- Quine–McCluskey prime implicants ------------------------------ */
-function bitString(num,len){ return num.toString(2).padStart(len,'0'); }
-function combine(a,b){ let diff=-1; for(let i=0;i<a.length;i++){ if(a[i]!==b[i]){ if(diff!==-1) return null; diff=i; } } return diff===-1?null: a.slice(0,diff)+'-'+a.slice(diff+1); }
+function bitStr(n,l){return n.toString(2).padStart(l,'0');}
+function combine(a,b){let d=-1;for(let i=0;i<a.length;i++){if(a[i]!==b[i]){if(d!==-1)return null;d=i;}}return d===-1?null:a.slice(0,d)+'-'+a.slice(d+1);}  
 function primeImplicants(ones,dcs,n){
-  let terms=[...ones,...dcs].map(i=>({bits:bitString(i,n),src:[i]}));
-  const primes=[];
-  while(true){
-    const next=[], used=new Set(), buckets={};
-    terms.forEach(t=>{ const k=(t.bits.match(/1/g)||[]).length; (buckets[k]=buckets[k]||[]).push(t); });
-    const keys=Object.keys(buckets).map(Number).sort((a,b)=>a-b);
-    for(const k of keys){ const A=buckets[k], B=buckets[k+1]||[]; A.forEach(a=> B.forEach(b=>{ const cBits=combine(a.bits,b.bits); if(cBits){ used.add(a); used.add(b); if(!next.some(t=>t.bits===cBits)) next.push({bits:cBits,src:[...new Set([...a.src,...b.src])]}); } })); }
-    terms.forEach(t=>{ if(!used.has(t) && !primes.some(p=>p.bits===t.bits)) primes.push(t); });
-    if(!next.length) break; terms=next;
+  let terms=[...ones,...dcs].map(i=>({bits:bitStr(i,n),src:[i]})); const primes=[];
+  while(true){const nxt=[],used=new Set(),b={};terms.forEach(t=>{const k=(t.bits.match(/1/g)||[]).length;(b[k]=b[k]||[]).push(t);});
+    Object.keys(b).map(Number).sort((a,b)=>a-b).forEach(k=>{(b[k+1]||[]).forEach(u=>{});});
+    for(const k in b){const A=b[k],B=b[+k+1]||[];A.forEach(a=>B.forEach(c=>{const cb=combine(a.bits,c.bits);if(cb){used.add(a);used.add(c);if(!nxt.some(t=>t.bits===cb))nxt.push({bits:cb,src:[...new Set([...a.src,...c.src])]});}}));}
+    terms.forEach(t=>{if(!used.has(t)&&!primes.some(p=>p.bits===t.bits))primes.push(t);}); if(!nxt.length)break; terms=nxt;
   }
-  return primes.filter(p=> p.src.some(i=>ones.includes(i)) );
+  return primes.filter(p=>p.src.some(i=>ones.includes(i)));
 }
+function petrick(minterms,primes){let prod=[{}];minterms.forEach(m=>{const cover=primes.map((p,i)=>p.src.includes(m)?i:null).filter(x=>x!==null);const newP=[];prod.forEach(t=>cover.forEach(i=>newP.push({...t,[i]:true})));prod=reduce(newP);});prod.sort((a,b)=>lit(a)-lit(b)||Object.keys(a).length-Object.keys(b).length);return Object.keys(prod[0]).map(i=>primes[i]);function lit(o){return Object.keys(o).reduce((s,i)=>s+primes[i].bits.replace(/-/g,'').length,0);}function reduce(arr){return arr.filter((t,i)=>!arr.some((o,j)=>j!==i&&sub(o,t)));}function sub(a,b){return Object.keys(a).every(k=>k in b);}}
+function greedyCover(ms,ps){const ch=[];let un=[...ms];while(un.length){let best=null,sc=1e9;ps.forEach(p=>{if(ch.includes(p))return;const cov=un.filter(m=>p.src.includes(m)).length;if(!cov)return;const lit=p.bits.replace(/-/g,'').length;const s=lit-cov*0.2;if(s<sc){sc=s;best=p;}});if(!best)break;ch.push(best);un=un.filter(m=>!best.src.includes(m));}return ch;}
 
-/* ---- Petrick (exact) ---------------------------------------------- */
-function petrick(minterms, primes){
-  let prod=[{}]; // each term = object of prime indices set to true
-  minterms.forEach(m=>{
-    const covering = primes.map((p,i)=> p.src.includes(m)? i : null).filter(i=>i!==null);
-    const newProd=[];
-    prod.forEach(term=>{ covering.forEach(pi=> newProd.push({...term,[pi]:true})); });
-    prod = minimiseProd(newProd);
-  });
-  prod.sort((a,b)=> litCount(a)-litCount(b) || Object.keys(a).length - Object.keys(b).length);
-  return Object.keys(prod[0]).map(i=>primes[i]);
-
-  function litCount(termObj){ return Object.keys(termObj).reduce((s,i)=> s+primes[i].bits.replace(/-/g,'').length,0); }
-  function minimiseProd(list){ return list.filter((t,i)=> !list.some((o,j)=> j!==i && subset(o,t))); }
-  function subset(a,b){ return Object.keys(a).every(k=> k in b); }
-}
-
-/* ---- Greedy cover (fallback) -------------------------------------- */
-function greedyCover(minterms, primes){
-  const chosen=[]; let uncovered=[...minterms];
-  while(uncovered.length){
-    let best=null, score=1e9;
-    primes.forEach(p=>{
-      if(chosen.includes(p)) return;
-      const cov=uncovered.filter(m=>p.src.includes(m)).length;
-      if(!cov) return;
-      const lit=p.bits.replace(/-/g,'').length;
-      const s=lit - cov*0.2; // heuristic
-      if(s<score){score=s; best=p;}
-    });
-    if(!best) break;
-    chosen.push(best);
-    uncovered = uncovered.filter(m=> !best.src.includes(m) );
-  }
-  return chosen;
-}
-
-/* ==== 7.  Draw implicant rectangles (wrap‑around aware) ============= */
-const COLORS=['#d00','#06a','#0a0','#c0c','#f70','#099','#b60','#309'];
+/* ===== 8. Draw groups ============================================== */
+const COLORS=['#e31','#06a','#0a0','#c0c','#f70','#099','#b60','#309'];
 function drawGroups(groups){
   overlay.innerHTML='';
-  const tblRect = tbl.getBoundingClientRect();
-  overlay.setAttribute('width', tblRect.width);
-  overlay.setAttribute('height',tblRect.height);
-  const wrapRect = wrapper.getBoundingClientRect();
-
+  const tblRect=tbl.getBoundingClientRect(); overlay.setAttribute('width',tblRect.width); overlay.setAttribute('height',tblRect.height);
+  const wrapRect=wrapper.getBoundingClientRect();
   groups.forEach((imp,i)=>{
-    const cells = memberCells(imp.bits);
-    if(!cells.length) return;
-    const rowCoords = [...new Set(cells.map(idx=> rowPosByBin[idx>>d] ))];
-    const colCoords = [...new Set(cells.map(idx=> colPosByBin[idx & (K-1)] ))];
-    const rowIntervals = intervals(rowCoords);
-    const colIntervals = intervals(colCoords);
-    rowIntervals.forEach(rI=> colIntervals.forEach(cI=> drawRect(rI, cI, COLORS[i%COLORS.length])));
+    const cells=memberCells(imp.bits); if(!cells.length)return;
+    const rCoords=[...new Set(cells.map(idx=>rowPosByNat[idx>>d]))];
+    const cCoords=[...new Set(cells.map(idx=>colPosByNat[idx&(K-1)]))];
+    const rInts=intervals(rCoords); const cInts=intervals(cCoords);
+    rInts.forEach(r=>cInts.forEach(c=>drawRect(r,c,COLORS[i%COLORS.length])));
   });
-
-  /* ----- helpers ---------------------------------------------------- */
-  function intervals(indices){
-    const sorted=[...indices].sort((a,b)=>a-b);
-    const res=[];
-    let start=sorted[0], prev=sorted[0];
-    for(let i=1;i<sorted.length;i++){
-      const cur=sorted[i];
-      if(cur===prev+1){ prev=cur; continue; }
-      res.push([start,prev]); start=prev=cur;
-    }
-    res.push([start,prev]);
-    // Wrap‑around merge if first starts at 0 and last ends at K‑1
-    if(res.length>1 && res[0][0]===0 && res[res.length-1][1]===K-1){
-      const last = res.pop();
-      const first= res.shift();
-      res.push([last[0], last[1]]);   // high interval
-      res.push([0, first[1]]);        // low interval
-    }
-    return res;
-  }
-
-  function drawRect(rInt, cInt, color){
-    const [r0,r1]=rInt, [c0,c1]=cInt;
-    const td1 = cellEls[ ((rowOrder[r0]<<d) | colOrder[c0]) ];
-    const td2 = cellEls[ ((rowOrder[r1]<<d) | colOrder[c1]) ];
-    const b1 = td1.getBoundingClientRect();
-    const b2 = td2.getBoundingClientRect();
-    const x = b1.left - wrapRect.left;
-    const y = b1.top  - wrapRect.top;
-    const w = b2.right - b1.left;
-    const h = b2.bottom - b1.top;
-    const rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
-    rect.setAttribute('x',x);
-    rect.setAttribute('y',y);
-    rect.setAttribute('width',w);
-    rect.setAttribute('height',h);
-    rect.setAttribute('fill','none');
-    rect.setAttribute('stroke',color);
-    rect.setAttribute('stroke-width','2');
-    overlay.appendChild(rect);
-  }
-
-  function memberCells(bits){
-    const res=[];
-    for(let idx=0; idx<K*K; idx++){
-      const bs = bitString(idx, 2*d);
-      let ok=true;
-      for(let i=0;i<bs.length;i++) if(bits[i]!=='-' && bits[i]!==bs[i]){ ok=false; break; }
-      if(ok) res.push(idx);
-    }
-    return res;
-  }
+  function intervals(arr){const s=[...arr].sort((a,b)=>a-b);const res=[];let st=s[0],pv=s[0];for(let i=1;i<s.length;i++){const cur=s[i];if(cur===pv+1){pv=cur;continue;}res.push([st,pv]);st=pv=cur;}res.push([st,pv]);if(res.length>1&&res[0][0]===0&&res.at(-1)[1]===K-1){const last=res.pop();const first=res.shift();res.push([0,first[1]]);res.push([last[0],last[1]]);}return res;}
+  function drawRect(rI,cI,color){const [r0,r1]=rI,[c0,c1]=cI;const td1=cellEls[(rowDisplay[r0]<<d)|colDisplay[c0]];const td2=cellEls[(rowDisplay[r1]<<d)|colDisplay[c1]];const b1=td1.getBoundingClientRect(),b2=td2.getBoundingClientRect();const x=b1.left-wrapRect.left,y=b1.top-wrapRect.top,w=b2.right-b1.left,h=b2.bottom-b1.top;const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');rect.setAttribute('x',x);rect.setAttribute('y',y);rect.setAttribute('width',w);rect.setAttribute('height',h);rect.setAttribute('fill','none');rect.setAttribute('stroke',color);rect.setAttribute('stroke-width','2');overlay.appendChild(rect);}  
+  function memberCells(bits){const res=[];for(let idx=0;idx<K*K;idx++){const bs=bitStr(idx,2*d);let ok=true;for(let i=0;i<bs.length;i++)if(bits[i]!=='-'&&bs[i]!==bits[i]){ok=false;break;}if(ok)res.push(idx);}return res;}
 }
 })();
 </script>
