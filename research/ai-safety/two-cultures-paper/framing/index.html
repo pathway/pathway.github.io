@@ -1,0 +1,3455 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI safety research notes, catalogs and drafts by Robin Ranjit Singh Chauhan, Pathway Intelligence Inc.">
+      
+      
+        <meta name="author" content="Robin Ranjit Singh Chauhan">
+      
+      
+        <link rel="canonical" href="https://pathway.github.io/research/ai-safety/two-cultures-paper/framing/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../assumptions_table/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Framing - AI Safety Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agent-safety-the-two-cultures-framing-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Safety Research" class="md-header__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Safety Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Framing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../papers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Papers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../map/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../explore/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Explore
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI-use statement
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Safety Research" class="md-nav__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Safety Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ai-risk-taxonomy/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI risk taxonomy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI risk taxonomy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/unified_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/facets/PAPER_facet_taxonomies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facet taxonomies (paper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/taxonomy_crosswalk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy crosswalk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/disagreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disagreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../risk-vocabulary/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk vocabulary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Risk vocabulary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/biblio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../llm-agent-incident-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM-agent incident catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM-agent incident catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incident catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/sources_checked/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources checked
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy_stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/coverage_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/human_check_sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human-check sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../safety-environments-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety environments catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Safety environments catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/by_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index by taxonomy node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-game-theory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game theory and reward hacking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game theory and reward hacking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/tutorial/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/honesty_games/honesty_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Honesty by design (catalogue)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/bibliography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-psych/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reward hacking across psychology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reward hacking across psychology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/prior_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../goodhart-plane/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Goodhart plane
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/goodhart_plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/coverage_layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/huggingface_incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case study: Hugging Face incident
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/prior_planes_and_catalogues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior planes and catalogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../papers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../rebuttal-agent-safety-rl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebuttal: agent safety and RL
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rebuttal: agent safety and RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/draft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/onepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two cultures paper
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Two cultures paper
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-one-paragraph-thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. One-paragraph thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-mapping-line-by-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The mapping, line by line
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-the-mapping-runs-rl-statistics-not-rl-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why the mapping runs RL ≈ statistics, not RL ≈ machine learning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-skeleton-the-assumptions-table-is-the-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Skeleton: the assumptions table is the paper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Skeleton: the assumptions table is the paper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-opening-mirrors-breiman-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Opening (mirrors Breiman §§1–4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-body-one-section-per-row-group-replaces-breiman-511" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Body: one section per row group (replaces Breiman §§5–11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-closing-mirrors-breiman-12-and-the-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Closing (mirrors Breiman §12 and the discussion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-reading-the-table-as-the-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Reading the table as the paper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-bellman-decision-cut-as-a-section-keep-the-curse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Bellman decision: cut as a section, keep the curse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-what-makes-it-a-paper-not-an-essay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. What makes it a paper, not an essay
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4a-results-so-far-and-a-pivot-in-the-claim-2026-11-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Results so far, and a pivot in the claim (2026-11-20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-where-the-analogy-breaks-and-the-paper-must-say-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Where the analogy breaks, and the paper must say so
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-relation-to-the-debunking-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Relation to the debunking paper
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-naming-the-cultures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Naming the cultures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-follow-ups-to-breiman-worth-citing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Follow-ups to Breiman worth citing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliography
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assumptions_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../related_two_cultures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Related work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept_semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept_semantics_expanded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics, expanded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../twopager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../census/census_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../census/census_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cotrained-graders-confessions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-trained graders
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Co-trained graders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cotrained-graders-confessions/paper/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report (short draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-use statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-one-paragraph-thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. One-paragraph thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-mapping-line-by-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The mapping, line by line
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-the-mapping-runs-rl-statistics-not-rl-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why the mapping runs RL ≈ statistics, not RL ≈ machine learning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-skeleton-the-assumptions-table-is-the-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Skeleton: the assumptions table is the paper
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Skeleton: the assumptions table is the paper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-opening-mirrors-breiman-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Opening (mirrors Breiman §§1–4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-body-one-section-per-row-group-replaces-breiman-511" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Body: one section per row group (replaces Breiman §§5–11)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-closing-mirrors-breiman-12-and-the-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Closing (mirrors Breiman §12 and the discussion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-reading-the-table-as-the-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Reading the table as the paper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-bellman-decision-cut-as-a-section-keep-the-curse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Bellman decision: cut as a section, keep the curse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-what-makes-it-a-paper-not-an-essay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. What makes it a paper, not an essay
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4a-results-so-far-and-a-pivot-in-the-claim-2026-11-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Results so far, and a pivot in the claim (2026-11-20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-where-the-analogy-breaks-and-the-paper-must-say-so" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Where the analogy breaks, and the paper must say so
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-relation-to-the-debunking-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Relation to the debunking paper
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-naming-the-cultures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Naming the cultures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-follow-ups-to-breiman-worth-citing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Follow-ups to Breiman worth citing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliography
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="agent-safety-the-two-cultures-framing-notes">Agent Safety: The Two Cultures — framing notes</h1>
+<div class="admonition warning">
+<p class="admonition-title">Status: STARTED</p>
+<p>Not final. Not fully human-reviewed. See <a href="../../ai-use/">the AI-use statement</a>.</p>
+</div>
+<p><em>v0.1, 2026-11-20. Framing document, not a draft. Companion to <code>../rebuttal-agent-safety-rl/draft.md</code>.</em></p>
+<hr />
+<h2 id="0-one-paragraph-thesis">0. One-paragraph thesis</h2>
+<p>Breiman <a href="#ref-1">[1]</a> split statistics into a <strong>data modeling culture</strong> ("assume the data are generated by the following model", validate by goodness-of-fit) and an <strong>algorithmic modeling culture</strong> (treat the inside of the box as unknown, validate by predictive accuracy on a test set). Agent safety has the same split, and the same epistemic move marks the line. One culture begins "assume the agent maximizes a reward R", derives safety from that model (constrained MDPs, shields, safe exploration), and validates by constraint satisfaction inside the model's abstraction. The other treats the trained agent as a black box, measures what it does (red-team success rates, evals, incident records), and bounds harm by architecture rather than by proof. McLean et al. <a href="#ref-2">[2]</a> is the exhibit that makes the split visible: it hypothesizes an "internalized" reward f(o_p, o_g) for a frozen LLM policy and reasons from it, which is "assume the data are generated by the following model" in RL dress. The debunking draft <a href="#ref-3">[3]</a> shows that this move fails on one paper. The two-cultures paper asks why the move is made at all, who makes it, what it costs the field, and what each culture cannot do without the other.</p>
+<hr />
+<h2 id="1-the-mapping-line-by-line">1. The mapping, line by line</h2>
+<p>Breiman gave each culture four lines: what is inside the box, the approach, the validation, the population. The same template for agent safety:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Breiman: data modeling</th>
+<th>Breiman: algorithmic modeling</th>
+<th>Agent safety: <strong>objective-modeling culture</strong></th>
+<th>Agent safety: <strong>behavior-modeling culture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The black box</td>
+<td>nature: x → y</td>
+<td>nature: x → y</td>
+<td>the agent: (observations, prompt) → actions</td>
+<td>the agent: (observations, prompt) → actions</td>
+</tr>
+<tr>
+<td>What is assumed inside</td>
+<td>a stochastic model with parameters</td>
+<td>unknown; "complex, mysterious, partly unknowable"</td>
+<td>an optimizer of a designer-known R (or an "internalized" R) over a known state abstraction</td>
+<td>unknown; a pretrained artifact with latent dispositions, lightly steered by post-training</td>
+</tr>
+<tr>
+<td>The opening sentence</td>
+<td>"Assume that the data are generated by the following model: …" [1, §4.1]</td>
+<td>"find a function f(x)" [1, §1]</td>
+<td>"Assume the agent maximizes R(s, a) …" / "the agent has internalized f(o_p, o_g)" [2, §4]</td>
+<td>"We ran the agent against N attacks / tasks and observed …"</td>
+</tr>
+<tr>
+<td>First question asked of a new problem</td>
+<td>"What's the model for the data?" [1, §4]</td>
+<td>"How well does it predict on a test set?"</td>
+<td>"What's the reward function? What's the cost function?" <a href="#ref-2">[2]</a>; CPO takes C_i as input <a href="#ref-4">[4]</a></td>
+<td>"What does it do when we run it?" [<a href="#ref-5">5</a>, <a href="#ref-6">6</a>]</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>goodness-of-fit tests, residual plots</td>
+<td>test-set error, cross-validation</td>
+<td>constraint satisfaction, formal guarantee inside a finite abstraction <a href="#ref-7">[7]</a>, Safety Gym cost <a href="#ref-8">[8]</a></td>
+<td>attack success rate <a href="#ref-5">[5]</a>, eval pass rate, incident databases <a href="#ref-9">[9]</a>, monitor catch rate <a href="#ref-10">[10]</a></td>
+</tr>
+<tr>
+<td>Theory</td>
+<td>inference, asymptotics, hypothesis tests</td>
+<td>generalization bounds, capacity</td>
+<td>regret bounds, CMDP duality, shield correctness, convergence</td>
+<td>threat models, control protocols <a href="#ref-11">[11]</a>, scaling of eval results, security design patterns <a href="#ref-12">[12]</a></td>
+</tr>
+<tr>
+<td>Where the hard part is relocated</td>
+<td>into the choice of model</td>
+<td>into the choice of test distribution</td>
+<td>into the specification of R, C, the unsafe set</td>
+<td>into eval coverage and the threat model</td>
+</tr>
+<tr>
+<td>Characteristic failure</td>
+<td>a model that passes the checks and is wrong about nature</td>
+<td>distribution shift</td>
+<td>a specification that is satisfied and a system that is unsafe ("moves the alignment problem around" [8, §3.3])</td>
+<td>a tail event no eval covered</td>
+</tr>
+<tr>
+<td>Home venues</td>
+<td>Annals, JASA</td>
+<td>NeurIPS, Machine Learning</td>
+<td>ICML/NeurIPS RL tracks, L4DC, safe-RL workshops</td>
+<td>alignment labs, security venues (AISec, OWASP <a href="#ref-13">[13]</a>), SE venues (ICSE <a href="#ref-14">[14]</a>), blogs, incident reports</td>
+</tr>
+<tr>
+<td>Population (Breiman's guess: 98% / 2%)</td>
+<td></td>
+<td></td>
+<td>measured in §4a</td>
+<td>measured in §4a</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reading the table.</strong> Every row has a one-to-one analogue except population, which Breiman guessed and we can measure. The two "where the hard part is relocated" rows are the honest core: both cultures relocate the problem rather than solve it. Breiman said the data modelers' goodness-of-fit tests "have very little power unless the direction of the alternative is precisely specified" [1, §5.2]. The analogue holds exactly: a shield proves safety only against the automaton's labels [7, §9]; a constraint is satisfied only for the cost you wrote <a href="#ref-4">[4]</a>. The behavior culture's analogue failure is the Efron objection (§5 below): a test set says nothing about the tail.</p>
+<hr />
+<h2 id="2-why-the-mapping-runs-rl-statistics-not-rl-machine-learning">2. Why the mapping runs RL ≈ statistics, not RL ≈ machine learning</h2>
+<p>This needs stating early because RL people will object. In robotics, RL <em>is</em> the algorithmic culture against classical control. The mapping here is by epistemic move, not community label. The move that defines Breiman's data-modeling culture is: <em>posit a parametric model of the inside of the box, then reason from the model as if it were the mechanism.</em> Safe RL inherits exactly this move from control: posit R and the constraint set, then the conclusions (safe, within budget, shielded) are about the model's mechanism, not the agent's. Breiman's sentence transfers verbatim: "The conclusions are about the model's mechanism, and not about nature's mechanism" [1, §5]. Replace "nature" with "the agent".</p>
+<p>The parallel also holds sociologically:</p>
+<ul>
+<li>Breiman: the new community (ML) "sprang up" outside statistics, "mostly young computer scientists" working on problems "where it was obvious that data models were not applicable" [1, §7.1]. Here: LLM-agent safety sprang up outside RL, in labs, security teams and SE groups, on systems where it was obvious a cost function could not be written.</li>
+<li>Breiman: statistics' tools "are frozen at discriminant analysis and logistic regression" [1, §6]. Here: the safe-RL toolkit named in <a href="#ref-2">[2]</a> is CMDP (1999), shielding (2018), safe exploration (2012), Safety Gym (2019), applied unchanged to a 2026 artifact.</li>
+<li>Breiman: "the field has a vested interest in data models, come hell or high water" [1, §12]. Here: the vested interest is in the reward-maximizer picture, which is what makes decades of theory applicable.</li>
+<li>Breiman: "If all a man has is a hammer, then every problem looks like a nail. The trouble for statisticians is that recently some of the problems have stopped looking like nails" [1, §6]. This sentence can open the paper.</li>
+</ul>
+<hr />
+<p><strong>Central table.</strong> <code>assumptions_table.md</code> is the paper's central table: 23 axes in six row groups, unifying the classical-RL assumptions that fail for LLM agents and the LLM-agent assumptions that fail in typical RL. §3 builds the paper's body around its row groups.</p>
+<hr />
+<h2 id="3-skeleton-the-assumptions-table-is-the-paper">3. Skeleton: the assumptions table is the paper</h2>
+<p>Breiman's paper is 12 numbered sections plus a glossary, then four invited comments and a rejoinder. The two-cultures paper keeps Breiman's opening (§§1–4) and closing (§12), and replaces his middle (§§5–11) with the six row groups of <code>assumptions_table.md</code>. Bracketed numbers follow this file's bibliography, not the table's. Each body section states, for its row group: the classical-RL default, the LLM-agent default, the RL steelman (the "RL exceptions" column), and the safety consequence. Breiman's named lessons are attached to the row group where they belong instead of standing alone.</p>
+<h3 id="31-opening-mirrors-breiman-14">3.1 Opening (mirrors Breiman §§1–4)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Breiman</th>
+<th>Two-cultures paper</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Introduction: black-box diagram, two cultures, 98/2</td>
+<td>Agent-in-the-loop diagram; the two cultures; measured population (census, §4 item 1)</td>
+<td>Keep the diagram. Replace "nature" with "agent"; the environment and the principal are outside the box. End §1 with the assumptions table, so the reader has the whole argument before the body.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Road map: personal history as consultant</td>
+<td>Road map: personal history operating agents</td>
+<td>Breiman's credibility came from 13 years of consulting; the analogue is operational experience with deployed agents.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Projects in consulting: Ozone, Chlorine</td>
+<td>Incidents: Replit/SaaStr <a href="#ref-15">[15]</a>, Terraform [<a href="#ref-16">16</a>, <a href="#ref-17">17</a>], prompt-injection cases [<a href="#ref-5">5</a>, <a href="#ref-6">6</a>]</td>
+<td>Show how each resisted the objective-modeling toolkit. Ozone was "a failure" he regretted; keep one honest failure. Each incident is tagged with the rows it violates, so the body sections can refer back.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Return to the university: "Assume the data are generated by…"; the colleague's "What's the model for the data?"</td>
+<td>Reading the safe-RL literature: "Assume the agent maximizes…"; the colleague's "What's the reward function?"</td>
+<td><a href="#ref-2">[2]</a> is the exhibit. Quote its §4 hypothesis of f(o_p, o_g). [2, §5] concedes the tools "cannot be mapped one-to-one onto LLM backbones".</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-body-one-section-per-row-group-replaces-breiman-511">3.2 Body: one section per row group (replaces Breiman §§5–11)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Row group</th>
+<th>Classical-RL default</th>
+<th>LLM-agent default</th>
+<th>RL steelman</th>
+<th>Safety consequence</th>
+<th>Breiman analogue attached here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><strong>A. Objective</strong> (A1–A5)</td>
+<td>Designer writes R and the cost set before training; observations cannot change them</td>
+<td>Prompt and tool outputs set the effective objective at run time; preferences move under the agent; the unsafe set is open-world</td>
+<td>Goal-conditioned RL <a href="#ref-28">[28]</a>; corrupted-reward channel <a href="#ref-29">[29]</a>; assistance games <a href="#ref-30">[30]</a>; impact measures [<a href="#ref-31">31</a>, <a href="#ref-32">32</a>]</td>
+<td>The objective arrives over an unauthenticated channel (A2); CMDPs and shields cover only the enumerable subset (A5)</td>
+<td><strong>§5 "the use of data models"</strong>: "the conclusions are about the model's mechanism, and not about nature's mechanism." <strong>§5.2 "goodness-of-fit has no power"</strong>: a shield over a finite abstraction has no power outside its label set [7, §9]; a constraint is satisfied only for the cost you wrote <a href="#ref-4">[4]</a>. Coverage count (§4 item 2) is the measurement.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>B. Learning</strong> (B1–B5)</td>
+<td>Policy learns at deployment; reward arrives each step; competence comes from reward-driven trial and error</td>
+<td>Weights frozen; no reward at deployment; competence from pretraining, lightly steered</td>
+<td>Offline RL; inverse RL <a href="#ref-18">[18]</a>; goal misgeneralization <a href="#ref-34">[34]</a></td>
+<td>Safe-exploration methods have nothing to modify (B1) <a href="#ref-33">[33]</a>; "internalized reward" cannot be tested (B2); reward-based diagnosis misattributes (B3)</td>
+<td><strong>§5.3 / §8 Rashomon</strong>: many rewards fit one behavior [<a href="#ref-18">18</a>, <a href="#ref-19">19</a>], as many five-variable regressions fit one data set "within 1.0%" [1, §8]; and one incident fits three formalisms (Rashomon demo, §4 item 3).</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>C. Environment and state</strong> (C1–C5)</td>
+<td>Experimenter builds a simulator; episodes reset; state is physical; nature is the only adversary; single agent</td>
+<td>Real software and users; single-shot and irreversible; state includes intent; content authors attack; other agents present</td>
+<td>Sim-to-real <a href="#ref-35">[35]</a>; POMDP belief states <a href="#ref-36">[36]</a>; robust and adversarial RL [<a href="#ref-37">37</a>, <a href="#ref-38">38</a>]; multi-agent RL</td>
+<td>Expected-cost guarantees are the wrong metric when failures do not amortize (C2); belief over intent is the alignment problem (C3); a threat model is required (C4)</td>
+<td><strong>§6 "limitations of data models"</strong>: "some of the problems have stopped looking like nails"; the toolkit "frozen at" CMDP (1999), safe exploration (2012), shielding (2018). Cox's objection sits here: prediction "under quite different conditions from the data" [1, Cox comment].</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>D. Actions and observations</strong> (D1–D3)</td>
+<td>Fixed small action space with known semantics; no self-report; steering requires retraining</td>
+<td>Open-ended text and tool calls whose safety depends on context; verbal reasoning traces; steering by prompt</td>
+<td>Large discrete action spaces; goal-conditioned policies <a href="#ref-28">[28]</a></td>
+<td>The same action type is safe or catastrophic by context (D1); the steering channel is the attack channel (D3, with A1)</td>
+<td><strong>§9 Occam</strong>: the MDP picture is simple and wrong about frozen text-conditioned agents; the honest picture is messy and right. Breiman: "the goal is not interpretability, but accurate information"; here, not a clean formalism but accurate prediction of failures. <strong>Bellman's curse</strong> is folded in at D1 and A5 (see Bellman decision below).</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>E. Overseer</strong> (E1–E3)</td>
+<td>Agent does not model the overseer; autonomous after training; one team trains and deploys</td>
+<td>Agent knows what oversight is and can fake alignment <a href="#ref-39">[39]</a>; user co-acts and disables gates; deployer cannot retrain</td>
+<td>Delusion box <a href="#ref-44">[44]</a>; reward tampering via causal influence diagrams; RLHF as a training-time human loop <a href="#ref-40">[40]</a></td>
+<td>Optimizing against a monitor hides misbehavior (E1) <a href="#ref-10">[10]</a>; shields carry a friction cost users remove (E2); safety must be architectural (E3) [<a href="#ref-41">41</a>, <a href="#ref-12">12</a>]</td>
+<td><strong>§7 "a new research community"</strong>: the behavior-modeling community grew around the overseer: AI control <a href="#ref-11">[11]</a>, monitoring [<a href="#ref-10">10</a>, <a href="#ref-27">27</a>], security patterns <a href="#ref-12">[12]</a>. <strong>§11 "information from a black box"</strong>: CoT monitoring extracts intent from the agent black box as permutation importance extracted structure from the forest [1, §11]; Baker et al. show a weaker model can monitor a stronger one <a href="#ref-10">[10]</a>. Breiman's "two black boxes, ours slightly less inscrutable than nature's" is literal here: the agent is one, the monitor is another. E1 is the limit: the forest did not know it was being examined.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>F. Validation</strong> (F1–F2)</td>
+<td>Expected return and expected cost under known R and C; the agent does not model the test</td>
+<td>Attack success rates, eval pass rates, incident records; the agent can detect evaluation <a href="#ref-42">[42]</a></td>
+<td>Specification gaming literature <a href="#ref-43">[43]</a></td>
+<td>Both cultures measure where their instruments reach and are blind in the tail (F1); evals are specifications and inherit Goodhart (F2)</td>
+<td><strong>§5.4 "predictive accuracy"</strong> and the Efron comment: "Prediction by itself is only occasionally sufficient" [1, Efron comment]. This is the section that cuts against the behavior culture, and it must be as hard on evals as §5 was on shields.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-closing-mirrors-breiman-12-and-the-discussion">3.3 Closing (mirrors Breiman §12 and the discussion)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Breiman</th>
+<th>Two-cultures paper</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>Final remarks: vested interest; return to roots</td>
+<td>Final remarks: what each culture must borrow</td>
+<td>See §5 below for the balance. Hoadley's "score engineering" is the recommended hybrid: a behavior-measured agent inside written constraints over the enumerable subset.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Four comments + rejoinder (Cox disagrees, Efron has reservations, Hoadley and Parzen agree)</td>
+<td>Write the strongest objections in (§5)</td>
+<td>Statistical Science's discussion format did the steelman for Breiman. A position track will not; the paper must do it itself, which is what the "RL exceptions" column is for.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-reading-the-table-as-the-paper">3.4 Reading the table as the paper</h3>
+<ul>
+<li><strong>Rows are claims; sections are row groups.</strong> Every body section argues its rows and nothing else. A reviewer who rejects a row rejects a paragraph, not the paper.</li>
+<li><strong>The "Owner" column sets each section's tone.</strong> RL-owned rows (A1, A2, A4, A5, B1, B2, B5, C2, C3, D1, E1) are where the objective-modeling culture is wrong about LLM agents; these carry Breiman's §§5–6 polemic. LLM-owned rows (A3, B4, C1, C4, C5, D2, D3, E2, E3, F2) are where the behavior-modeling culture faces problems RL never had, and where it borrows RL's habit of stating assumptions. "Both" rows (B3, F1) go to the final remarks.</li>
+<li><strong>The "RL exceptions" column is the built-in rejoinder.</strong> Breiman had Cox and Efron to steelman him; a position track has nobody. Each section must engage its exceptions column before stating its consequence.</li>
+<li><strong>Breiman's named lessons attach to row groups, not sections of their own.</strong> No power of goodness-of-fit → A. Rashomon → B. Limitations of the frozen toolkit → C. Occam → D. New community and information from a black box → E. Predictive accuracy and the Efron objection → F.</li>
+<li><strong>The evidence items of §4 each anchor to rows.</strong> Census → §1 population and E (the new community). Coverage count → A5, D1. Rashomon demo → B2, B3, with the three stories drawn from A (misspecified reward), E1 (oversight evasion) and A2 (unauthenticated control plane). Transfer test → every row read as a yes/no precondition; the debunking draft's P1–P6 are A1, A4, A5, B1, C2, E1.</li>
+</ul>
+<h3 id="35-bellman-decision-cut-as-a-section-keep-the-curse">3.5 Bellman decision: cut as a section, keep the curse</h3>
+<p><strong>Decision.</strong> Do not give "dimensionality: curse or blessing" its own section. Fold the curse into rows A5 and D1 (no enumerable unsafe set; the same action type is safe or catastrophic by context). Move the one genuine blessing, chain-of-thought monitoring, to row group E under Breiman's §11 "information from a black box", where the analogy is tight.</p>
+<p><strong>Reasoning.</strong> The test was: at least two concrete, cited results showing a safety capability with no classical-RL counterpart, and an analogy to Breiman's "more variables, more information" that is tight rather than decorative.</p>
+<ul>
+<li><em>CoT monitoring.</em> One concrete result: Baker et al. show CoT monitoring is "far more effective than monitoring agent actions and outputs alone" and that GPT-4o can monitor o3-mini <a href="#ref-10">[10]</a>. No classical-RL counterpart: an Atari policy has no legible intent trace. But the same paper shows the channel degrades under optimization pressure, and Korbak et al. is a position statement that calls the opportunity "fragile" and "imperfect", not a result <a href="#ref-27">[27]</a>. Count: one result, one position.</li>
+<li><em>Instructability (D3).</em> A capability, but it has a counterpart in goal-conditioned RL <a href="#ref-28">[28]</a>, and it is the same channel as prompt injection (A1, A2). It is not a safety blessing; it is a double-edged control surface.</li>
+<li><em>Natural-language constraints.</em> AgentSpec is a DSL of triggers, predicates and enforcement actions over an enumerable rule set, with over 90% prevention on code agents <a href="#ref-14">[14]</a>. This is a shield <a href="#ref-7">[7]</a> with a nicer front end. It has a classical counterpart by construction.</li>
+<li><em>Tightness.</em> Breiman's blessing is that the <em>predictor</em> uses more features and extracts information "in small pieces" [1, §10.1]. The agent-safety blessing is that the <em>overseer</em> reads more output. The roles differ, so the analogy is decorative. Where the analogy is tight is Breiman §11: extracting information about the mechanism from a black box without a data model. CoT monitoring is exactly that, so it moves to E.</li>
+</ul>
+<p><strong>Result.</strong> One of two required results, counterpart-free; analogy decorative. Cut. The curse side stays as evidence in A5 and D1, and the blessing side becomes two sentences in §9 (row group E).</p>
+<hr />
+<h2 id="4-what-makes-it-a-paper-not-an-essay">4. What makes it a paper, not an essay</h2>
+<p>Breiman had two kinds of evidence: twenty years of accuracy wins (Tables 1–2, Statlog ranks 1,1,1,1) and the hepatitis re-analysis. The two-cultures paper needs its own evidence, or it is an opinion piece. Four candidates, ranked by value per effort:</p>
+<ol>
+<li><strong>A measured census (replaces Breiman's 98/2 guess).</strong> Build the citation graph of safe-RL and LLM-agent-safety papers from OpenAlex <a href="#ref-21">[21]</a> or Semantic Scholar. Measure: do the two literatures cite each other? Cluster the graph and report the cross-cluster citation rate. Count authors who publish in both. Breiman guessed; we count. This is the single most novel contribution and it is cheap. Anchors: §1 population line and row group E (the new community).</li>
+<li><strong>A specification-coverage measurement (the "no power" claim made concrete).</strong> Take the AI Incident Database <a href="#ref-9">[9]</a> entries involving LLM agents, and classify each: could the harm have been written as a cost function or safety automaton before deployment, yes or no, with the rule written out when yes. Report the fraction. This is the analogue of Breiman's seven-dimensional simulation where goodness-of-fit tests "did not reject linearity until the nonlinearity was extreme" [1, §5.2]. Anchors: rows A5 (cost not writable before deployment) and D1 (action safety depends on context); feeds F1.</li>
+<li><strong>A Rashomon demonstration.</strong> One incident (Replit), three formal stories (misspecified reward; oversight-evading policy; unauthenticated control plane), each internally complete, each prescribing a different remedy. Mirrors Breiman's three five-variable regressions "within 1.0% of each other" [1, §8]. Anchors: rows B2 and B3 (reward not identifiable from behavior); the three stories are drawn from A (misspecified reward), E1 (oversight evasion) and A2 (unauthenticated control plane).</li>
+<li><strong>The transfer test, generalized.</strong> Lift the precondition checklist from [3, §6] into a general instrument: for any "X is a Y problem" claim, list Y's method preconditions and check them. Used once in <a href="#ref-3">[3]</a>; here it becomes the paper's reusable tool, applied to RL → agents and, for symmetry, to security → agents and to evals → agents. Anchors: every row of the table read as a yes/no precondition; the debunking draft's P1–P6 are rows A1, A4, A5, B1, C2, E1.</li>
+</ol>
+<p>Items 1 and 2 are measurements made in this work. Item 3 is a worked example. Item 4 is the method.</p>
+<hr />
+<h2 id="4a-results-so-far-and-a-pivot-in-the-claim-2026-11-20">4a. Results so far, and a pivot in the claim (2026-11-20)</h2>
+<ul>
+<li><strong>Census:</strong> the split is visible in the citation graph without our labels. Louvain purity 0.92; cross-corpus references 0.13% (A→B) and 0.23% (B→A). Nearly all contact runs through the term "reward hacking". Breiman's 98/2 guess becomes a measurement.</li>
+<li><strong>Coverage count:</strong> a pre-deployment rule could have blocked first-order harm in 86% of 103 LLM-agent incidents (yes 43%, partial 44%). Every <code>no</code> is an attacker-operated agent. The "no power" claim of §4 item 2 is <strong>not supported as stated</strong>.</li>
+<li><strong>Operator split and rule kind:</strong> deployer-operated incidents (N=64): yes 61%, partial 39%, <strong>no 0%</strong>. Attacker-operated (N=35): no 40%. Of 89 writable rules, 88 are tool-layer access control (allow/deny-list 78%, approval gate 61%, least privilege 39%, egress/DLP 35%); <strong>1 is a CMDP-style cost over the policy</strong>. Gate present but switched off: 16% of incidents.</li>
+<li><strong>Catalog and combined:</strong> over the 70-row catalog (N=66 after vetoes) yes 55% / partial 44% / no 2%; deployer-operated no = 0. Combined AIID + catalog, deduplicated, N=148: yes 46%, partial 45%, no 9%, all 14 <code>no</code> attacker-operated. CMDP-style cost: 1 of 154 writable rules. Robust across two independently assembled sets.</li>
+<li><strong>The pivot.</strong> The writable rules are tool-layer access control, not costs over the agent's objective. So:<ul>
+<li>The objective-modeling culture is right that constraints work, and wrong about where they live: in the tool layer, not in R.</li>
+<li>The behavior-modeling culture is right that the objective cannot be specified, and wrong if it concludes that nothing can be written.</li>
+<li>The residual no rule covers is concealment, intent-indistinguishable misuse, and legitimate-looking injected instructions (rows E1, A2, C3).</li>
+<li>Where rules existed they were disabled or bypassed (row E2). Human factors, not writability, is the binding constraint in the headline cases.</li>
+</ul>
+</li>
+<li><strong>Breiman analogue shifts</strong> from "goodness-of-fit has no power" (§5.2) to Hoadley's reply: black boxes run in production only inside written constraints that clients, law and drift demand. The paper's recommendation becomes Hoadley's score engineering for agents, with the measured residual as the open problem.</li>
+<li><strong>Taxonomy mapping, N=70:</strong> McLean's three classes fit 53% of incidents, none fits 47%; the class label is unstable under prompt rewording (kappa 0.25) while operational facts are stable (kappa 0.86–0.90). On the cannon unified taxonomy, the response that would have prevented or caught the incident is area 10 runtime control in nearly every case (10.3 safeguards/access restriction 86%, 10.2 monitoring 63%); formal guarantees (11.1) and specification work score 0. RL-native problem areas (3.1, 3.2, 4.2) cover ≤ 20%; injection (4.3) covers 70%.</li>
+<li>The 15-incident sample has not been human-audited.</li>
+</ul>
+<h2 id="5-where-the-analogy-breaks-and-the-paper-must-say-so">5. Where the analogy breaks, and the paper must say so</h2>
+<p>Breiman wrote from a position of strength: the algorithmic culture was winning on the one metric both cultures accepted. The behavior-modeling culture in agent safety has no such scoreboard. Writing the paper as "RL loses" would be wrong and would be refused by reviewers from the RL side. The honest asymmetries:</p>
+<ul>
+<li><strong>No shared metric.</strong> Breiman could put x down both boxes and compare y. In safety, the quantity of interest is the rate of rare catastrophic events, which neither culture can measure in advance. The paper should say that the behavior culture's "test set" is as weak in the tail as the objective culture's constraints are outside the abstraction.</li>
+<li><strong>The Efron objection transfers.</strong> Efron: "Prediction by itself is only occasionally sufficient," and "Numerical experimentation by itself, unguided by theory, is prone to faddish wandering" [1, Efron comment]. For agents: a passed eval has no confidence interval over deployments, and the behavior culture has no theory of when its measurements generalize. The objective culture at least knows what it assumed. Breiman conceded the related point that "'Importance' does not yet have a satisfactory theoretical definition" [1, Rejoinder].</li>
+<li><strong>The Cox objection transfers.</strong> Cox: "Often the prediction is under quite different conditions from the data," and "Better a rough answer to the right question than an exact answer to the wrong question" [1, Cox comment]. Breiman agreed on the first point. For agents, every deployment is prediction under changed conditions. The question "will this agent delete the database" is about a mechanism, and mechanism-free measurement cannot answer the counterfactual. Interpretability is the behavior culture's attempt at mechanism; it is immature.</li>
+<li><strong>The Hoadley point transfers.</strong> Hoadley's credit scorers put "score engineering" constraints on black-box models because clients, law and drift demanded it [1, Hoadley comment]. This is the hybrid the paper should recommend: a behavior-measured agent wrapped in written constraints over the enumerable subset.</li>
+<li><strong>Evals are specifications too.</strong> The behavior culture writes evals; an eval is a specification of what counts as failure. It inherits Goodhart when the agent models the eval [<a href="#ref-10">10</a>, <a href="#ref-22">22</a>]. The debunking draft's P6 (the agent models the monitor) cuts against both cultures. This should be stated in the final remarks, not hidden.</li>
+<li><strong>Breiman's resolution does not fully transfer.</strong> Breiman dissolved the Occam dilemma: "the goal is not interpretability, but accurate information" [1, §11]. For safety, accurate information about past behavior is not enough; the goal is a bound on future harm. No black-box method gives one. The paper's final remarks should propose what each culture must borrow: the objective culture must give up the fiction that R is known and adopt measurement; the behavior culture must adopt the objective culture's habit of stating assumptions so that its measurements have a domain of validity.</li>
+</ul>
+<p>Recommended stance: Breiman's structure and tone in §§1–11, then a §12 that is more balanced than Breiman's, because the evidence is.</p>
+<hr />
+<h2 id="6-relation-to-the-debunking-paper">6. Relation to the debunking paper</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>The rebuttal</th>
+<th>This paper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object</td>
+<td>one paper <a href="#ref-2">[2]</a></td>
+<td>a field split</td>
+</tr>
+<tr>
+<td>Claim</td>
+<td>formal equivalence is not method transfer</td>
+<td>the two communities make different founding assumptions and validate differently; neither alone suffices</td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>preconditions stated by the tools' own authors; three incidents</td>
+<td>census; coverage measurement; Rashomon demo; the transfer test as instrument</td>
+</tr>
+<tr>
+<td>Tone</td>
+<td>rebuttal</td>
+<td>diagnosis</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-naming-the-cultures">7. Naming the cultures</h2>
+<p>Breiman named each culture by what it puts inside the box: a data model, or an algorithm. Options here:</p>
+<table>
+<thead>
+<tr>
+<th>Name pair</th>
+<th>For</th>
+<th>Against</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>objective-modeling / behavior-modeling</td>
+<td>mirrors "data modeling / algorithmic modeling"; names the epistemic move</td>
+<td>"behavior modeling" is a term in psychology</td>
+</tr>
+<tr>
+<td>specification culture / empirical culture</td>
+<td>plain</td>
+<td>"empirical" sounds like a compliment; RL people run experiments too</td>
+</tr>
+<tr>
+<td>reward culture / observation culture</td>
+<td>short</td>
+<td>"reward modeling" collides with Leike et al.; "observation" collides with POMDP vocabulary</td>
+</tr>
+<tr>
+<td>RL culture / agent culture</td>
+<td>what people actually say</td>
+<td>names communities, not moves; invites the "RL is empirical" objection of §2</td>
+</tr>
+</tbody>
+</table>
+<p>Recommendation: objective-modeling and behavior-modeling. State in §1 that the names denote moves, not tribes, and that many people make both moves.</p>
+<hr />
+<h2 id="8-follow-ups-to-breiman-worth-citing">8. Follow-ups to Breiman worth citing</h2>
+<p>Breiman's paper generated a literature on itself. The most useful for this paper:</p>
+<ul>
+<li>Shmueli, "To Explain or to Predict?" <a href="#ref-24">[24]</a>: formalizes the explanation/prediction distinction Breiman left informal. The agent analogue is "to specify or to measure".</li>
+<li>Donoho, "50 Years of Data Science" <a href="#ref-25">[25]</a>: the sociological sequel; the two cultures became one field with a new name. Worth asking whether agent safety will do the same.</li>
+<li>Efron, "Prediction, Estimation, and Attribution" <a href="#ref-26">[26]</a>: Efron's considered 2020 position, two decades after his comment on Breiman; the best source for the "prediction is not enough" objection.</li>
+<li>The 2021 Observational Studies retrospective issue on Breiman's paper (<em>Observational Studies</em> 7(1), 2021).</li>
+</ul>
+<hr />
+<h2 id="bibliography">Bibliography</h2>
+<p>[1] <a id="ref-1"></a>L. Breiman, "Statistical Modeling: The Two Cultures (with comments and a rejoinder by the author)," <em>Statistical Science</em> 16(3), 199–231, 2001. <a href="https://doi.org/10.1214/ss/1009213726">https://doi.org/10.1214/ss/1009213726</a> (open copy: <a href="https://www2.math.uu.se/~thulin/mm/breiman.pdf">https://www2.math.uu.se/~thulin/mm/breiman.pdf</a>)</p>
+<p>[2] <a id="ref-2"></a>R. McLean, T. E. Lee, M. Mohammedalamen, K. Roice, G. Berseth, P. Pilarski, M. C. Machado, A. Lefaivre Škopac, B. Rosman, "AI Agent Safety is a Reinforcement Learning Problem," <em>Second Workshop on Agents in the Wild (AIWILD), ICML 2026</em>. <a href="https://openreview.net/forum?id=wvga9chmb6">https://openreview.net/forum?id=wvga9chmb6</a></p>
+<p>[3] <a id="ref-3"></a>"On the Limits of Reinforcement Learning for LLM-Agent Safety: Formal Equivalence Is Not Method Transfer," draft v0.2, 2026-11-20. <code>../rebuttal-agent-safety-rl/draft.md</code></p>
+<p>[4] <a id="ref-4"></a>J. Achiam, D. Held, A. Tamar, P. Abbeel, "Constrained Policy Optimization," <em>ICML 2017</em>. <a href="https://proceedings.mlr.press/v70/achiam17a.html">https://proceedings.mlr.press/v70/achiam17a.html</a></p>
+<p>[5] <a id="ref-5"></a>E. Debenedetti, J. Zhang, M. Balunović, L. Beurer-Kellner, M. Fischer, F. Tramèr, "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents," <em>NeurIPS 2024 Datasets and Benchmarks</em>. <a href="https://arxiv.org/abs/2406.13352">https://arxiv.org/abs/2406.13352</a></p>
+<p>[6] <a id="ref-6"></a>K. Greshake, S. Abdelnabi, S. Mishra, C. Endres, T. Holz, M. Fritz, "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection," <em>AISec 2023</em>. <a href="https://arxiv.org/abs/2302.12173">https://arxiv.org/abs/2302.12173</a></p>
+<p>[7] <a id="ref-7"></a>M. Alshiekh, R. Bloem, R. Ehlers, B. Könighofer, S. Niekum, U. Topcu, "Safe Reinforcement Learning via Shielding," <em>AAAI 2018</em>. <a href="https://arxiv.org/abs/1708.08611">https://arxiv.org/abs/1708.08611</a></p>
+<p>[8] <a id="ref-8"></a>A. Ray, J. Achiam, D. Amodei, "Benchmarking Safe Exploration in Deep Reinforcement Learning," OpenAI, 2019. <a href="https://cdn.openai.com/safexp-short.pdf">https://cdn.openai.com/safexp-short.pdf</a></p>
+<p>[9] <a id="ref-9"></a>Responsible AI Collaborative, <em>AI Incident Database</em>. <a href="https://incidentdatabase.ai/">https://incidentdatabase.ai/</a></p>
+<p>[10] <a id="ref-10"></a>B. Baker et al., "Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation," 2025. <a href="https://arxiv.org/abs/2503.11926">https://arxiv.org/abs/2503.11926</a></p>
+<p>[11] <a id="ref-11"></a>R. Greenblatt, B. Shlegeris, K. Sachan, F. Roger, "AI Control: Improving Safety Despite Intentional Subversion," <em>ICML 2024</em>. <a href="https://arxiv.org/abs/2312.06942">https://arxiv.org/abs/2312.06942</a></p>
+<p>[12] <a id="ref-12"></a>L. Beurer-Kellner et al., "Design Patterns for Securing LLM Agents against Prompt Injections," 2025. <a href="https://arxiv.org/abs/2506.08837">https://arxiv.org/abs/2506.08837</a></p>
+<p>[13] <a id="ref-13"></a>OWASP GenAI Security Project, <em>OWASP Top 10 for LLM Applications 2025</em>, LLM01: Prompt Injection. <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">https://genai.owasp.org/llmrisk/llm01-prompt-injection/</a></p>
+<p>[14] <a id="ref-14"></a>H. Wang, C. M. Poskitt, J. Sun, "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents," <em>ICSE 2026</em>. <a href="https://arxiv.org/abs/2503.18666">https://arxiv.org/abs/2503.18666</a></p>
+<p>[15] <a id="ref-15"></a>S. Sharwood, "Vibe coding service Replit deleted user's production database, faked data, told fibs galore," <em>The Register</em>, 21 July 2025. <a href="https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident">https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident</a></p>
+<p>[16] <a id="ref-16"></a>A. Grigorev, "How I Dropped Our Production Database and Now Pay 10% More for AWS," <em>AI Shipping Labs</em>, 6 March 2026. <a href="https://alexeyondata.substack.com/p/how-i-dropped-our-production-database">https://alexeyondata.substack.com/p/how-i-dropped-our-production-database</a></p>
+<p>[17] <a id="ref-17"></a>Rootly, "Hey Claude, where's my database?" (interview with A. Grigorev), <em>Humans of Reliability</em>, 2026. <a href="https://rootly.com/humans-of-reliability/hey-claude-wheres-my-database-alexey-grigorev">https://rootly.com/humans-of-reliability/hey-claude-wheres-my-database-alexey-grigorev</a></p>
+<p>[18] <a id="ref-18"></a>A. Y. Ng, S. Russell, "Algorithms for Inverse Reinforcement Learning," <em>ICML 2000</em>. <a href="https://ai.stanford.edu/~ang/papers/icml00-irl.pdf">https://ai.stanford.edu/~ang/papers/icml00-irl.pdf</a></p>
+<p>[19] <a id="ref-19"></a>S. Armstrong, S. Mindermann, "Occam's Razor Is Insufficient to Infer the Preferences of Irrational Agents," <em>NeurIPS 2018</em>. <a href="https://arxiv.org/abs/1712.05812">https://arxiv.org/abs/1712.05812</a></p>
+<p>[20] <a id="ref-20"></a>A. Meinke, B. Schoen, J. Scheurer, M. Balesni, R. Shah, M. Hobbhahn, "Frontier Models Are Capable of In-Context Scheming," 2024. <a href="https://arxiv.org/abs/2412.04984">https://arxiv.org/abs/2412.04984</a></p>
+<p>[21] <a id="ref-21"></a>OurResearch, <em>OpenAlex</em>. <a href="https://openalex.org/">https://openalex.org/</a></p>
+<p>[22] <a id="ref-22"></a>D. Manheim, S. Garrabrant, "Categorizing Variants of Goodhart's Law," 2018. <a href="https://arxiv.org/abs/1803.04585">https://arxiv.org/abs/1803.04585</a></p>
+<p>[23] <a id="ref-23"></a>C. P. Snow, <em>The Two Cultures and the Scientific Revolution</em> (Rede Lecture), Cambridge University Press, 1959. <a href="https://doi.org/10.1017/CBO9781139196949">https://doi.org/10.1017/CBO9781139196949</a></p>
+<p>[24] <a id="ref-24"></a>G. Shmueli, "To Explain or to Predict?," <em>Statistical Science</em> 25(3), 289–310, 2010. <a href="https://doi.org/10.1214/10-STS330">https://doi.org/10.1214/10-STS330</a></p>
+<p>[25] <a id="ref-25"></a>D. Donoho, "50 Years of Data Science," <em>Journal of Computational and Graphical Statistics</em> 26(4), 745–766, 2017. <a href="https://doi.org/10.1080/10618600.2017.1384734">https://doi.org/10.1080/10618600.2017.1384734</a></p>
+<p>[26] <a id="ref-26"></a>B. Efron, "Prediction, Estimation, and Attribution," <em>Journal of the American Statistical Association</em> 115(530), 636–655, 2020. <a href="https://doi.org/10.1080/01621459.2020.1762613">https://doi.org/10.1080/01621459.2020.1762613</a></p>
+<p>[27] <a id="ref-27"></a>T. Korbak et al., "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety," 2025. <a href="https://arxiv.org/abs/2507.11473">https://arxiv.org/abs/2507.11473</a></p>
+<p>[28] <a id="ref-28"></a>L. P. Kaelbling, "Learning to Achieve Goals," <em>IJCAI 1993</em>.</p>
+<p>[29] <a id="ref-29"></a>T. Everitt, V. Krakovna, L. Orseau, S. Legg, "Reinforcement Learning with a Corrupted Reward Channel," <em>IJCAI 2017</em>. <a href="https://doi.org/10.24963/ijcai.2017/656">https://doi.org/10.24963/ijcai.2017/656</a></p>
+<p>[30] <a id="ref-30"></a>D. Hadfield-Menell, A. Dragan, P. Abbeel, S. Russell, "Cooperative Inverse Reinforcement Learning," <em>NeurIPS 2016</em>. <a href="https://arxiv.org/abs/1606.03137">https://arxiv.org/abs/1606.03137</a></p>
+<p>[31] <a id="ref-31"></a>V. Krakovna et al., "Penalizing Side Effects Using Stepwise Relative Reachability," 2018. <a href="https://arxiv.org/abs/1806.01186">https://arxiv.org/abs/1806.01186</a></p>
+<p>[32] <a id="ref-32"></a>A. M. Turner, D. Hadfield-Menell, P. Tadepalli, "Conservative Agency via Attainable Utility Preservation," <em>AIES 2020</em>. <a href="https://arxiv.org/abs/1902.09725">https://arxiv.org/abs/1902.09725</a></p>
+<p>[33] <a id="ref-33"></a>T. M. Moldovan, P. Abbeel, "Safe Exploration in Markov Decision Processes," <em>ICML 2012</em>. <a href="https://arxiv.org/abs/1205.4810">https://arxiv.org/abs/1205.4810</a></p>
+<p>[34] <a id="ref-34"></a>R. Shah et al., "Goal Misgeneralization: Why Correct Specifications Aren't Enough for Correct Goals," 2022. <a href="https://arxiv.org/abs/2210.01790">https://arxiv.org/abs/2210.01790</a></p>
+<p>[35] <a id="ref-35"></a>J. Tobin et al., "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World," <em>IROS 2017</em>. <a href="https://arxiv.org/abs/1703.06907">https://arxiv.org/abs/1703.06907</a></p>
+<p>[36] <a id="ref-36"></a>L. P. Kaelbling, M. L. Littman, A. R. Cassandra, "Planning and Acting in Partially Observable Stochastic Domains," <em>Artificial Intelligence</em> 101, 1998. <a href="https://doi.org/10.1016/S0004-3702(98">https://doi.org/10.1016/S0004-3702(98</a>)00023-X</p>
+<p>[37] <a id="ref-37"></a>L. Pinto, J. Davidson, R. Sukthankar, A. Gupta, "Robust Adversarial Reinforcement Learning," <em>ICML 2017</em>. <a href="https://arxiv.org/abs/1703.02702">https://arxiv.org/abs/1703.02702</a></p>
+<p>[38] <a id="ref-38"></a>A. Gleave et al., "Adversarial Policies: Attacking Deep Reinforcement Learning," <em>ICLR 2020</em>. <a href="https://arxiv.org/abs/1905.10615">https://arxiv.org/abs/1905.10615</a></p>
+<p>[39] <a id="ref-39"></a>R. Greenblatt et al., "Alignment Faking in Large Language Models," 2024. <a href="https://arxiv.org/abs/2412.14093">https://arxiv.org/abs/2412.14093</a></p>
+<p>[40] <a id="ref-40"></a>P. Christiano et al., "Deep Reinforcement Learning from Human Preferences," <em>NeurIPS 2017</em>. <a href="https://arxiv.org/abs/1706.03741">https://arxiv.org/abs/1706.03741</a></p>
+<p>[41] <a id="ref-41"></a>E. Debenedetti et al., "Defeating Prompt Injections by Design," 2025. <a href="https://arxiv.org/abs/2503.18813">https://arxiv.org/abs/2503.18813</a></p>
+<p>[42] <a id="ref-42"></a>J. Needham et al., "Large Language Models Often Know When They Are Being Evaluated," 2025. <a href="https://arxiv.org/abs/2505.23836">https://arxiv.org/abs/2505.23836</a></p>
+<p>[43] <a id="ref-43"></a>V. Krakovna et al., "Specification Gaming: The Flip Side of AI Ingenuity," DeepMind blog, 2020. <a href="https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/">https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/</a></p>
+<p>[44] <a id="ref-44"></a>M. Ring, L. Orseau, "Delusion, Survival, and Intelligent Agents," <em>AGI 2011</em>. <a href="https://doi.org/10.1007/978-3-642-22887-2_2">https://doi.org/10.1007/978-3-642-22887-2_2</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Robin Ranjit Singh Chauhan, Pathway Intelligence Inc. Mostly AI-generated, not fully human-reviewed.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

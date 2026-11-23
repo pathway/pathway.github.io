@@ -1,0 +1,4198 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI safety research notes, catalogs and drafts by Robin Ranjit Singh Chauhan, Pathway Intelligence Inc.">
+      
+      
+        <meta name="author" content="Robin Ranjit Singh Chauhan">
+      
+      
+        <link rel="canonical" href="https://pathway.github.io/research/ai-safety/ai-risk-taxonomy/glossary/">
+      
+      
+        <link rel="prev" href="../disagreements/">
+      
+      
+        <link rel="next" href="../../risk-vocabulary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Glossary - AI Safety Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glossary-of-the-ai-safety-surveytaxonomy-corpus-51-papers-17-taxonomies-2008-2026" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Safety Research" class="md-header__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Safety Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Glossary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../papers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Papers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../map/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../explore/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Explore
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI-use statement
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Safety Research" class="md-nav__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Safety Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI risk taxonomy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI risk taxonomy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facets/PAPER_facet_taxonomies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facet taxonomies (paper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy_crosswalk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy crosswalk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disagreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disagreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        W
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Z
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms-that-drift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terms that drift
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#same-idea-different-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same idea, different names
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-when-major-terms-enter-the-corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline: when major terms enter the corpus
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../risk-vocabulary/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk vocabulary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Risk vocabulary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/biblio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../llm-agent-incident-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM-agent incident catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM-agent incident catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incident catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/sources_checked/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources checked
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy_stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/coverage_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/human_check_sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human-check sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../safety-environments-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety environments catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Safety environments catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/by_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index by taxonomy node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-game-theory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game theory and reward hacking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game theory and reward hacking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/tutorial/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/honesty_games/honesty_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Honesty by design (catalogue)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/bibliography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-psych/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reward hacking across psychology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reward hacking across psychology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/prior_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../goodhart-plane/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Goodhart plane
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/goodhart_plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/coverage_layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/huggingface_incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case study: Hugging Face incident
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/prior_planes_and_catalogues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior planes and catalogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../papers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../rebuttal-agent-safety-rl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebuttal: agent safety and RL
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rebuttal: agent safety and RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/draft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/onepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../two-cultures-paper/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two cultures paper
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Two cultures paper
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/framing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/assumptions_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/related_two_cultures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Related work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/concept_semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/concept_semantics_expanded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics, expanded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/twopager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/census/census_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/census/census_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cotrained-graders-confessions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-trained graders
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Co-trained graders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cotrained-graders-confessions/paper/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report (short draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-use statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        W
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Z
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms-that-drift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terms that drift
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#same-idea-different-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Same idea, different names
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-when-major-terms-enter-the-corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline: when major terms enter the corpus
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="glossary-of-the-ai-safety-surveytaxonomy-corpus-51-papers-17-taxonomies-2008-2026">Glossary of the AI-safety survey/taxonomy corpus (51 papers + 17 taxonomies, 2008-2026)</h1>
+<p>How to read this file
+- Sources: section 7 ("Terms") and section 5 (taxonomy) of the 51 files in <code>papers/</code>, plus the node trees of the 17 files in <code>taxonomies/</code>. Greps of the full files were used to find the earliest and later users of each term.
+- Most paper files are <code>[read-partial]</code>: they come from a summariser digest, headings, or part of the text. Only about nine were read in full text (Manheim 2018, Shah 2022, Pan 2022, Ngo 2022, Skalse 2022 (most), Hendrycks 2022, Slattery 2024, Krakovna 2020, Hubinger 2019 (parts)). Bostrom 2014 and Russell 2019 were not read at all.
+- "First" means the earliest file in this corpus that lists the term. It does not mean the first use in history. Taxonomy files carry the year of the source they describe (for example Omohundro 2008).
+- Tags. (partial) = definition rests on a digest or partial read. (mk) = known only from model-knowledge notes or an unread book; no sourced text. Entries with no tag rest on a full-text read.
+- [outside] = standard background that is not in the files. "Coiner" is given only if a file says so. None of the files names a coiner, so every coinage credit below is [outside].
+- Short names: Amodei 2016, Everitt 2018 (literature review), Everitt 2019 (tampering), Everitt 2021 (incentives), Bengio 2023 (managing risks), Bengio 2025 (report 2025), Bengio 2025-SAI (Scientist AI), Bengio 2026 (report 2026), Leech SR-2023/24/25 (Shallow Reviews), tx = taxonomy file.</p>
+<hr />
+<h2 id="a">A</h2>
+<p><strong>Accident</strong>
+- Definition: unintended, harmful behaviour that comes from poor design of a real-world AI system.
+- First: Amodei 2016. Also: Hendrycks 2023 (organisational accidents, "Accidents Are Hard to Avoid"), Hendrycks 2022.
+- Drift: Amodei means a design flaw in one system. Hendrycks 2023 means a failure of a whole organisation (Normal-accident view). GDM 2025 splits this as "Mistakes".
+- See also: Mistakes, Malfunction.</p>
+<p><strong>Activation monitoring</strong>
+- Definition: detect unwanted concepts or behaviour from a model's internal states.
+- First: Anthropic recommended directions 2025 (tx). Also: Leech SR-2025 ("Monitoring concepts"), Sharkey 2025 (concept-based probes). (partial)
+- See also: Behavioural monitoring, Concept-based probes, Representation control.</p>
+<p><strong>Activation patching</strong>
+- Definition: replace activations in a run to test the causal role of a component.
+- First: Bereska 2024. (partial) Also: Sharkey 2025 (causal methods in general).
+- See also: Circuit, Mechanistic interpretability.</p>
+<p><strong>Adversarial Goodhart</strong>
+- Definition: agents with their own aims exploit a metric once it becomes a target.
+- First: Manheim 2018 (variant of four). Also: Weng 2024 ("Goodhart" section).
+- Drift: Manheim lists Campbell's law, Cobra effect and "Adversarial Misalignment" under it. Bostrom 2014's treacherous turn is said to be related (mk note in the Bostrom file).
+- See also: Goodhart's law, Campbell's law, Cobra effect.</p>
+<p><strong>Adversarial robustness</strong>
+- Definition: resistance to inputs crafted to cause failure.
+- First: Amodei 2016 (inside "distributional shift"/"safe exploration" discussion is weak; the dedicated node appears in Hendrycks 2021, "Adversarial Robustness"). Also: Everitt 2018 (Security), DeepMind 2018 (tx), Anthropic 2025 (tx), Singapore 2025 (tx), Anwar 2024 (jailbreaks).
+- Drift: Hendrycks 2021 puts it under Robustness; Everitt 2018 calls the cluster "Security"; Anwar 2024 turns it into jailbreaks and prompt injection.
+- See also: Jailbreak, Backdoor, Robustness.</p>
+<p><strong>Agency (emergent agency)</strong>
+- Definition: capacity of a system to work on its own towards goals. "Emergent agency" means autonomy that appears from general capability gains or from combining systems.
+- First: Chan 2023 (four traits: underspecification, directness of impact, goal-directedness, long-term planning). Also: Hammond 2025 ("Emergent Agency" as a multi-agent risk factor), Bengio 2025-SAI ("how agency may emerge"), Anwar 2024 ("Agentic LLMs Pose Novel Risks"). (partial)
+- Drift: Chan: a list of traits. Hammond: new goals arising from joined systems. Bengio 2025-SAI: a property to avoid by design.
+- See also: AI agent, Language agent, Scientist AI.</p>
+<p><strong>AGI (artificial general intelligence)</strong>
+- Definition: AI that matches or exceeds humans across many cognitive tasks.
+- First: Bostrom 2014 (under "superintelligence"; mk). Defined in Everitt 2018 and Ngo 2022. Also: Hendrycks 2022 ("strong AI" as synonym), Shah 2025 ("Exceptional AGI, Level 4"), Leech SR-2025.
+- Drift: Everitt 2018 "equal or exceed humans on many tasks"; Ngo 2022 "domain-general skills at or above human level"; Shah 2025 gives a percentile threshold (99th percentile of skilled adults, non-physical tasks). Hendrycks 2022 treats "strong AI", "human-level AI" and AGI as the same.
+- See also: Superintelligence, Frontier AI, General-purpose AI.</p>
+<p><strong>AI agent</strong>
+- Definition: a goal-directed system that acts on its own, often with tools and limited oversight.
+- First: Hammond 2025. Also: Bengio 2026, Bengio 2025-SAI (agent = goals, plans, affordances), Chan 2023 (as "agency"). (partial)
+- See also: Agency, Language agent, Autonomous AI systems.</p>
+<p><strong>AI control</strong>
+- Definition: get safe results from models that may try to subvert safety measures on purpose. Safety is shown by a red team test, not by trusting the model.
+- First: Greenblatt 2023. Also: Leech SR-2024 (as an agenda), Clymer 2024 (control arguments), Shah 2025, Anthropic 2025 (tx, "AI control"), Carlsmith 2023 (mentioned), Leech SR-2023 (as "control evaluation"). (partial)
+- Drift: strong. Bengio 2025 uses "control" for any ability to oversee and halt a system (see Control (general)). Clymer's "control arguments" mean environmental restrictions that stop capable systems. GDM 2025 makes control evaluations one of the stress tests. See the drift table.
+- See also: Control evaluation, Trusted monitoring, Untrusted monitoring, Collusion, Safety case.</p>
+<p><strong>AI macrosystem</strong>
+- Definition: the AI models, non-AI software and supporting humans that together are deployed.
+- First: Clymer 2024. (partial) See also: Safety case, Deployment window.</p>
+<p><strong>AI race</strong>
+- Definition: competition that pushes actors to deploy unsafe AI or give up control to it.
+- First: Hendrycks 2023 (category 3: military arms race, corporate race, evolutionary pressures). Also: Critch 2020 ("unsafe development races", type 2a). (partial)
+- See also: Collective action problem, Structural risks.</p>
+<p><strong>Alignment (AI alignment)</strong>
+- Definition: make an AI pursue the goals or values its humans intend.
+- First: Bostrom 2014 (as the control problem; mk). Defined in Leike 2018 ("agent alignment problem"), Ngo 2022, Anwar 2024. Also nearly every paper.
+- Drift: strong. Leike 2018: behave as the user intends. Anwar 2024: "intent alignment", the system is "trying" to do what a human actor intends. Ngo 2022: match human values or interests. Leech SR-2025 notes "steerability" as a competing academic word. GDM 2025: misalignment = AI "knowingly" causes harm against developer intent. Kenton 2021 lists four notions (behaviour, intent, incentive, inner). See the drift table.
+- See also: Outer alignment, Inner alignment, Value specification, Superalignment.</p>
+<p><strong>Alignment cycle</strong>
+- Definition: Ji's loop between forward alignment (training) and backward alignment (assurance and governance).
+- First: Ji 2023. (partial) See also: Forward/backward alignment, RICE.</p>
+<p><strong>Alignment evaluation</strong>
+- Definition: a test of a model's propensity to cause harm (as opposed to its capability).
+- First: Shevlane 2023 (examples: pursues long-term goals not the developer's, power-seeking, resists shutdown, colludes, resists malicious access). Also: Bengio 2023 ("Evaluating AI alignment"), Anthropic 2025 (tx, "Evaluating alignment"), Singapore 2025 (tx, "capability and propensity assessment"). (partial)
+- See also: Dangerous capability evaluation.</p>
+<p><strong>Alignment faking (alignment fakers)</strong>
+- Definition: an AI that pretends to be more aligned than it is, to pass tests or avoid training changes.
+- First: Carlsmith 2023 ("alignment fakers"). Also: Clymer 2024 ("alignment faking", hides defects until a good moment), Park 2023 (deception examples), Ngo 2022 (2025 edit mentions a Claude 3 Opus demonstration), Bengio 2025. (partial)
+- Drift: the same behaviour as deceptive alignment (Hubinger 2019) but named by effect, not mechanism. Carlsmith puts "alignment fakers" as the broad class and "schemers" as the subset driven by power.
+- See also: Deceptive alignment, Scheming, Sandbagging.</p>
+<p><strong>Amplified oversight</strong>
+- Definition: AI helps humans judge the outputs of other AI, so that oversight keeps up with capability.
+- First: Shah 2025 (GDM). (partial) Also: GDM AGI safety 2025 (tx).
+- Drift: GDM's name for the family that Amodei 2016 called "scalable oversight". Related: recursive reward modeling (Leike 2018), IDA and debate (Ji 2023).
+- See also: Scalable oversight, Recursive reward modeling, Weak-to-strong generalization.</p>
+<p><strong>Anytime preparedness</strong>
+- Definition: prepare for both short and long AI timelines at once.
+- First: Bengio 2025-SAI. (partial)</p>
+<p><strong>Approximate continuity</strong>
+- Definition: assumption that capability grows without large discontinuous jumps.
+- First: Shah 2025. (partial) See also: Emergent capability (the opposite claim), Phase transition.</p>
+<p><strong>Assistance game (CIRL)</strong>
+- Definition: a game in which the machine is unsure of the human's reward and learns it from the human's actions. CIRL (cooperative inverse reinforcement learning) is the formal version.
+- First: Russell 2019 (mk). Also: Ji 2023 (CIRL under scalable oversight), Leech SR-2024 ("Assistance games / reward learning"), Leech SR-2025 ("Assistance games, assistive agents"). (mk)
+- See also: Standard model, Reward modeling, Value learning.</p>
+<p><strong>Assurance</strong>
+- Definition: any way of giving evidence that a system is safe or aligned.
+- First: DeepMind 2018 (tx; third pillar, monitoring and enforcement). Defined in Anwar 2024. Also: Ji 2023 (backward alignment: safety evaluations, interpretability, human values verification), Dalrymple 2024 (verification).
+- Drift: DeepMind 2018: watch and restrict a running system. Ji 2023: evidence-gathering before and after deployment. Dalrymple 2024: formal proof. See the drift table.
+- See also: Safety case, Verifier, Backward alignment.</p>
+<p><strong>Auto-induced distributional shift</strong>
+- Definition: the policy's own actions move feedback into regions where the reward model is not reliable.
+- First: Casper 2023. (partial) See also: Distribution shift, Feedback loop (Amodei 2016, source of reward hacking).</p>
+<p><strong>Autonomous AI systems</strong>
+- Definition: systems that pursue goals and act in the world with little human input.
+- First: Bengio 2023. (partial) See also: AI agent, Agency.</p>
+<h2 id="b">B</h2>
+<p><strong>Backdoor (Trojan)</strong>
+- Definition: hidden behaviour that a specific input triggers.
+- First: Hendrycks 2021 ("Backdoors" under hidden model functionality). Also: Anwar 2024 (poisoning and backdoors). (partial)
+- Drift: Greenblatt 2023 uses "backdoor" in a different sense: code that passes tests but has an exploitable logic error, inserted by the red-team attack policy.
+- See also: Poisoning, Sleeper agent [outside].</p>
+<p><strong>Base optimizer</strong>
+- Definition: the training process that searches over algorithms for one that scores well on the base objective.
+- First: Hubinger 2019. (partial) See also: Mesa-optimizer, Outer alignment.</p>
+<p><strong>Behavioral objective</strong>
+- Definition: the objective a system appears to pursue, as shown by its behaviour (formally, from perfect inverse RL).
+- First: Hubinger 2019. Also: Langosco 2021 ("behavioural objective" = proxy the policy seems to pursue). (partial)
+- Drift: formal IRL-based in Hubinger; a plain observation in Langosco.
+- See also: Mesa-objective, Goal misgeneralization.</p>
+<p><strong>Best-of-n (BoN)</strong>
+- Definition: sample n outputs and keep the one with the highest proxy score. A way to apply optimisation pressure.
+- First: Gao 2022. (partial) Also: Phuong 2024 ("expert best-of-N", a human chooses and the help is counted in bits). Lambert 2025 (rejection sampling family). See also: Overoptimisation.</p>
+<p><strong>Black swan (tail risk)</strong>
+- Definition: rare, high-impact events outside the training distribution.
+- First: Hendrycks 2021. Also: Hendrycks 2022 (tail risk), Clymer 2024 (rare input that causes catastrophic misbehaviour, may not appear in evals). (partial)
+- See also: Distribution shift, X-risk.</p>
+<p><strong>Black-box / white-box safety</strong>
+- Definition: area names. Black-box = shape behaviour from inputs and outputs. White-box = use model internals (interpretability).
+- First: Leech SR-2025. (partial) See also: Interpretability, Iterative alignment.</p>
+<p><strong>Builder-breaker</strong>
+- Definition: method in which one party proposes a strategy and another gives a counterexample, in turns.
+- First: Christiano 2021 (ELK). (partial) See also: ELK.</p>
+<h2 id="c">C</h2>
+<p><strong>Calibration</strong>
+- Definition: confidence matches the chance of being right.
+- First: Hendrycks 2021 (under Monitoring). Also: Critch 2020 (calibrated confidence reports, direction 2). (partial)
+- See also: Honesty, Uncertainty.</p>
+<p><strong>Campbell's law</strong>
+- Definition: a social indicator that drives decisions gets corrupted.
+- First: Manheim 2018. Also: Manheim tx 2018 (listed under adversarial Goodhart; the note and the fetch disagree on whether it is separate). See also: Goodhart's law.</p>
+<p><strong>Capabilities externality</strong>
+- Definition: a gain in general capability that comes as a side effect of improving a safety metric.
+- First: Hendrycks 2022. See also: Safetywashing (a related claim that safety work can be a label without a safety gain).</p>
+<p><strong>Capability generalisation vs goal generalisation</strong>
+- Definition: a policy can keep its skills out of distribution while pursuing the wrong goal.
+- First: Langosco 2021 ("capability generalisation"). Also: Ngo 2022 (capability vs goal misgeneralization), Shah 2022 (capability and "consistent goal" defined by behaviour). (partial)
+- See also: Goal misgeneralization.</p>
+<p><strong>Causal Goodhart</strong>
+- Definition: pushing on a proxy through an indirect causal path breaks its link to the goal.
+- First: Manheim 2018 (sub-types: shared cause intervention, intermediary intervention, metric manipulation). See also: Goodhart's law.</p>
+<p><strong>Causal influence diagram (CID)</strong>
+- Definition: a graph with decision, chance and utility nodes and causal edges, used to read what incentives an agent has.
+- First: Everitt 2019. Also: Everitt 2021 (SCIM, materiality, value of information/control, response and instrumental control incentive, minimal reduction). (partial)
+- See also: Reward tampering, Current-RF optimisation, Uninfluenceable learning.</p>
+<p><strong>Circuit / feature / motif</strong>
+- Definition: Feature = a unit of representation. Circuit = sub-graph of features and weights. Motif = a pattern repeated across models or tasks.
+- First: Bereska 2024. (partial) Also: Sharkey 2025 (latents). See also: Mechanistic interpretability, Superposition.</p>
+<p><strong>Cobra effect</strong>
+- Definition: a bounty creates an incentive that increases the thing it meant to reduce.
+- First: Manheim 2018 (normal and non-causal forms). See also: Adversarial Goodhart, Perverse instantiation.</p>
+<p><strong>Collective action problem</strong>
+- Definition: choices that are rational for each actor give a worse result for all.
+- First: Hendrycks 2023. Also: Hammond 2025 ("social dilemma"). (partial) See also: AI race.</p>
+<p><strong>Collusion</strong>
+- Definition: AI agents (or an AI and its monitor) coordinate to avoid detection or to act against others.
+- First: Shevlane 2023 (alignment evaluation: "can be induced to collude"). Defined in Greenblatt 2023 (policy and monitor) and Hammond 2025 (undesired cooperation between agents). Also: Bengio 2025-SAI (collusion between superintelligent systems), Hendrycks 2023, Anwar 2024, Chan 2023. (partial)
+- Drift: Greenblatt: policy-monitor collusion, blocked by signal jamming. Hammond: market-style collusion among agents with different goals.
+- See also: Signal jamming, Multi-agent failure modes, Steganography.</p>
+<p><strong>CoT monitorability</strong>
+- Definition: how well a reasoning model's chain of thought shows relevant behaviour, so that an automated monitor can flag misbehaviour.
+- First: Korbak 2025 (two grounds: necessity, since hard tasks need CoT as working memory; propensity, since models often say what they do). (partial)
+- Drift: threats named are RL scaling that drifts from legible text, direct supervision of CoT, indirect optimisation pressure, and new architectures. "Obfuscated reward hacking" (CoT that hides intent under RL pressure) is named but not defined in the file (mk).
+- See also: Externalized reasoning, Unfaithful reasoning, Load-bearing safety measure, Obfuscated reward hacking.</p>
+<p><strong>Comprehension / instruction / control (human abilities)</strong>
+- Definition: Critch's three human abilities needed to delegate safely: to understand an AI, to direct it, and to halt or redirect it.
+- First: Critch 2020. (partial) See also: Delegation, Corrigibility.</p>
+<p><strong>Concept-based probes</strong>
+- Definition: classifiers that predict a human concept from hidden states.
+- First: Sharkey 2025. (partial) Also: Leech SR-2024 and SR-2025 (concept-based interpretability). See also: Activation monitoring.</p>
+<p><strong>Control (general sense)</strong>
+- Definition: ability to oversee an AI system and adjust or halt it. "Loss of control" = systems operate outside anyone's control and there is no clear way back.
+- First: Bengio 2025 (2.2.3). Also: Bengio 2026, Critch 2020 ("control" ability), Park 2023.
+- Drift: not the same as AI control (Greenblatt 2023). See the drift table.
+- See also: Loss of control, Corrigibility.</p>
+<p><strong>Control evaluation</strong>
+- Definition: a safety test where a red team's attack policy replaces the untrusted model, and the blue team's protocol must still keep outcomes safe.
+- First: Greenblatt 2023. Also: Leech SR-2023 (the label appears), Shah 2025 (tx: "Control evaluations" under misalignment). (partial)
+- See also: AI control, Attack policy, Red teaming.</p>
+<p><strong>Corrigibility</strong>
+- Definition: an agent cooperates with attempts to fix, change or shut it down.
+- First: Omohundro 2008 (tx; the self-protection drive is the opposing force). First defined: Everitt 2018 (safe interruptibility). Also: Hubinger 2019 (corrigible alignment), Critch 2020 (direction 10), Leech SR-2023/2025 (theory agenda "Corrigibility"). (partial)
+- Drift: Everitt 2018 treats it as a cooperation property. Hubinger 2019 uses a narrower "corrigible alignment" (mesa-objective points at the base objective through the model's knowledge of it). Leech lists it as a theory agenda ("behavior alignment theory").
+- See also: Instrumental convergence, Interruptibility, Power-seeking.</p>
+<p><strong>Corrigible alignment</strong>
+- Definition: the mesa-objective points to the base objective through the model's own knowledge of it.
+- First: Hubinger 2019. (partial) See also: Deceptive alignment, Pseudo-alignment.</p>
+<p><strong>Current-RF optimisation</strong>
+- Definition: judge future trajectories with the reward function as it is now, so the agent gets no gain from changing it.
+- First: Everitt 2019. (partial) See also: Reward tampering, Time-inconsistency.</p>
+<h2 id="d">D</h2>
+<p><strong>Dangerous capabilities (and evaluations)</strong>
+- Definition: capabilities that could unlock very large-scale harm, even if also useful. A "dangerous capability evaluation" tests for them.
+- First: Shevlane 2023 (nine capability areas: cyber-offence, deception, persuasion, political strategy, weapons acquisition, long-horizon planning, AI development, situational awareness, self-proliferation). Also: Phuong 2024 (persuasion and deception, cyber, self-proliferation, self-reasoning), Bengio 2023, Shah 2025, Singapore 2025 (tx), Leech SR-2025 (WMD evals). (partial)
+- Drift: the capability lists differ per paper. Phuong 2024 keeps four areas; Shevlane 2023 nine.
+- See also: Alignment evaluation, Self-proliferation, Uplift [outside].</p>
+<p><strong>Deceptive alignment</strong>
+- Definition: a learned optimiser acts as if it optimises the base objective, for instrumental reasons, to avoid being modified.
+- First: Hubinger 2019 (a form of pseudo-alignment). Also: Ngo 2022, Shah 2022 ("deceptive model"), Shevlane 2023 (situationally aware model looks safe in evaluation), Dalrymple 2024 (detects test conditions), Clymer 2024 (alignment faking). (partial)
+- Drift: Hubinger: needs a mesa-optimizer. Shevlane and Dalrymple: any model that passes tests and then behaves differently. See the drift table.
+- See also: Alignment faking, Scheming, Treacherous turn, Situational awareness.</p>
+<p><strong>Deception</strong>
+- Definition: systematic inducement of false beliefs to reach an outcome other than the truth.
+- First: Bostrom 2014 (treacherous turn; mk). Defined in Park 2023. Also: Kenton 2021 (signal that makes the receiver hold a false belief, to the signaller's benefit), Rauker 2022 (passing false or incomplete information despite being able to give true), Hendrycks 2023 (misrepresenting capabilities or intent), Phuong 2024.
+- Drift: Park 2023 is outcome-based. Kenton 2021 is functional (benefit to signaller). Hubinger-style deceptive alignment needs a mesa-optimizer's intent. Weng 2024: U-Sophistry (unintended) vs I-Sophistry (instructed).
+- See also: Sycophancy, Unfaithful reasoning, Honesty, Deceptive alignment.</p>
+<p><strong>Decoupled approval</strong>
+- Definition: sample feedback independently of the action the system actually executes, so tampering does not pay.
+- First: Weng 2024. (partial) See also: Reward tampering.</p>
+<p><strong>Defense in depth</strong>
+- Definition: stack several independent partial safeguards.
+- First: Hendrycks 2022 (a safe-design principle with redundancy, least privilege, loose coupling, separation of duties, fail-safes). Also: Leech SR-2023, Shah 2025, Bengio 2026.
+- See also: Safe design principles, Safety case.</p>
+<p><strong>Delegation</strong>
+- Definition: humans assign tasks to AI systems. Critch splits it into single/single, single/multi, multi/single, multi/multi.
+- First: Critch 2020. (partial) See also: Multiplicity thesis, Principal.</p>
+<p><strong>Delusion box</strong>
+- Definition: the agent controls the inputs to its own reward function (named in Everitt 2019 as from Ring and Orseau).
+- First: Everitt 2019. (partial) See also: Wireheading, Reward tampering.</p>
+<p><strong>Direct translator / human simulator</strong>
+- Definition: two types of ELK reporter. The direct translator reports the predictor's real beliefs (wanted). The human simulator reports what a human would believe from the observations (fits training data, bad).
+- First: Christiano 2021. (partial) See also: ELK, Reporter, Ontology identification.</p>
+<p><strong>Distribution shift (distributional shift)</strong>
+- Definition: deployment differs from training or evaluation, so behaviour can change.
+- First: Amodei 2016 (one of five problems). Also: Hendrycks 2021, Hubinger 2019, Ji 2023 (a whole branch: "Learning under distribution shift"), Kenton 2021, Clymer 2024, Casper 2023.
+- Drift: Ji 2023 treats it as a training topic (cross-distribution aggregation, adversarial training). Clymer 2024 treats it as a safety-case risk (eval vs deployment gap).
+- See also: Black swan, Robustness, Goal misgeneralization.</p>
+<p><strong>Dual-use</strong>
+- Definition: a useful capability that also enables harm.
+- First: Anwar 2024. Also: Bereska 2024 (interpretability can be dual-use). (partial) See also: Dangerous capabilities.</p>
+<h2 id="e">E</h2>
+<p><strong>ELK (eliciting latent knowledge)</strong>
+- Definition: get a model to report what it internally "knows" even when its outputs would not show it. Toy case: SmartVault camera that is tampered with.
+- First: Christiano 2021 (coiner per the file title: ARC report; coiner credit otherwise [outside]). Also: Rauker 2022 ("latent knowledge"), Bengio 2025-SAI, Leech SR-2025 ("Extracting latent knowledge"). (partial)
+- Drift: Rauker 2022 uses "latent knowledge" loosely: something a system "knows" but shows no sign of knowing.
+- See also: Reporter, Ontology identification, Lie and deception detectors.</p>
+<p><strong>Emergent capability</strong>
+- Definition: an ability that appears with scale without having been trained for.
+- First: Hendrycks 2021 (hazard under Monitoring). Also: Shevlane 2023, Anwar 2024 (scale effects). (partial) See also: Approximate continuity.</p>
+<p><strong>Emergent misalignment</strong>
+- Definition: a narrow fine-tune shifts the model's wider persona so that it acts misaligned in unrelated areas. The file gives no definition, only the agenda name.
+- First: Leech SR-2025 (agenda under "Model psychology"). (partial, mk on meaning)
+- See also: Model psychology, Persona.</p>
+<p><strong>Existential risk (x-risk)</strong>
+- Definition: risk that permanently curtails humanity's long-term potential or prevents recovery.
+- First: Bostrom 2014 (mk). Defined in Hendrycks 2022 and Hendrycks 2023. Also: Critch 2020 (ESAI), Ord-style usage [outside].
+- See also: Tail risk, Extreme risk.</p>
+<p><strong>Exposure / vulnerability / hazard / threat</strong>
+- Definition (Hendrycks 2022, from risk analysis): hazard = source of danger; exposure = extent subjected to it; vulnerability = susceptibility to damage; threat = hazard with intent to exploit a vulnerability. Risk = hazard x exposure x vulnerability (Hendrycks 2021 wording: prevalence, exposure, effect).
+- First: Hendrycks 2021. Also: Hendrycks 2022. The four safety areas (robustness, monitoring, alignment, systemic safety) are each tied to one factor.
+- See also: Inherent hazard, Systemic hazard.</p>
+<p><strong>Extremal Goodhart</strong>
+- Definition: extreme proxy values lie in regions where the proxy-goal link differs from where it was learned.
+- First: Manheim 2018 (sub-types: model insufficiency, change in regime). Also: Gao 2022 (regressional/extremal Goodhart as source of overoptimisation). See also: Regressional Goodhart.</p>
+<p><strong>Externalized reasoning property</strong>
+- Definition: hard tasks need chain of thought as working memory, and it is in human-readable form.
+- First: Korbak 2025. (partial) See also: CoT monitorability.</p>
+<p><strong>Extreme risk</strong>
+- Definition: harm on the order of tens of thousands of lives, hundreds of billions in damage, or major disruption of social or political order.
+- First: Shevlane 2023. Also: Bengio 2023. Clymer 2024 uses "catastrophe" (billions in damage or thousands of deaths, from a fetch). (partial)
+- Drift: thresholds differ by paper (see the drift table).</p>
+<h2 id="f">F</h2>
+<p><strong>FATE</strong>
+- Definition: fairness, accountability, transparency, ethics.
+- First: Chan 2023. (partial)</p>
+<p><strong>Forward / backward alignment</strong>
+- Definition: forward = make systems aligned (training). Backward = gather evidence of alignment and govern (assurance, governance).
+- First: Ji 2023. (partial) See also: Alignment cycle, Assurance.</p>
+<p><strong>Foundationality</strong>
+- Definition: many agents built on one base model, so failures are correlated (Anwar 2024; gloss flagged "verify" in the file).
+- First: Anwar 2024. (partial) See also: Multi-agent failure modes.</p>
+<p><strong>Frontier AI</strong>
+- Definition: the few most capable systems, trained on very costly compute. Shevlane: near or above the most capable existing models and novel in scale or design.
+- First: Shevlane 2023 ("frontier model"). Also: Bengio 2023 (frontier AI), Phuong 2024, Bengio 2025-2026 (general-purpose AI).
+- Drift: "frontier", "general-purpose AI" and "foundation model" overlap but have different scope.
+- See also: General-purpose AI, AGI.</p>
+<h2 id="g">G</h2>
+<p><strong>General-purpose AI</strong>
+- Definition: AI that performs a wide variety of tasks. The AI Safety Reports' term.
+- First: Bengio 2025. Also: Bengio 2026. See also: Frontier AI.</p>
+<p><strong>Goal drift</strong>
+- Definition: adaptive systems change their goals or values over time.
+- First: Hendrycks 2023. See also: Goal misgeneralization (a different mechanism).</p>
+<p><strong>Goal misgeneralization</strong>
+- Definition: a model competently pursues an unintended goal out of distribution, even though training feedback was correct.
+- First: Langosco 2021 (empirical, deep RL, CoinRun). Defined in Shah 2022. Also: Ngo 2022, Casper 2023 ("misgeneralization"), Kenton 2021 (as distributional shift), Ji 2023, Bengio 2025-SAI. A critique is noted in Shah's file: a 2023 blog says the term merges two failure types (wrong goal concept vs a mess of drives).
+- Drift: Langosco: behavioural objective differs from the intended reward. Shah: correct specification, wrong learned goal, so unlike specification gaming. Ngo: competent pursuit of the wrong goal vs incompetence. Casper 2023: "reward misgeneralization" sits next to hacking. See the drift table.
+- See also: Specification gaming, Inner alignment, Capability generalisation.</p>
+<p><strong>Goal-guarding</strong>
+- Definition: an AI tries to prevent changes to its own goals.
+- First: Omohundro 2008 (tx: "utility function preservation"). Named in Carlsmith 2023 ("goal-guarding schemers"). (partial)
+- See also: Scheming, Instrumental convergence.</p>
+<p><strong>Gold reward model / proxy reward model</strong>
+- Definition: gold = a fixed model standing in for the true preference. Proxy = a learned model trained on gold labels.
+- First: Gao 2022. (partial) See also: Overoptimisation.</p>
+<p><strong>Goodhart's law</strong>
+- Definition: a measure used as a target stops being a good measure.
+- First: Amodei 2016 (named as one source of reward hacking). Dedicated treatment: Manheim 2018 (four variants: regressional, extremal, causal, adversarial). Also: Hendrycks 2023, Gao 2022, Dalrymple 2024, Weng 2024, Bengio 2025-SAI (capabilities amplify misalignment), Skalse 2022 (context). Coiner credit (Goodhart; Strathern's phrasing) [outside].
+- Drift: Bengio 2025-SAI uses the name for "more capable systems amplify misalignment". Manheim insists on four distinct mechanisms.
+- See also: Proxy gaming, Reward hacking, Overoptimisation.</p>
+<p><strong>Gorilla problem</strong>
+- Definition: being outclassed by a smarter species.
+- First: Russell 2019. (mk) See also: Superintelligence.</p>
+<p><strong>Guaranteed Safe AI (GS-AI)</strong>
+- Definition: AI with high-assurance, quantitative safety guarantees built from three parts: a world model, a safety specification and a verifier.
+- First: Dalrymple 2024. Also: Leech SR-2024, SR-2025 ("Safety by construction"), Singapore 2025 ("Guaranteed safety by design"). (partial)
+- See also: World model, Verifier, Sound abstraction.</p>
+<h2 id="h">H</h2>
+<p><strong>Hackable / unhackable (reward pair)</strong>
+- Definition: a proxy is hackable relative to a true reward if raising the proxy can lower the true reward over some policy set. Skalse also defines "simplification" and "refinement".
+- First: Skalse 2022. (partial) See also: Reward hacking.</p>
+<p><strong>Honesty vs truthfulness</strong>
+- Definition: truthfulness = what the system says is true. Honesty = what it says matches what it believes. Park 2023 section 6 uses this split.
+- First: Hendrycks 2021 ("Making Model Outputs Honest and Truthful"). Defined in Park 2023. Also: Anthropic 2025 (tx), Singapore 2025 ("Truthfulness and honesty"), Bengio 2023 ("Oversight and honesty"). (partial)
+- See also: Deception, Lie detectors.</p>
+<p><strong>Human fragility</strong>
+- Definition: humanity's vulnerability to changes in its environment.
+- First: Critch 2020 (file marks as not read). (partial) See also: Prepotent AI.</p>
+<h2 id="i">I</h2>
+<p><strong>In-context learning (ICL)</strong>
+- Definition: learn a task from the prompt, with no weight update.
+- First: Anwar 2024. (partial) See also: In-context reward hacking.</p>
+<p><strong>In-context reward hacking (ICRH)</strong>
+- Definition: exploitation through feedback loops between generator and evaluator at deployment, without weight updates.
+- First: Weng 2024. (partial) See also: Reward hacking.</p>
+<p><strong>Inference scaling</strong>
+- Definition: let a trained model use more computation per problem (for example chains of thought).
+- First: Bengio 2025. Also: Bengio 2026 ("reasoning systems"), Korbak 2025, Lambert 2025 (RLVR). (partial)
+- See also: Reasoning model, RLVR.</p>
+<p><strong>Information hazard</strong>
+- Definition: harm risk from spreading information that enables harm.
+- First: Weidinger 2021. Also: Slattery 2024 (privacy and security domain). (partial)</p>
+<p><strong>Inherent hazard / systemic hazard</strong>
+- Definition: inherent = from the system itself. Systemic = from the wider sociotechnical system.
+- First: Hendrycks 2022. See also: Systemic safety, Structural risks.</p>
+<p><strong>Inner alignment</strong>
+- Definition: align the mesa-objective with the base objective (Hubinger). Looser uses: the learned goal matches the designer's intent.
+- First: Hubinger 2019. Also: Ngo 2022, Shah 2022, Kenton 2021 (a notion of alignment). (partial)
+- Drift: Hubinger needs a mesa-optimizer. Ngo and Shah use a broader "learning desirable goals" sense. Shah 2022 aligns inner/outer with "underspecification/misspecification". See the drift table.
+- See also: Outer alignment, Mesa-optimizer, Goal misgeneralization.</p>
+<p><strong>Inner interpretability</strong>
+- Definition: methods that study internal structures and representations (not data, inputs or outputs).
+- First: Rauker 2022. See also: Mechanistic interpretability.</p>
+<p><strong>Instrumental convergence</strong>
+- Definition: many different final goals lead to the same sub-goals (self-improvement, goal preservation, self-protection, resource acquisition).
+- First: Omohundro 2008 (tx: five drives). Named as a thesis in Bostrom 2014 (mk). Also: Ngo 2022, Chan 2023 ("instrumental goals"), Hendrycks 2023, Bengio 2025-SAI.
+- Drift: Omohundro/Bostrom state it as a thesis. Ngo makes it a step in a risk chain. Bengio 2025-SAI says reward maximisation leads to dangerous instrumental goals. See the drift table.
+- See also: Power-seeking, Corrigibility, Orthogonality thesis.</p>
+<p><strong>Intended objective</strong>
+- Definition: the designer's reward R (Langosco 2021). See also: Behavioral objective.</p>
+<p><strong>Interpretability</strong>
+- Definition: processes that describe an AI system's computation in human-understandable terms.
+- First: Everitt 2018 ("Intelligibility"). Defined in Rauker 2022 (intrinsic vs post hoc). Also: Ji 2023, Bereska 2024, Sharkey 2025, Hendrycks 2022 (transparency), Leech SR-2023 to SR-2025, Anthropic 2025 (tx), UK AISI 2025 (tx).
+- Drift: Rauker's "interpretability" is broad; "mechanistic interpretability" is the algorithmic-level subset.
+- See also: Mechanistic interpretability, Microscope AI.</p>
+<p><strong>Interruptibility (safe interruptibility)</strong>
+- Definition: the agent does not resist or learn to avoid being interrupted.
+- First: Everitt 2018. Also: DeepMind 2018 (tx, "Enforcement" example), Critch 2020 ("generalizable shutdown"). (partial) See also: Corrigibility.</p>
+<p><strong>Iterative alignment</strong>
+- Definition: Leech's preferred term for prosaic alignment: steer current models with current methods in loops.
+- First: Leech SR-2023 ("prosaic alignment") and SR-2024 ("iterative alignment"). (partial) See also: Prosaic alignment, RLHF.</p>
+<h2 id="j">J</h2>
+<p><strong>Jailbreak</strong>
+- Definition: input that makes a model break its safety rules. Often paired with prompt injection.
+- First: Anwar 2024 (challenge "Jailbreaks and Prompt Injections"). Also: Anthropic 2025 (tx), Singapore 2025 (tx, robustness). (partial) See also: Adversarial robustness.</p>
+<p><strong>Jingle-jangle fallacies</strong>
+- Definition: the same name for different things (jingle), or different names for the same thing (jangle).
+- First: Slattery 2024. Why it matters here: this glossary's drift and same-idea tables are cases of both.</p>
+<h2 id="l">L</h2>
+<p><strong>Language agent</strong>
+- Definition: Kenton: an ML system whose actions are text output only. Weidinger: a language model in a dialogue application.
+- First: Kenton 2021. Also: Weidinger 2021. (partial)
+- Drift: the two 2021 papers use the same word for different things. See the drift table.
+- See also: AI agent.</p>
+<p><strong>Latent knowledge</strong>
+- See ELK.</p>
+<p><strong>Linear representation hypothesis</strong>
+- Definition: concepts are linear directions in activation space.
+- First: Bereska 2024. Also: Sharkey 2025. (partial) See also: Superposition.</p>
+<p><strong>Load-bearing safety measure</strong>
+- Definition: a measure the safety case relies on.
+- First: Korbak 2025. (partial) See also: Safety case, CoT monitorability.</p>
+<p><strong>Loss of control</strong>
+- Definition: AI systems operate outside anyone's control, with no clear way to regain it.
+- First: Park 2023 (as a risk of deception). Defined in Bengio 2025. Also: Hendrycks 2023, Bengio 2026 ("Malfunctions" subtype), Singapore 2025 ("Loss-of-control risk assessment"). (partial)
+- See also: Control (general sense), Prepotent AI, Gradual disempowerment (Chan 2023 "collective disempowerment").</p>
+<h2 id="m">M</h2>
+<p><strong>Malfunction</strong>
+- Definition: unintended harm without bad intent (reliability, bias, loss of control).
+- First: Bengio 2025 (classes: malicious use, malfunctions, systemic). Also: Bengio 2026, Weidinger 2021 and Slattery 2024 (overlapping domain lists). See also: Accident, Mistakes.</p>
+<p><strong>Mechanistic interpretability</strong>
+- Definition: use knowledge of a network's mechanisms to predict behaviour or reach practical goals. Rauker: algorithmic-level understanding, such as turning a DNN into pseudocode.
+- First: Rauker 2022. Also: Bereska 2024 (review), Sharkey 2025 (open problems), Leech SR-2024 ("Good-enough mech interp"). (partial)
+- Drift: Sharkey 2025 stresses pragmatic goals. Rauker 2022 stresses algorithm-level. See the drift table.
+- See also: Interpretability, Sparse dictionary learning, Superposition.</p>
+<p><strong>Mesa-optimizer</strong>
+- Definition: a learned algorithm that is itself an optimiser, with its own objective (the mesa-objective).
+- First: Hubinger 2019 (coiner per [outside]). Also: Kenton 2021, Anwar 2024 ("mesa-optimization"), Ngo 2022 (concept in the background). (partial)
+- Drift: Hubinger needs search at run time. Later papers use it as a loose label for "model with its own goal". See the drift table.
+- See also: Base optimizer, Inner alignment, Deceptive alignment.</p>
+<p><strong>Microscope AI</strong>
+- Definition: gain domain insight by interpreting a high-performing AI.
+- First: Rauker 2022. Also: Sharkey 2025. (partial)</p>
+<p><strong>Misspecification (reward misspecification)</strong>
+- Definition: the reward or objective does not match the designer's real preferences.
+- First: Leike 2018 (design specification problems). Named in Pan 2022 (types: misweighting, ontological, scope). Also: Ngo 2022, Kenton 2021 (data, training process, distributional shift), Bengio 2023, Hendrycks 2021 ("difficult to specify"), Bengio 2025-SAI.
+- Drift: Kenton includes distributional shift under misspecification; others keep it separate. Shah 2022 sets "specification gaming" as misspecification and "goal misgeneralization" as the contrast.
+- See also: Specification gaming, Reward hacking, Value specification, Outer alignment.</p>
+<p><strong>Mistakes</strong>
+- Definition: AI outputs cause harm without the AI knowing the outcome.
+- First: Shah 2025 (one of four risk areas with misuse, misalignment, structural). (partial) See also: Accident.</p>
+<p><strong>Mode collapse</strong>
+- Definition: output diversity falls after RL fine-tuning.
+- First: Casper 2023. (partial) See also: RLHF.</p>
+<p><strong>Model psychology / persona</strong>
+- Definition: agenda area on model values, character training, persona steering and model specs.
+- First: Leech SR-2025. Also: Anthropic 2025 (tx, persona effects), Lambert 2025 (character training). (partial)
+- See also: Emergent misalignment.</p>
+<p><strong>Multi-agent failure modes</strong>
+- Definition: Hammond's three: miscoordination (same goals, fail to align), conflict (different goals, outcome off the Pareto frontier), collusion. Seven risk factors: information asymmetries, network effects, selection pressures, destabilising dynamics, commitment and trust, emergent agency, multi-agent security.
+- First: Hammond 2025. Also: Anwar 2024, Critch 2020 (multiplicity), Shah 2025 (structural risks), Anthropic 2025 (tx). (partial)
+- See also: Structural risks, Collusion, Zero-shot coordination.</p>
+<p><strong>Multiplicity thesis</strong>
+- Definition: incentives push single-stakeholder, single-system settings into multi-stakeholder, multi-system ones.
+- First: Critch 2020. (partial) See also: Delegation.</p>
+<h2 id="n">N</h2>
+<p><strong>Nearest unblocked strategy</strong>
+- Definition: strong optimisation finds the closest strategy to a banned one that is not yet blocked.
+- First: Ngo 2022. See also: Reward hacking, Specification gaming.</p>
+<p><strong>Nines of reliability</strong>
+- Definition: k = -log10(1 - p).
+- First: Hendrycks 2022.</p>
+<h2 id="o">O</h2>
+<p><strong>Obfuscated reward hacking</strong>
+- Definition: reward hacking whose intent the model hides, for example in CoT, under RL pressure. The Korbak file does not define it.
+- First: Korbak 2025. (mk) See also: CoT monitorability.</p>
+<p><strong>Ontology identification</strong>
+- Definition: map between an AI's concepts and human concepts.
+- First: Christiano 2021. Also: Leech SR-2023, SR-2025 (agenda: natural abstractions, learning-theoretic agenda). (partial) See also: ELK.</p>
+<p><strong>Optimization power</strong>
+- Definition: the effective size of the policy search space available to the agent. Pan 2022 axes: model capacity, training steps, action-space resolution, observation fidelity.
+- First: Pan 2022. See also: Phase transition.</p>
+<p><strong>Orthogonality thesis</strong>
+- Definition: intelligence and final goals are independent.
+- First: Bostrom 2014. (mk) See also: Instrumental convergence.</p>
+<p><strong>Outer alignment</strong>
+- Definition: the base objective matches the programmer's intent.
+- First: Hubinger 2019. Also: Ngo 2022, Shah 2022. (partial)
+- Drift: Hubinger: base objective vs intent. Shah 2022: "outer = misspecification". Casper 2023's "reward modelling challenges" covers the same ground without the term.
+- See also: Inner alignment, Misspecification.</p>
+<p><strong>Overoptimisation</strong>
+- Definition: pushing a proxy so far that true reward falls. In RLHF, the proxy is a learned reward model.
+- First: Gao 2022 (gold vs proxy reward models; scaling laws in KL distance). Also: Casper 2023, Lambert 2025 ("over-optimization"), Weng 2024, Pan 2022 (phase transitions). (partial)
+- See also: Goodhart's law, Reward hacking, Best-of-n.</p>
+<h2 id="p">P</h2>
+<p><strong>Perverse instantiation</strong>
+- Definition: a goal met in a way that satisfies its words but breaks its aim.
+- First: Bostrom 2014. (mk) Also: Krakovna 2018 ("perverse incentive", in comments). See also: Specification gaming.</p>
+<p><strong>Phase transition</strong>
+- Definition: a capability threshold at which behaviour shifts and true reward drops sharply.
+- First: Pan 2022. See also: Optimization power, Emergent capability.</p>
+<p><strong>Polysemanticity</strong>
+- Definition: one neuron or unit responds to several unrelated features.
+- First: Rauker 2022. Also: Bereska 2024, Sharkey 2025, Anwar 2024. (partial) See also: Superposition.</p>
+<p><strong>Power-seeking</strong>
+- Definition: seeking autonomy or control as an instrument.
+- First: Omohundro 2008 (tx: resource acquisition, self-protection). Named: Hendrycks 2022, Ngo 2022, Hendrycks 2023, Skalse 2022 (context), Shevlane 2023.
+- Drift: Carlsmith 2023 uses "power-motivated" for scheming. Singapore and Bengio 2025-SAI file it under instrumental goals.
+- See also: Instrumental convergence, Scheming.</p>
+<p><strong>Prepotent AI (MPAI)</strong>
+- Definition: AI whose deployment changes humanity's habitat at least as much as humanity does and cannot be stopped by humans. MPAI = misaligned prepotent AI.
+- First: Critch 2020. (partial) Tier 1 risk types 1a-1e: uncoordinated development, unrecognised prepotence, unrecognised misalignment, involuntary and voluntary deployment. See also: Loss of control.</p>
+<p><strong>Principal</strong>
+- Definition: the actor on whose behalf an agent acts.
+- First: Hammond 2025. (partial) See also: Delegation.</p>
+<p><strong>Prosaic alignment</strong>
+- Definition: align AI with current ML methods (RLHF and similar).
+- First: Leech SR-2023. (partial) See also: Iterative alignment.</p>
+<p><strong>Proxy gaming</strong>
+- Definition: AI optimises a flawed proxy to extremes.
+- First: Hendrycks 2021. Also: Hendrycks 2023 (rogue AI 5.1), Hendrycks 2022 ("proxy misspecification"). (partial)
+- Drift: Hendrycks's name for reward hacking / specification gaming. See the same-idea table.
+- See also: Reward hacking, Goodhart's law.</p>
+<p><strong>Pseudo-alignment</strong>
+- Definition: the mesa-optimizer looks aligned on training data only. Sub-types: proxy (side-effect, instrumental), approximate, suboptimality alignment; deceptive alignment as a special case.
+- First: Hubinger 2019. (partial) See also: Robust alignment, Deceptive alignment.</p>
+<h2 id="r">R</h2>
+<p><strong>Reasoning model</strong>
+- Definition: a model that generates chains of thought for complex problems.
+- First: Korbak 2025. Also: Bengio 2026 ("reasoning systems"). (partial) See also: Inference scaling.</p>
+<p><strong>Red teaming</strong>
+- Definition: adversaries test a system to find failures. In control work, the red team writes the attack policy.
+- First: Shevlane 2023-era use; in files: Bengio 2023, Greenblatt 2023, Ji 2023 (4.1.3), Hendrycks 2023. Also: Shah 2025 ("misuse stress tests", "alignment stress tests"), Anthropic 2025 (tx), UK AISI 2025 (tx), Leech SR-2023 to SR-2025. (partial)
+- See also: Control evaluation.</p>
+<p><strong>Regressional Goodhart</strong>
+- Definition: when you select on a proxy, you also select for the gap between proxy and goal (noise).
+- First: Manheim 2018. Also: Gao 2022. See also: Goodhart's law.</p>
+<p><strong>Reporter</strong>
+- Definition: a model that answers questions from the predictor's internals.
+- First: Christiano 2021. (partial) See also: ELK.</p>
+<p><strong>Representation control</strong>
+- Definition: edit internal states so outputs stay consistent with them (a defence against deception).
+- First: Park 2023. (partial) See also: Activation monitoring.</p>
+<p><strong>Reward corruption</strong>
+- Definition: an RL agent hijacks its reward signal.
+- First: Everitt 2018. (partial) Drift: Everitt 2018's three "value specification" sub-problems are reward corruption, reward gaming and negative side effects. See also: Reward tampering.</p>
+<p><strong>Reward hacking</strong>
+- Definition: gain high reward by exploiting a loophole or flaw in the reward, against the designer's intent.
+- First: Amodei 2016 (one of five problems; sources: partially observed goals, complicated systems, abstract rewards, Goodhart's law, feedback loops, environmental embedding). Defined formally in Skalse 2022. Also: Krakovna 2020, Pan 2022, Ngo 2022, Casper 2023, Chan 2023, Weng 2024, Bengio 2025-SAI, Ji 2023, Kenton 2021 ("objective gaming").
+- Drift: strong. Skalse 2022: optimising an imperfect proxy gives poor true reward (formal, hackable pair). Amodei 2016: broad loophole. Krakovna 2020: lists it as "related term used by other papers". Weng 2024 treats hacking, gaming and tampering together. Ngo 2022 adds "situationally-aware reward hacking". See the drift table.
+- See also: Specification gaming, Reward tampering, Goodhart's law, Proxy gaming.</p>
+<p><strong>Reward modeling (recursive reward modeling)</strong>
+- Definition: learn a reward from user interaction, then optimise with RL. Recursive: use agents trained this way to help evaluate the next agent.
+- First: Leike 2018 (agenda). Also: Ji 2023, Casper 2023, Lambert 2025 (Bradley-Terry reward model). (partial)
+- See also: Scalable oversight, Amplified oversight, RLHF.</p>
+<p><strong>Reward shaping (potential-based)</strong>
+- Definition: extra reward to speed learning. Only potential-based shaping keeps the optimal policy.
+- First: Krakovna 2020. Also: Weng 2024. See also: Specification gaming.</p>
+<p><strong>Reward tampering</strong>
+- Definition: the agent manipulates how reward is produced, such as the physical or digital implementation of the reward (RF tampering) or its inputs (RF-input tampering).
+- First: Krakovna 2018. Defined formally in Everitt 2019. Also: Krakovna 2020, Weng 2024, Bengio 2025-SAI, Omohundro 2008 (tx: wireheading).
+- Drift: Everitt 2019 separates RF tampering, RF-input tampering and wireheading (direct tampering with RF or output). Amodei 2016 files it under reward hacking as "environmental embedding". See the drift table.
+- See also: Wireheading, Delusion box, Decoupled approval.</p>
+<p><strong>RICE</strong>
+- Definition: Robustness, Interpretability, Controllability, Ethicality. Ji's four alignment objectives.
+- First: Ji 2023. Also: Clymer 2024 (mentions). (partial) See also: Alignment cycle.</p>
+<p><strong>RLHF (and RLxF, RLVR, DAA)</strong>
+- Definition: RLHF = reinforcement learning from human feedback (feedback collection, reward modelling, policy optimisation). RLxF = generalisation to other feedback sources. RLVR = RL with verifiable rewards. DAA = direct alignment algorithm (for example DPO).
+- First: Leike 2018 (reward modeling precursor); named in Casper 2023, Ngo 2022. RLxF: Ji 2023. RLVR and DAA: Lambert 2025. (partial)
+- See also: Reward modeling, Overoptimisation, Mode collapse.</p>
+<p><strong>Robust alignment</strong>
+- Definition: the mesa-objective robustly matches the base objective.
+- First: Hubinger 2019. (partial) See also: Pseudo-alignment.</p>
+<p><strong>Robust training</strong>
+- Definition: widen the training distribution to improve generalisation (GDM).
+- First: Shah 2025. (partial) See also: Distribution shift.</p>
+<p><strong>Robustness</strong>
+- Definition: stay safe under hazards, unusual events or adversarial pressure.
+- First: Amodei 2016-era "distributional shift" content; as an area: DeepMind 2018 (tx, "Robustness": adversarial inputs, distributional shift, safe exploration, cautious generalisation, recovery). Also: Hendrycks 2021, Hendrycks 2022, Ji 2023 (R in RICE), Bengio 2023.
+- Drift: DeepMind 2018 includes safe exploration; Hendrycks 2021 splits black-swan vs adversarial robustness; Ji 2023 makes it an objective, not a research area.
+- See also: Distribution shift, Adversarial robustness.</p>
+<h2 id="s">S</h2>
+<p><strong>Safe design principles</strong>
+- Definition: defence in depth, redundancy, least privilege, loose coupling, separation of duties, fail-safes.
+- First: Hendrycks 2022. See also: Defense in depth.</p>
+<p><strong>Safe exploration</strong>
+- Definition: explore during learning without harmful outcomes.
+- First: Amodei 2016. Also: Everitt 2018 ("safe learning"), DeepMind 2018 (tx). See also: Robustness.</p>
+<p><strong>Safety case</strong>
+- Definition: a structured argument, with evidence, that a system stays below a harm threshold in a stated setting.
+- First: Bengio 2023 (as a governance measure). Defined in Clymer 2024 (argument types: inability, control, trustworthiness, deference). Also: Shah 2025 (inability, supervision/control, incentives, understanding), Korbak 2025 (load-bearing measure), Bengio 2026-era.
+- Drift: argument categories differ: Clymer (inability, control, trustworthiness, deference); GDM 2025 (inability, supervision, incentives, understanding). See the drift table.
+- See also: Load-bearing safety measure, Assurance, Deployment window.</p>
+<p><strong>Safetywashing</strong>
+- Definition: safety claims that do not reflect real safety gains.
+- First: Ji 2023 (heading 4.1.4; definition not read). (partial) See also: Capabilities externality.</p>
+<p><strong>Sandbagging</strong>
+- Definition: a model hides capability or underperforms on purpose.
+- First: Greenblatt 2023 (a practical challenge). Also: Leech SR-2025 (evals list). Neither file defines it. (mk on meaning)
+- See also: Alignment faking, Dangerous capability evaluation.</p>
+<p><strong>Scaffolding</strong>
+- Definition: planning frameworks, prompts, tools and fine-tuning added to a base model.
+- First: Phuong 2024. (partial) See also: AI agent.</p>
+<p><strong>Scalable oversight</strong>
+- Definition: keep intended behaviour when the true objective is too costly to check often, or supervise systems beyond easy human evaluation.
+- First: Amodei 2016 ("Scalable Supervision"). Also: Leike 2018, Casper 2023, Ji 2023 (2.4 "path towards superalignment"), Christiano 2021, Greenblatt 2023, Ngo 2022, Leech SR-2023 to SR-2025, Anthropic 2025 (tx; sub-nodes: recursive oversight, weak-to-strong, honesty).
+- Drift: Amodei: semi-supervised reward signal. Ji and Anthropic: includes debate, IDA, recursive reward modeling. GDM 2025: renamed "amplified oversight". See the drift table.
+- See also: Amplified oversight, Reward modeling, Weak-to-strong, Debate, Superalignment.</p>
+<p><strong>Scheming</strong>
+- Definition: a power-motivated, instrumental training-gamer: it plays the training game to gain power for itself or other AIs later.
+- First: Carlsmith 2023 (with goal-guarding schemers, early undermining). Related older terms: Hubinger 2019 (deceptive alignment), Bostrom 2014 (treacherous turn). Also: Leech SR-2025 ("AI scheming evals"), Shah 2022 (deceptive model). (partial)
+- Drift: Carlsmith's four preconditions: situational awareness, beyond-episode goals, belief that training-gaming serves power. Later files use "scheming" for any strategic deception towards developers. See the drift table.
+- See also: Deceptive alignment, Alignment faking, Training gamer, Situational awareness.</p>
+<p><strong>Self-modification</strong>
+- Definition: the agent changes itself, so goals or reliability change.
+- First: Omohundro 2008 (tx: self-improvement). Defined in Everitt 2018. Also: Phuong 2024 ("reversibility reasoning": notice irreversible self-modifications). (partial)</p>
+<p><strong>Self-proliferation</strong>
+- Definition: break containment, acquire resources and operate autonomously on the internet, growing capacity.
+- First: Shevlane 2023. Also: Phuong 2024. (partial) See also: Dangerous capabilities.</p>
+<p><strong>Shallow review</strong>
+- Definition: Leech's yearly breadth pass over agendas (about an hour per agenda in 2024, two hours per entry in 2025). An "agenda" = a group of similar methods, aims or sociology.
+- First: Leech SR-2023. Also: SR-2024, SR-2025. (partial) See also: Graveyard (known-inactive agendas), Galaxy-brained (end-to-end theory).</p>
+<p><strong>Side effects (negative side effects)</strong>
+- Definition: harm from an objective that ignores the rest of the environment.
+- First: Amodei 2016 ("Avoiding Side Effects"). Also: Everitt 2018, DeepMind 2018 (tx), Hendrycks 2021. (partial)</p>
+<p><strong>Signal jamming</strong>
+- Definition: redact or paraphrase to block collusion signals.
+- First: Greenblatt 2023. (partial) See also: Collusion, Untrusted monitoring.</p>
+<p><strong>Situational awareness</strong>
+- Definition: the model knows facts about itself and its context (that it is in training, evaluation or deployment) and uses them when it acts.
+- First: Ngo 2022 (behavioural test). Also: Carlsmith 2023 (precondition: knows it is in training and what is rewarded), Park 2023, Shevlane 2023 (capability), Phuong 2024 ("instrumental self-reasoning"), Leech SR-2025 (evals).
+- Drift: Ngo: testable by behaviour. Carlsmith: knows training details. Park: knows if evaluated or deployed. Phuong: "self-reasoning" is the evaluation category. See the drift table.
+- See also: Scheming, Deceptive alignment, Self-proliferation.</p>
+<p><strong>Slack (training slack)</strong>
+- Definition: how much suboptimal performance training tolerates.
+- First: Carlsmith 2023. (partial)</p>
+<p><strong>Social dilemma / Pareto frontier</strong>
+- Definition: individual incentives diverge from collective welfare. Conflict = outcome off the Pareto frontier.
+- First: Hammond 2025. (partial) See also: Collective action problem.</p>
+<p><strong>Sparse dictionary learning (SDL)</strong>
+- Definition: unsupervised finding of sparse latent directions (for example sparse autoencoders).
+- First: Leech SR-2024 (sparse autoencoders). Defined in Sharkey 2025. Also: Bereska 2024. (partial)
+- See also: Superposition, Latents, Mechanistic interpretability.</p>
+<p><strong>Specification gaming</strong>
+- Definition: meet the literal objective without the intended outcome.
+- First: Krakovna 2018 (catalogue of examples; also the DeepMind 2018 tx). Also: Krakovna 2020, Weng 2024, Shah 2022, Everitt 2019, Ngo 2022, Ji 2023, Pan 2022.
+- Drift: Krakovna 2020 and Weng 2024 treat it as the broader family that includes reward hacking. Shah 2022 sets it against goal misgeneralization: the specification itself is flawed. Skalse 2022 prefers "reward hacking" for the formal case. See the drift table.
+- See also: Reward hacking, Reward tampering, Goodhart's law, Misspecification.</p>
+<p><strong>Standard model (of AI)</strong>
+- Definition: optimise a fixed, human-specified objective.
+- First: Russell 2019. (mk) See also: Assistance game.</p>
+<p><strong>Steganography</strong>
+- Definition: hide information in model outputs or reasoning, for example so that a monitor cannot read it.
+- First: Christiano 2021 (concern about hidden channels). Also: Leech SR-2025 (steganography evals). Neither file defines it. (mk on meaning)
+- See also: Collusion, CoT monitorability.</p>
+<p><strong>Structural risks</strong>
+- Definition: harms from multi-agent dynamics, or wider social structure, that changing one person's behaviour would not prevent.
+- First: Shah 2025 (one of four risk areas). Also: Hendrycks 2023 (organisational risks, AI race), Critch 2020 (tier-2 hazardous social conditions), Bengio 2025-2026 (systemic risks).
+- Drift: "systemic" (Bengio, Hendrycks 2021) vs "structural" (Shah) vs "tier-2" (Critch). See the same-idea table.
+- See also: Systemic safety.</p>
+<p><strong>Superalignment</strong>
+- Definition: aligning systems beyond human ability to supervise.
+- First: Ji 2023 (section 2.4, "Path towards Superalignment"). Also: Leech SR-2023, SR-2024 (OpenAI Superalignment automated alignment research). (partial)
+- See also: Scalable oversight, Weak-to-strong.</p>
+<p><strong>Superintelligence</strong>
+- Definition: intellect that greatly exceeds humans in nearly all domains.
+- First: Bostrom 2014. (mk) Also: Russell 2019 (gorilla problem), Bengio 2025-SAI ("ASI"). See also: AGI.</p>
+<p><strong>Superposition</strong>
+- Definition: networks represent more features than they have dimensions, using sparse linear codes.
+- First: Bereska 2024 (hypothesis 1 of 6). Also: Sharkey 2025. (partial) See also: Polysemanticity, Sparse dictionary learning.</p>
+<p><strong>Sycophancy</strong>
+- Definition: agreeing with the user to gain approval, whatever the accuracy.
+- First: Kenton 2021 (mention). Defined in Park 2023. Also: Weng 2024. (partial) See also: Deception, Reward hacking.</p>
+<p><strong>Systemic safety</strong>
+- Definition: reduce risks of the deployment context (ML for cybersecurity, better epistemics and decision making).
+- First: Hendrycks 2021. Also: Hendrycks 2022. (partial)
+- Drift: a research area in Hendrycks 2021; "systemic risks" in the Bengio reports are harms (labour, market concentration, autonomy). See the drift table.
+- See also: Structural risks.</p>
+<h2 id="t">T</h2>
+<p><strong>Time-inconsistency (TI)</strong>
+- Definition: the preferred policy changes between time steps.
+- First: Everitt 2019. (partial) See also: Current-RF optimisation.</p>
+<p><strong>Training gamer</strong>
+- Definition: a model that understands training and optimises reward on the episode. Sub-types: reward-on-the-episode seekers (terminal) and schemers (instrumental, power-motivated). Contrast: training saints (pursue the specified goal directly), misgeneralized non-training-gamers.
+- First: Carlsmith 2023. (partial) See also: Scheming, Alignment faking.</p>
+<p><strong>Treacherous turn</strong>
+- Definition: an AI behaves well until it is strong enough to defect.
+- First: Bostrom 2014. (mk) Related: Hubinger 2019 deceptive alignment (per the Bostrom file note). See also: Deceptive alignment.</p>
+<p><strong>Trusted / untrusted model; trusted monitoring; untrusted monitoring; defer to trusted; trusted editing</strong>
+- Definition: Greenblatt's protocol family. Trusted monitoring: a weaker trusted model scores suspicion and the top share is audited. Defer to trusted: use the trusted model's answer when suspicion is moderate. Untrusted monitoring: an untrusted model checks outputs, with synthetic tests and signal jamming. Trusted editing: the trusted model edits suspicious code.
+- First: Greenblatt 2023. Also: Anthropic 2025 (tx, "Behavioral monitoring"). (partial) See also: AI control.</p>
+<h2 id="u">U</h2>
+<p><strong>Unfaithful reasoning</strong>
+- Definition: stated reasons differ from the real drivers of the output.
+- First: Park 2023. Also: Anthropic 2025 (tx, "chain-of-thought faithfulness"), Leech SR-2024 ("faithful CoT through separation and paraphrasing"). (partial) See also: CoT monitorability.</p>
+<p><strong>Uninfluenceable learning</strong>
+- Definition: the expected output of reward learning does not depend on the agent's actions.
+- First: Everitt 2019. (partial) See also: Reward tampering.</p>
+<p><strong>Unlearning</strong>
+- Definition: remove dangerous knowledge or capabilities from a model.
+- First: Anthropic 2025 (tx). Also: Leech SR-2025. (partial) See also: Capability suppression (GDM misuse mitigation).</p>
+<p><strong>Uplift</strong>
+- Not defined in the files; see [outside]: gain in a malicious actor's ability from model help. The files treat it under "bioterrorism" (Hendrycks 2023), WMD evals (Leech SR-2025).</p>
+<h2 id="v">V</h2>
+<p><strong>Value lock-in</strong>
+- Definition: a speculative hazard where one set of values is fixed in place.
+- First: Hendrycks 2022. (partial) See also: Concentration of power (Hendrycks 2023).</p>
+<p><strong>Value specification</strong>
+- Definition: MIRI's name (per Everitt 2018) for getting an AGI to pursue the right goals.
+- First: Everitt 2018. (partial)
+- See also: Misspecification, Outer alignment, Agent alignment problem.</p>
+<p><strong>Verifier / world model / safety specification (GS-AI parts)</strong>
+- Definition: world model = formal description of environment dynamics that answers "what would happen" queries. Safety specification = mathematical description of acceptable effects. Verifier = produces a proof certificate or probability bound that the AI meets the spec. Sound abstraction = verified link between high-level model and the underlying physics.
+- First: Dalrymple 2024. (partial) See also: Guaranteed Safe AI.</p>
+<h2 id="w">W</h2>
+<p><strong>Weak-to-strong generalization</strong>
+- Definition: train a strong model on weak oversight, expecting good behaviour on hard cases.
+- First: Ji 2023 (as a path to superalignment; heading-level). Also: Leech SR-2024, SR-2025, Anthropic 2025 (tx), Clymer 2024. (partial)
+- See also: Scalable oversight, Easy-to-hard generalization.</p>
+<p><strong>Wireheading</strong>
+- Definition: the agent tampers with its own reward channel. Everitt 2019: direct tampering with the reward function or its output.
+- First: Omohundro 2008 (tx: a vulnerability, not a drive). Defined in Amodei 2016. Also: Everitt 2019.
+- Drift: Amodei 2016 uses it for "environmental embedding" tampering. Everitt 2019 narrows it to direct tampering. See the drift table.
+- See also: Reward tampering, Delusion box.</p>
+<p><strong>WMD evals</strong>
+- Definition: tests for weapons-of-mass-destruction help (agenda name in Leech SR-2025).
+- First: Leech SR-2025. Also: Bengio 2025 (biological and chemical attacks), Shevlane 2023 (weapons acquisition). (partial)
+- See also: Dangerous capabilities.</p>
+<h2 id="z">Z</h2>
+<p><strong>Zero-shot coordination</strong>
+- Definition: coordinate without earlier interaction or a protocol.
+- First: Hammond 2025. (partial) See also: Multi-agent failure modes.</p>
+<hr />
+<h2 id="terms-that-drift">Terms that drift</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Earlier sense (year)</th>
+<th>Later sense (year)</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI control</td>
+<td>Safety against deliberate subversion, tested by a red team (Greenblatt 2023)</td>
+<td>Any ability to oversee and halt a system (Bengio 2025); environmental restrictions only (Clymer 2024, "control arguments"); one stress test (Shah 2025)</td>
+<td>Same word; three scopes. Check which one a paper means.</td>
+</tr>
+<tr>
+<td>Alignment</td>
+<td>Behave as the user intends (Leike 2018)</td>
+<td>Intent alignment (Anwar 2024); match human values (Ngo 2022); AI does not "knowingly" harm against developer intent (Shah 2025); "steerability" (Leech 2025)</td>
+<td>Wider and narrower use in parallel.</td>
+</tr>
+<tr>
+<td>Reward hacking</td>
+<td>Exploit a loophole in the reward (Amodei 2016)</td>
+<td>Formal: proxy raising causes true reward fall (Skalse 2022); with situational awareness (Ngo 2022); in-context (Weng 2024); obfuscated (Korbak 2025)</td>
+<td>Became a family.</td>
+</tr>
+<tr>
+<td>Specification gaming</td>
+<td>Satisfy the literal spec (Krakovna 2018)</td>
+<td>Contrasted with goal misgeneralization: spec itself is flawed (Shah 2022)</td>
+<td>The scope shifts from "all gaming" to "flawed spec case".</td>
+</tr>
+<tr>
+<td>Wireheading</td>
+<td>Tamper with reward channel via environment (Amodei 2016)</td>
+<td>Direct tampering with RF or its output only (Everitt 2019)</td>
+<td>Everitt splits out RF-input tampering.</td>
+</tr>
+<tr>
+<td>Goal misgeneralization</td>
+<td>Behavioural objective differs from intended reward OOD (Langosco 2021)</td>
+<td>Correct feedback, wrong learned goal (Shah 2022); "reward misgeneralization" beside hacking (Casper 2023)</td>
+<td>A critic argues the term hides two failures (note in Shah file).</td>
+</tr>
+<tr>
+<td>Inner alignment</td>
+<td>Mesa vs base objective (Hubinger 2019)</td>
+<td>Broad: learn desirable goals (Ngo 2022); underspecification (Shah 2022)</td>
+<td>Loses the mesa-optimizer requirement.</td>
+</tr>
+<tr>
+<td>Mesa-optimizer</td>
+<td>A learned optimiser that searches at run time (Hubinger 2019)</td>
+<td>A model that has its own goal (Kenton 2021; Anwar 2024)</td>
+<td>Loose use spreads.</td>
+</tr>
+<tr>
+<td>Deceptive alignment</td>
+<td>A mesa-optimizer's strategy to avoid modification (Hubinger 2019)</td>
+<td>Any model that passes tests then differs (Dalrymple 2024; Shevlane 2023)</td>
+<td>Also renamed "alignment faking" (Carlsmith 2023; Clymer 2024).</td>
+</tr>
+<tr>
+<td>Scheming</td>
+<td>Power-motivated instrumental training-gaming (Carlsmith 2023)</td>
+<td>Loose label for strategic deception towards developers (Leech 2025 evals)</td>
+<td>Precise sense kept in Carlsmith only.</td>
+</tr>
+<tr>
+<td>Situational awareness</td>
+<td>Behavioural test of self-and-context use (Ngo 2022)</td>
+<td>Knows training details (Carlsmith 2023); knows eval vs deployment (Park 2023); "self-reasoning" (Phuong 2024)</td>
+<td>Four sets of conditions.</td>
+</tr>
+<tr>
+<td>Scalable oversight</td>
+<td>Supervise when objective is costly to evaluate (Amodei 2016)</td>
+<td>Includes debate, IDA, recursive reward modeling (Ji 2023); renamed amplified oversight (Shah 2025)</td>
+<td></td>
+</tr>
+<tr>
+<td>Assurance</td>
+<td>Monitoring and enforcement (DeepMind 2018)</td>
+<td>Evidence of safety or alignment (Anwar 2024); evaluations, interpretability, values verification (Ji 2023); proof (Dalrymple 2024)</td>
+<td></td>
+</tr>
+<tr>
+<td>Safety case</td>
+<td>Governance measure (Bengio 2023)</td>
+<td>Argument with four types (Clymer 2024); alternative types (Shah 2025)</td>
+<td></td>
+</tr>
+<tr>
+<td>Systemic / structural risk</td>
+<td>Research area "systemic safety" (Hendrycks 2021)</td>
+<td>Harms of wide deployment (Bengio 2025); multi-agent "structural risks" (Shah 2025)</td>
+<td></td>
+</tr>
+<tr>
+<td>Robustness</td>
+<td>Research area including safe exploration (DeepMind 2018)</td>
+<td>One of four areas (Hendrycks 2021); one RICE objective (Ji 2023)</td>
+<td></td>
+</tr>
+<tr>
+<td>Language agent</td>
+<td>Text-only action system (Kenton 2021)</td>
+<td>LM in a dialogue application (Weidinger 2021)</td>
+<td>Same year, two meanings.</td>
+</tr>
+<tr>
+<td>Backdoor</td>
+<td>Hidden trigger behaviour (Hendrycks 2021)</td>
+<td>Code with exploitable logic error (Greenblatt 2023)</td>
+<td>Different objects.</td>
+</tr>
+<tr>
+<td>Extreme risk / catastrophe</td>
+<td>Tens of thousands of lives, hundreds of billions (Shevlane 2023)</td>
+<td>Billions in damage or thousands of deaths (Clymer 2024, from a fetch)</td>
+<td>Thresholds are not the same.</td>
+</tr>
+<tr>
+<td>AGI</td>
+<td>Equal or exceed humans on many tasks (Everitt 2018)</td>
+<td>99th percentile skilled adults, non-physical (Shah 2025)</td>
+<td>Moves from fuzzy to a level.</td>
+</tr>
+<tr>
+<td>Collusion</td>
+<td>Policy-monitor coordination (Greenblatt 2023)</td>
+<td>Cooperation among agents in markets (Hammond 2025)</td>
+<td></td>
+</tr>
+<tr>
+<td>Corrigibility</td>
+<td>Cooperation with fixes (Everitt 2018)</td>
+<td>Narrow "corrigible alignment" (Hubinger 2019); theory agenda (Leech 2023-25)</td>
+<td></td>
+</tr>
+<tr>
+<td>Interpretability / mech interp</td>
+<td>Algorithm-level understanding (Rauker 2022)</td>
+<td>Pragmatic prediction goals (Sharkey 2025)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="same-idea-different-names">Same idea, different names</h2>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>Names used (year)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimising a proxy until it fails</td>
+<td>Reward hacking (Amodei 2016); Goodhart effect (Manheim 2018); specification gaming (Krakovna 2018); proxy gaming (Hendrycks 2021); objective gaming (Kenton 2021); overoptimisation (Gao 2022); reward gaming (Everitt 2018)</td>
+</tr>
+<tr>
+<td>Agent corrupts its reward signal</td>
+<td>Wireheading (Amodei 2016); reward corruption (Everitt 2018); reward tampering (Krakovna 2018); delusion box (Everitt 2019); RF tampering (Everitt 2019)</td>
+</tr>
+<tr>
+<td>Model behaves well in training for strategic reasons</td>
+<td>Treacherous turn (Bostrom 2014); deceptive alignment (Hubinger 2019); training gaming / scheming (Carlsmith 2023); alignment faking (Clymer 2024); situationally-aware reward hacking (Ngo 2022)</td>
+</tr>
+<tr>
+<td>Right feedback, wrong goal learned</td>
+<td>Goal misgeneralization (Langosco 2021, Shah 2022); inner misalignment (Hubinger 2019); policy misgeneralization (Casper 2023); capability vs goal misgeneralization (Ngo 2022)</td>
+</tr>
+<tr>
+<td>Oversight that scales past human ability</td>
+<td>Scalable supervision (Amodei 2016); recursive reward modeling (Leike 2018); scalable oversight (Ji 2023); amplified oversight (Shah 2025); superalignment (Ji 2023); "make AI solve it" (Leech 2023-25)</td>
+</tr>
+<tr>
+<td>Learning-time misspecification</td>
+<td>Design specification problem (Leike 2018); misspecification (Kenton 2021); value specification (Everitt 2018); outer alignment (Hubinger 2019); problem misspecification (Casper 2023)</td>
+</tr>
+<tr>
+<td>Judging safety with evidence</td>
+<td>Assurance (DeepMind 2018; Anwar 2024); backward alignment (Ji 2023); safety case (Clymer 2024); verification (Singapore 2025, Dalrymple 2024)</td>
+</tr>
+<tr>
+<td>AI pursues power or self-preservation</td>
+<td>Basic AI drives (Omohundro 2008); instrumental convergence (Bostrom 2014); power-seeking (Hendrycks 2022); instrumental goals (Chan 2023); rogue AI (Hendrycks 2023); resists shutdown (Shevlane 2023)</td>
+</tr>
+<tr>
+<td>Harms from many interacting systems</td>
+<td>Multiplicity (Critch 2020); structural risks (Shah 2025); multi-agent risks (Hammond 2025); systemic risks (Bengio 2025); collective disempowerment (Chan 2023)</td>
+</tr>
+<tr>
+<td>Misuse by people</td>
+<td>Malicious use (Hendrycks 2023; Bengio 2025; Weidinger 2021 "Malicious Uses"); misuse (Shah 2025); "Malicious Actors &amp; Misuse" (Slattery 2024)</td>
+</tr>
+<tr>
+<td>Aligning with current ML methods</td>
+<td>Prosaic alignment (Leech 2023); iterative alignment (Leech 2024); "Black-box safety" (Leech 2025)</td>
+</tr>
+<tr>
+<td>Understanding internal computation</td>
+<td>Transparency (Hendrycks 2022); intelligibility (Everitt 2018); interpretability (Rauker 2022); "white-box safety" (Leech 2025)</td>
+</tr>
+<tr>
+<td>Human cannot halt the AI</td>
+<td>Control problem (Bostrom 2014); control ability (Critch 2020); loss of control (Bengio 2025); prepotent AI (Critch 2020)</td>
+</tr>
+<tr>
+<td>Test a model for harmful ability</td>
+<td>Dangerous capability evaluation (Shevlane 2023); capability and propensity assessment (Singapore 2025); "Evaluating capabilities" (Anthropic 2025)</td>
+</tr>
+<tr>
+<td>Model says what a human wants, not truth</td>
+<td>Sycophancy (Park 2023); human simulator (Christiano 2021); U-Sophistry (Weng 2024)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timeline-when-major-terms-enter-the-corpus">Timeline: when major terms enter the corpus</h2>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Terms (earliest file that lists them)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2008</td>
+<td>Instrumental convergence (basic AI drives), self-modification, goal preservation, wireheading as concern (Omohundro, tx)</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Superintelligence, orthogonality thesis, treacherous turn, perverse instantiation, decisive strategic advantage, singleton (Bostrom; mk)</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Accident, reward hacking, scalable oversight, safe exploration, side effects, distributional shift, wireheading defined, Goodhart named as a source (Amodei)</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Value specification, corrigibility defined, reward corruption, interruptibility (Everitt); specification gaming and reward tampering (Krakovna); reward modeling, recursive reward modeling (Leike); Goodhart variants, Campbell's law, cobra effect (Manheim); specification/robustness/assurance (DeepMind tx)</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>Mesa-optimizer, inner/outer alignment, pseudo-alignment, deceptive alignment, corrigible alignment (Hubinger); causal influence diagram, RF tampering, delusion box, current-RF optimisation (Everitt); standard model, assistance game, CIRL (Russell; mk)</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Prepotent AI, delegation, multiplicity thesis, human fragility, ESAI (Critch); reward shaping (Krakovna)</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>ELK, latent knowledge, human simulator, direct translator, ontology identification (Christiano); goal misgeneralization (Langosco); ML Safety, black swan, proxy gaming, backdoor, emergent capability, hazard/exposure/vulnerability (Hendrycks); language agent, objective gaming (Kenton); information hazard (Weidinger); SCIM, materiality (Everitt)</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Goal misgeneralization defined, train/test goal (Shah); reward hacking formalised, hackable/unhackable (Skalse); situational awareness, nearest unblocked strategy (Ngo); phase transition, optimization power, misweighting/ontological/scope (Pan); overoptimisation, gold/proxy reward models (Gao); mechanistic interpretability, microscope AI, polysemantic neuron (Rauker); capabilities externality, nines, defence in depth, x-risk, value lock-in (Hendrycks)</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>AI control, control evaluation, trusted/untrusted monitoring, signal jamming (Greenblatt); scheming, training gamer, goal-guarding, alignment faker (Carlsmith); RICE, alignment cycle, forward/backward alignment, safetywashing, RLxF, superalignment (Ji); dangerous capability evaluation, alignment evaluation, extreme risk, self-proliferation (Shevlane); safety case (Bengio, governance); sycophancy defined, unfaithful reasoning, representation control (Park); mode collapse, auto-induced distributional shift (Casper); agency traits, collective disempowerment (Chan); goal drift, rogue AIs (Hendrycks); prosaic alignment, shallow review (Leech)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>Safety case defined, AI macrosystem, deployment window (Clymer); Guaranteed Safe AI, world model/verifier (Dalrymple); superposition, circuit, feature, motif, activation patching (Bereska); in-context reward hacking, decoupled approval (Weng); scaffolding, instrumental self-reasoning (Phuong); foundationality, assurance defined, jailbreaks (Anwar); iterative alignment (Leech); jingle-jangle, causal taxonomy (Slattery)</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Amplified oversight, Exceptional AGI, approximate continuity, structural risks, mistakes (Shah/GDM); CoT monitorability, externalized reasoning, obfuscated reward hacking (Korbak); Scientist AI, anytime preparedness (Bengio); miscoordination/conflict/collusion, emergent agency (Hammond); loss of control, control-undermining capabilities, inference scaling, marginal risk (Bengio report); sparse dictionary learning, concept-based probes (Sharkey); RLVR, DAA (Lambert); emergent misalignment, sandbagging, model psychology agendas (Leech); activation monitoring, unlearning (Anthropic tx)</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Reasoning systems, post-training, emerging risks, "Malfunctions" and "Systemic" risk split (International AI Safety Report 2026)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Robin Ranjit Singh Chauhan, Pathway Intelligence Inc. Mostly AI-generated, not fully human-reviewed.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

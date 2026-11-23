@@ -1,0 +1,4600 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI safety research notes, catalogs and drafts by Robin Ranjit Singh Chauhan, Pathway Intelligence Inc.">
+      
+      
+        <meta name="author" content="Robin Ranjit Singh Chauhan">
+      
+      
+        <link rel="canonical" href="https://pathway.github.io/research/ai-safety/ai-risk-taxonomy/taxonomy_crosswalk/">
+      
+      
+        <link rel="prev" href="../facets/PAPER_facet_taxonomies/">
+      
+      
+        <link rel="next" href="../themes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Taxonomy crosswalk - AI Safety Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#taxonomy-crosswalk-17-ai-safety-taxonomies-and-51-surveyagenda-papers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Safety Research" class="md-header__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Safety Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Taxonomy crosswalk
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../papers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Papers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../map/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../explore/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Explore
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI-use statement
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Safety Research" class="md-nav__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Safety Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI risk taxonomy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI risk taxonomy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unified_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facets/PAPER_facet_taxonomies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facet taxonomies (paper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy crosswalk
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy crosswalk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-table-of-taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Table of taxonomies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-master-merged-taxonomy-my-synthesis-not-from-any-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MASTER merged taxonomy (my synthesis, not from any source)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. MASTER merged taxonomy (my synthesis, not from any source)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-side-what-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem side: what goes wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-side-what-researchers-and-institutions-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response side: what researchers and institutions do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-cross-cutting-and-container-nodes-not-an-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X Cross-cutting and container nodes (not an area)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-coverage-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Coverage matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Coverage matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3a-2008-to-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3a. 2008 to 2023
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3b-2024-to-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3b. 2024 to 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-master-areas-with-thin-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Master areas with thin coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-sub-areas-covered-by-one-or-two-taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4b. Sub-areas covered by one or two taxonomies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c-risk-to-response-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4c. Risk-to-response mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4d-nodes-that-did-not-fit-a-topic-area-placed-in-x-or-a-catch-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4d. Nodes that did not fit a topic area (placed in X or a catch-all)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cuts-differ-same-idea-different-slice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cuts differ: same idea, different slice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ambiguous-mappings-and-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ambiguous mappings and reasoning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reuse-of-the-projects-d1-m-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Reuse of the project's D1 / M codes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Reuse of the project&#39;s D1 / M codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7a-d1-vs-master-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7a. D1 vs master areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7b-m-codes-mechanism-vs-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7b. M codes (mechanism) vs master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7c-other-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7c. Other codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-node-level-map-proof-that-each-node-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A. Node-level map (proof that each node maps)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-the-51-papers-taxonomy-offered-section-5-mapped-to-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B. The 51 papers: taxonomy offered (section 5) mapped to master
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliography
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disagreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disagreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../risk-vocabulary/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk vocabulary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Risk vocabulary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/biblio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../llm-agent-incident-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM-agent incident catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM-agent incident catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incident catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/sources_checked/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources checked
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy_stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/coverage_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/human_check_sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human-check sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../safety-environments-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety environments catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Safety environments catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/by_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index by taxonomy node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-game-theory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game theory and reward hacking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game theory and reward hacking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/tutorial/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/honesty_games/honesty_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Honesty by design (catalogue)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/bibliography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-psych/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reward hacking across psychology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reward hacking across psychology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/prior_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../goodhart-plane/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Goodhart plane
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/goodhart_plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/coverage_layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/huggingface_incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case study: Hugging Face incident
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/prior_planes_and_catalogues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior planes and catalogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../papers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../rebuttal-agent-safety-rl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebuttal: agent safety and RL
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rebuttal: agent safety and RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/draft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/onepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../two-cultures-paper/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two cultures paper
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Two cultures paper
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/framing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/assumptions_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/related_two_cultures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Related work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/concept_semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/concept_semantics_expanded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics, expanded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/twopager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/census/census_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/census/census_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cotrained-graders-confessions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-trained graders
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Co-trained graders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cotrained-graders-confessions/paper/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report (short draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-use statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-table-of-taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Table of taxonomies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-master-merged-taxonomy-my-synthesis-not-from-any-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MASTER merged taxonomy (my synthesis, not from any source)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. MASTER merged taxonomy (my synthesis, not from any source)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-side-what-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem side: what goes wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-side-what-researchers-and-institutions-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response side: what researchers and institutions do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-cross-cutting-and-container-nodes-not-an-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X Cross-cutting and container nodes (not an area)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-coverage-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Coverage matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Coverage matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3a-2008-to-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3a. 2008 to 2023
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3b-2024-to-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3b. 2024 to 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-master-areas-with-thin-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4a. Master areas with thin coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-sub-areas-covered-by-one-or-two-taxonomies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4b. Sub-areas covered by one or two taxonomies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c-risk-to-response-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4c. Risk-to-response mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4d-nodes-that-did-not-fit-a-topic-area-placed-in-x-or-a-catch-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4d. Nodes that did not fit a topic area (placed in X or a catch-all)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cuts-differ-same-idea-different-slice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cuts differ: same idea, different slice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ambiguous-mappings-and-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ambiguous mappings and reasoning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-reuse-of-the-projects-d1-m-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Reuse of the project's D1 / M codes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Reuse of the project&#39;s D1 / M codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7a-d1-vs-master-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7a. D1 vs master areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7b-m-codes-mechanism-vs-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7b. M codes (mechanism) vs master
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7c-other-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7c. Other codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-node-level-map-proof-that-each-node-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A. Node-level map (proof that each node maps)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-the-51-papers-taxonomy-offered-section-5-mapped-to-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B. The 51 papers: taxonomy offered (section 5) mapped to master
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliography
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="taxonomy-crosswalk-17-ai-safety-taxonomies-and-51-surveyagenda-papers">Taxonomy crosswalk: 17 AI-safety taxonomies and 51 survey/agenda papers</h1>
+<p>Phase 2 analysis. Inputs: <code>taxonomies/*.md</code> (17 node trees), <code>papers/*.md</code> (section 5), the author's private reading-list indexes (not included), <code>0110_research_papers__survey_taxonomy/00_INDEX.md</code>, the author's private legend file (not included).</p>
+<p>Key
+- <code>*</code> = node marked [from-note] in the taxonomy file (not fetched from source).
+- Master codes like <code>3.1</code> = my synthesis (section 2). Not from any source.
+- Only node names present in the taxonomy files are used. Master area and sub-area names are mine.
+- Bracket tags such as <a href="https://arxiv.org/abs/2306.12001">hc23</a> link to the bibliography.</p>
+<hr />
+<h2 id="1-table-of-taxonomies">1. Table of taxonomies</h2>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Taxonomy</th>
+<th>Made by</th>
+<th>Cut</th>
+<th>Nodes (own count; from-note)</th>
+<th>Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2008</td>
+<td><a href="https://selfawaresystems.com/2009/02/18/agi-08-talk-the-basic-ai-drives/">Basic AI Drives</a> (Omohundro 2008)</td>
+<td>Stephen Omohundro (individual)</td>
+<td>mechanism</td>
+<td>10 (2*)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2016</td>
+<td><a href="https://arxiv.org/abs/1606.06565">Concrete Problems</a> (Amodei 2016)</td>
+<td>Amodei, Olah, Steinhardt, Christiano, Schulman, Mane (Google Brain, OpenAI, Stanford, Berkeley)</td>
+<td>problem list (stage of RL loop)</td>
+<td>8: 3 groups + 5 problems (0*)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2018</td>
+<td><a href="https://deepmindsafetyresearch.medium.com/building-safe-artificial-intelligence-52f5f75058f1">Specification, Robustness, Assurance</a> (Ortega 2018, DeepMind)</td>
+<td>DeepMind safety team</td>
+<td>problem class / approach (what must hold)</td>
+<td>16: 3 areas + 9 + 4*</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2018</td>
+<td><a href="https://arxiv.org/abs/1803.04585">Goodhart variants</a> (Manheim 2018)</td>
+<td>Manheim, Garrabrant (individuals)</td>
+<td>mechanism (proxy failure)</td>
+<td>13; 12 if Campbell's Law merged (0*)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2021</td>
+<td><a href="https://arxiv.org/abs/2109.13916">Unsolved Problems in ML Safety</a> (Hendrycks 2021)</td>
+<td>Hendrycks, Carlini, Schulman, Steinhardt</td>
+<td>problem list grouped by approach</td>
+<td>19: 4 areas + 11 + 4 (0*)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2021</td>
+<td><a href="https://arxiv.org/abs/2112.04359">Risks of Language Models</a> (Weidinger 2021)</td>
+<td>DeepMind ethics/safety group</td>
+<td>harm type</td>
+<td>27: 6 areas + 21 risks (0*)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2311.08379">Scheming AIs</a> (Carlsmith 2023)</td>
+<td>Joe Carlsmith (Open Philanthropy)</td>
+<td>mechanism (model classes, prerequisites)</td>
+<td>8 + 2 group headers (1*)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2306.12001">Catastrophic AI Risks</a> (Hendrycks 2023)</td>
+<td>Hendrycks, Mazeika, Woodside (CAIS)</td>
+<td>risk source</td>
+<td>17: 4 + 13 (0*)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2023</td>
+<td><a href="https://arxiv.org/abs/2310.19852">Alignment Survey</a> (Ji 2023)</td>
+<td>Ji et al. (Peking Univ.)</td>
+<td>approach by lifecycle (forward/backward) + goals (RICE)</td>
+<td>44 numbered (4 pillars, 14, 26) + 14 headers/RICE/intro/conclusion (0*)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2404.09932">Foundational Challenges</a> (Anwar 2024)</td>
+<td>Anwar et al., 40+ authors</td>
+<td>problem list (kind of gap: science / methods / sociotechnical)</td>
+<td>21: 3 + 18 (0*)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2024</td>
+<td><a href="https://arxiv.org/abs/2408.12622">AI Risk Repository</a> (Slattery 2024)</td>
+<td>MIT FutureTech et al.</td>
+<td>risk source (causal: entity, intent, timing) + harm type (domain)</td>
+<td>42 listed: 12 causal + 7 domains + 23 subdomains (file says 43/24; I count 23 subdomains) (0*)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://alignment.anthropic.com/2025/recommended-directions/">Recommended Directions</a> (Anthropic 2025)</td>
+<td>Anthropic Alignment Science</td>
+<td>approach (lab wish-list)</td>
+<td>20: 6 + 14 (0*)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2504.01849">Technical AGI Safety</a> (Shah 2025)</td>
+<td>Google DeepMind, 30 authors</td>
+<td>risk source, then mitigation (model-level / system-level)</td>
+<td>23: 4 risks + 7 misuse + 10 misalignment + 2*</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://shallowreview.ai/">Shallow Review</a> (Leech 2025)</td>
+<td>Arb Research (Gavin Leech et al.)</td>
+<td>approach (what researcher does to model) + one org list</td>
+<td>96: 8 areas + 7 sub-groups + 81 leaves (0*)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://arxiv.org/abs/2506.20702">Singapore Consensus</a> (Bengio 2025)</td>
+<td>Bengio, Russell, Tegmark et al., 80+ contributors</td>
+<td>approach by lifecycle (assess / develop / control)</td>
+<td>71 (0*)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2025</td>
+<td><a href="https://alignmentproject.aisi.gov.uk/">Alignment Project</a> (UK AISI 2025)</td>
+<td>UK AI Security Institute + coalition</td>
+<td>approach by academic discipline</td>
+<td>11 (0*)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2026</td>
+<td><a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026">Intl AI Safety Report</a> (Bengio 2026)</td>
+<td>Intl expert panel, chair Bengio</td>
+<td>risk source / harm type (misuse, malfunction, systemic)</td>
+<td>14 (0*)</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Totals: 474 nodes; 9 marked *. Cut counts: risk source 4 (Hendrycks 2023, GDM 2025, IASR 2026, MIT causal), harm type 3 (Weidinger 2021, MIT domain, IASR), mechanism 4, problem list 4, approach 9, lifecycle 2 (Ji, Singapore).
+Node counts in the files that I corrected: MIT (43 to 42), Anthropic (file index says 15 sub, page shows 14), IASR (index says 9 items, page shows 8), Shallow (index says 86 agendas, YAML shows 81 leaves incl. 7 Labs; unresolved in source file).</p>
+<hr />
+<h2 id="2-master-merged-taxonomy-my-synthesis-not-from-any-source">2. MASTER merged taxonomy (my synthesis, not from any source)</h2>
+<p>Design rule: one hybrid tree with two sides. Problem side (areas 1-6) catches risk-source, harm-type, mechanism and problem-list nodes. Response side (areas 7-12) catches approach, lifecycle and discipline nodes. <code>X</code> is a holding bucket for attributes and containers that are not topics.</p>
+<h3 id="problem-side-what-goes-wrong">Problem side: what goes wrong</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Sub-areas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 MU Misuse and malicious use</strong></td>
+<td>1.1 CBRN; 1.2 cyber offence; 1.3 influence, disinformation, fraud, manipulation; 1.4 surveillance and censorship; 1.5 agents released with harmful goals, general dual-use; 1.6 open-weight tampering, harmful fine-tuning, distillation</td>
+</tr>
+<tr>
+<td><strong>2 SH Societal, content and structural harms</strong></td>
+<td>2.1 discrimination, toxicity, unequal performance; 2.2 privacy, information hazards; 2.3 misinformation, epistemics; 2.4 human-AI interaction (overreliance, autonomy, anthropomorphism); 2.5 labour, inequality, access, creative economy; 2.6 environment; 2.7 power concentration, races, competitive pressure; 2.8 AI welfare and rights</td>
+</tr>
+<tr>
+<td><strong>3 SP Specification, objectives, values</strong></td>
+<td>3.1 reward hacking, specification gaming, Goodhart; 3.2 side effects, unintended consequences; 3.3 reward tampering, wireheading; 3.4 whose values, pluralism, value verification; 3.5 preference and reward learning, assistance</td>
+</tr>
+<tr>
+<td><strong>4 GR Generalisation, robustness, security</strong></td>
+<td>4.1 distribution shift, goal misgeneralisation; 4.2 safe exploration, recovery; 4.3 adversarial inputs, jailbreaks, injection; 4.4 poisoning, backdoors, tampering; 4.5 reliability, calibration, tail risk, uncertainty</td>
+</tr>
+<tr>
+<td><strong>5 AG Agentic misalignment and loss of control</strong></td>
+<td>5.1 deception, scheming, situational awareness; 5.2 instrumental drives, power-seeking; 5.3 goal drift, self-modification, emergent goals; 5.4 corrigibility, shutdown; 5.5 loss of control, rogue AI; 5.6 novel risks of agentic systems</td>
+</tr>
+<tr>
+<td><strong>6 MA Multi-agent and collective dynamics</strong></td>
+<td>6.1 failure modes and risk factors (miscoordination, conflict, collusion, selection pressure); 6.2 alignment targets for groups (context, social contract, plural stakeholders, learned governance); 6.3 theory (game theory, cooperation); 6.4 tools, evaluation, security for multi-agent</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-side-what-researchers-and-institutions-do">Response side: what researchers and institutions do</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Sub-areas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>7 EV Evaluation, risk assessment, assurance</strong></td>
+<td>7.1 benchmarks, audits, metrology; 7.2 dangerous-capability evals; 7.3 propensity and alignment evals (scheming, deception, sandbagging, situational awareness, control evals); 7.4 red teaming, stress tests, model organisms; 7.5 system-level risk assessment, forecasting, safety cases; 7.6 secure evaluation infrastructure; 7.7 evaluation validity (confounds, eval awareness, safetywashing)</td>
+</tr>
+<tr>
+<td><strong>8 IN Interpretability and internal understanding</strong></td>
+<td>8.1 mechanistic / reverse engineering; 8.2 representations, concepts, probing; 8.3 latent knowledge, honesty, lie detection; 8.4 training dynamics, data attribution, diffing; 8.5 explanations (CoT faithfulness, AI explainers, introspection); 8.6 science of LLM capabilities (ICL, scale, reasoning)</td>
+</tr>
+<tr>
+<td><strong>9 TR Training methods and scalable oversight</strong></td>
+<td>9.1 learning from feedback (RLHF, post-training); 9.2 scalable oversight; 9.3 data; 9.4 persona, model psychology, specs, constitutions; 9.5 editing, unlearning, capability removal; 9.6 pretraining and finetuning limits, trade-offs; 9.7 inference-time steering and in-context methods</td>
+</tr>
+<tr>
+<td><strong>10 CO Control, monitoring, runtime defence</strong></td>
+<td>10.1 control protocols, human oversight; 10.2 monitoring (behaviour, activations, CoT, anomaly, user); 10.3 safeguards, access restriction; 10.4 intervention (off-switch, override, enforcement); 10.5 security, provenance, tracking infrastructure; 10.6 containment, non-agentic guardrails</td>
+</tr>
+<tr>
+<td><strong>11 SB Safe by design and theory</strong></td>
+<td>11.1 formal guarantees, verification; 11.2 safer design patterns, non-agentic AI; 11.3 agent foundations, learning theory, ontology; 11.4 contributing disciplines (information theory, complexity, probability, game theory, cognitive science); 11.5 brain-like AGI</td>
+</tr>
+<tr>
+<td><strong>12 GV Governance, organisations, resilience</strong></td>
+<td>12.1 governance regimes (international, open-source, regulation); 12.2 organisational safety, accidents, culture; 12.3 societal resilience, incident response; 12.4 field strategy, ML for societal safety (cybersecurity, epistemics); 12.5 lab / organisation lists</td>
+</tr>
+</tbody>
+</table>
+<h3 id="x-cross-cutting-and-container-nodes-not-an-area">X Cross-cutting and container nodes (not an area)</h3>
+<p>MIT causal variables and values (Entity, Intent, Timing + 9 values); Ji "Alignment Cycle", "Forward Alignment", "Backward Alignment", "Boundaries of Alignment (1.2.3)", conclusion nodes 6, 6.1, 6.2; IASR Chapters 1, 2, 3; Anthropic "Miscellaneous"; Carlsmith "Model classes", "Prerequisites for scheming" headers and "Training saints" (success case, not a failure); Singapore headers "2 Developing..." and "3 Control..." map to their children.</p>
+<hr />
+<h2 id="3-coverage-matrix">3. Coverage matrix</h2>
+<p>Rows = master areas. Cells = source node names (short form). Blank = not covered. Full node-by-node proof is in Appendix A. Count column = taxonomies covering the area (of 17).</p>
+<h3 id="3a-2008-to-2023">3a. 2008 to 2023</h3>
+<table>
+<thead>
+<tr>
+<th>Master area</th>
+<th>2008 Omo</th>
+<th>2016 Amo</th>
+<th>2018 DM</th>
+<th>2018 GH</th>
+<th>2021 HU</th>
+<th>2021 Wei</th>
+<th>2023 Car</th>
+<th>2023 HC</th>
+<th>2023 Ji</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 MU</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Malicious Uses (4 risks)</td>
+<td></td>
+<td>Malicious Use: Bioterrorism, Unleashing AI Agents, Persuasive AIs</td>
+<td></td>
+</tr>
+<tr>
+<td>2 SH</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Discrimination..; Information Hazards; Misinformation Harms; HCI Harms; Automation, access, environmental</td>
+<td></td>
+<td>Concentration of Power; AI Race (3)</td>
+<td></td>
+</tr>
+<tr>
+<td>3 SP</td>
+<td>wireheading vulnerability</td>
+<td>Wrong objective function; Side Effects; Reward Hacking</td>
+<td>Specification; side-effects; Ideal/Design/Revealed<em>; Spec gaming</em></td>
+<td>all 4 variants + 9 sub-types</td>
+<td>Alignment 4.1-4.4</td>
+<td></td>
+<td>Reward-on-the-episode seekers</td>
+<td>Proxy Gaming</td>
+<td>Ethicality; CIRL; Human Values Verification; 5.4 socio-technical</td>
+</tr>
+<tr>
+<td>4 GR</td>
+<td></td>
+<td>Safe Exploration; Distributional Shift</td>
+<td>Robustness: adversarial inputs, shift, safe exploration, cautious generalisation, recovery</td>
+<td></td>
+<td>Robustness; Black Swan; Adversarial; Calibration; Backdoors</td>
+<td></td>
+<td>Misgeneralized non-training-gamers</td>
+<td></td>
+<td>Learning under Distribution Shift (3.x); Adversarial Training; Circuit Breaking</td>
+</tr>
+<tr>
+<td>5 AG</td>
+<td>Self-improvement; Self-protection; Resource acquisition; Utility fn preservation; Goal clarification; rationality convergence; Bostrom items*</td>
+<td></td>
+<td>Preventing dangerous sub-agents</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Schemers; Training gamers*; Situational awareness; Beyond-episode goals; Power-motivated strategy</td>
+<td>Rogue AIs: Goal Drift, Power-Seeking, Deception</td>
+<td>Risks of Misalignment (1.1.1)</td>
+</tr>
+<tr>
+<td>6 MA</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Evolutionary Pressures (weak)</td>
+<td>Cooperative Training</td>
+</tr>
+<tr>
+<td>7 EV</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Emergent Hazardous Capabilities</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Assurance; Safety Evaluations (5 sub); Red Teaming; Safetywashing</td>
+</tr>
+<tr>
+<td>8 IN</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Representative Model Outputs; Honest and Truthful</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Interpretability (3 sub)</td>
+</tr>
+<tr>
+<td>9 TR</td>
+<td></td>
+<td>Scalable Supervision</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Learning from Feedback (Feedback Types, Preference Modeling, Policy Learning, RLHF); Scalable Oversight (7 sub)</td>
+</tr>
+<tr>
+<td>10 CO</td>
+<td></td>
+<td></td>
+<td>Assurance: Monitoring, Enforcement</td>
+<td></td>
+<td>Monitoring; Anomaly Detection</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Controllability (RICE)</td>
+</tr>
+<tr>
+<td>11 SB</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12 GV</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Systemic Safety (ML for Cybersecurity, Epistemics)</td>
+<td></td>
+<td></td>
+<td>Organizational Risks (2)</td>
+<td>Governance (5.1-5.4)</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>2 areas</td>
+<td>3</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3b-2024-to-2026">3b. 2024 to 2026</h3>
+<table>
+<thead>
+<tr>
+<th>Master area</th>
+<th>2024 Anw</th>
+<th>2024 MIT</th>
+<th>2025 Ant</th>
+<th>2025 GDM</th>
+<th>2025 SR</th>
+<th>2025 SG</th>
+<th>2025 AISI</th>
+<th>2026 IASR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 MU</td>
+<td>Dual-Use Capabilities</td>
+<td>4 Malicious Actors (4.1-4.3)</td>
+<td></td>
+<td>Misuse (+ 5 mitigations)</td>
+<td>Harm reduction for open weights</td>
+<td>Resistance against harmful tampering; harmful distillation</td>
+<td></td>
+<td>Malicious Use (4 items)</td>
+</tr>
+<tr>
+<td>2 SH</td>
+<td>Socioeconomic Impacts</td>
+<td>Domains 1, 2.1, 3, 5, 6.1-6.3, 6.6, 7.5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Systemic Risks: Labour market, human autonomy</td>
+</tr>
+<tr>
+<td>3 SP</td>
+<td>Values to Be Encoded</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Goal robustness: Mild optimisation, RL safety, Assistance games; Aligned to who?</td>
+<td>2.1 Specification and Validation (all)</td>
+<td>Evaluation and Guarantees in RL</td>
+<td></td>
+</tr>
+<tr>
+<td>4 GR</td>
+<td>Jailbreaks; Poisoning; Untrustworthy</td>
+<td>2.2; 7.3</td>
+<td>Adversarial robustness (2)</td>
+<td>Robust training; Uncertainty; Mistakes</td>
+<td>Data poisoning defense; RL safety</td>
+<td>2.2.2 Robustness (3 items)</td>
+<td></td>
+<td>Reliability challenges</td>
+</tr>
+<tr>
+<td>5 AG</td>
+<td>Agentic LLMs Pose Novel Risks</td>
+<td>7.1</td>
+<td></td>
+<td>Misalignment</td>
+<td>Corrigibility; Behavior alignment theory; Emergent misalignment</td>
+<td>Corrigibility and agent foundations</td>
+<td></td>
+<td>Loss of control</td>
+</tr>
+<tr>
+<td>6 MA</td>
+<td>Multi-Agent Safety Is Not Assured</td>
+<td></td>
+<td>Learned governance for multi-agent</td>
+<td>Structural risks</td>
+<td>Multi-agent first (6 agendas)</td>
+<td>Evaluating robustness in multiagent contexts</td>
+<td>Economic Theory and Game Theory</td>
+<td></td>
+</tr>
+<tr>
+<td>7 EV</td>
+<td>Capabilities Difficult to Estimate; Evaluations Confounded</td>
+<td>7.2</td>
+<td>Evaluating capabilities; Evaluating alignment</td>
+<td>Dangerous capability evals<em>; Control evals; stress tests; safety cases</em></td>
+<td>Evals (12)</td>
+<td>1 Risk Assessment (all) ; 2.3.4 model organisms</td>
+<td>Benchmark Design; Monitoring and Red Teaming</td>
+<td></td>
+</tr>
+<tr>
+<td>8 IN</td>
+<td>ICL Is Black-Box; Reasoning; Tools for Interpreting</td>
+<td>7.4</td>
+<td>Understanding model cognition; CoT faithfulness; Honesty</td>
+<td>Interpretability</td>
+<td>White-box safety (14)</td>
+<td>2.3.3 Interpretability (5); 2.2.3 Truthfulness</td>
+<td>Interpretability</td>
+<td></td>
+</tr>
+<tr>
+<td>9 TR</td>
+<td>Pretraining; Finetuning; Safety-Performance</td>
+<td></td>
+<td>Scalable oversight (4); Persona; Unlearning</td>
+<td>Amplified oversight; Guiding model behavior; Safety post-training; Capability suppression</td>
+<td>Iterative alignment; Model psychology; Better data; Make AI solve it</td>
+<td>2.2.1 data; 2.2.4-2.2.5; scalable oversight</td>
+<td>Methods for Post-training and Elicitation</td>
+<td></td>
+</tr>
+<tr>
+<td>10 CO</td>
+<td></td>
+<td></td>
+<td>AI control (3); Adaptive defenses</td>
+<td>Monitoring; Access restrictions; Securing weights; Security</td>
+<td>Control; Safeguards; CoT monitoring</td>
+<td>3.1, 3.2 (monitoring, intervention, ecosystem)</td>
+<td>Monitoring and Red Teaming</td>
+<td></td>
+</tr>
+<tr>
+<td>11 SB</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Safer design patterns</td>
+<td>Safety by construction; Theory</td>
+<td>2.2.6; 2.3.2; modular systems</td>
+<td>Information Theory; Complexity; Probabilistic; Learning Theory; Cognitive Science</td>
+<td></td>
+</tr>
+<tr>
+<td>12 GV</td>
+<td>LLM Governance Is Lacking</td>
+<td>6.5 Governance failure</td>
+<td></td>
+<td>Societal readiness</td>
+<td>Labs (7); Neglected Approaches</td>
+<td>Societal resilience; Incident preparedness; Assessing RM frameworks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Count</td>
+<td>8 areas</td>
+<td>6</td>
+<td>6</td>
+<td>8</td>
+<td>12</td>
+<td>10</td>
+<td>5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Area coverage (taxonomies of 17): 1 MU 8; 2 SH 5; 3 SP 12; 4 GR 12; 5 AG 11; 6 MA 7; 7 EV 9; 8 IN 9; 9 TR 8; 10 CO 8; 11 SB 4; 12 GV 8.
+Widest taxonomies: Shallow 2025 (12 of 12 areas), Singapore 2025 (10), Ji 2023 (8), GDM 2025 (8), Anwar 2024 (8). Narrowest: Goodhart 2018 (1), AISI 2025 (5, by design).</p>
+<hr />
+<h2 id="4-gaps">4. Gaps</h2>
+<h3 id="4a-master-areas-with-thin-coverage">4a. Master areas with thin coverage</h3>
+<ul>
+<li>11 SB (4/17): only approach-cut taxonomies (GDM 2025, Shallow 2025, Singapore 2025, AISI 2025). No risk or problem list names a "design" problem. Reason: a design response is not a failure, so risk-cut taxonomies cannot hold it.</li>
+<li>2 SH (5/17): only harm-type and risk-source lists. No approach taxonomy names a technical response to discrimination (2.1), privacy (2.2) or environmental harm (2.6). Shallow, Anthropic, Singapore leave these out. Singapore 3.3 "Societal resilience" is the only partial match, to 2.3-2.5.</li>
+<li>6 MA (7/17): all seven are from 2023 or later. Older taxonomies are single-agent.</li>
+<li>1 MU (8/17): responses are spread (Shallow "WMD evals" at 7.2; Singapore "Dangerous capability..." at 7.2; GDM mitigations). No approach taxonomy has a "misuse" area of its own. Only GDM does.</li>
+</ul>
+<h3 id="4b-sub-areas-covered-by-one-or-two-taxonomies">4b. Sub-areas covered by one or two taxonomies</h3>
+<ul>
+<li>7.6 secure evaluation infrastructure: Singapore only.</li>
+<li>11.5 brain-like AGI: Shallow only. 12.5 labs list: Shallow only.</li>
+<li>2.8 AI welfare and rights: MIT 7.5 only.</li>
+<li>3.3 reward tampering, wireheading: Omohundro ("wireheading vulnerability") and Goodhart ("Metric Manipulation") only. No 2021+ taxonomy names it as a node.</li>
+<li>4.2 safe exploration, recovery: Amodei 2016 and DeepMind 2018 only. Absent from every taxonomy from 2021 on. The field moved from RL-native to LLM-native problems.</li>
+<li>3.2 side effects: Amodei, DeepMind, Hendrycks 2021 (4.4) only.</li>
+<li>8.4 data attribution, diffing, dynamics: Shallow, Singapore.</li>
+<li>12.2 organisational safety: Hendrycks 2023 only.</li>
+<li>2.6 environment: Weidinger, MIT only (IASR 2025 paper also).</li>
+</ul>
+<h3 id="4c-risk-to-response-mismatch">4c. Risk-to-response mismatch</h3>
+<ul>
+<li>Risks with no matching response in any approach taxonomy: 2.1 discrimination, 2.2 privacy, 2.6 environment, 1.4 surveillance, 2.5 labour (only Anwar names both).</li>
+<li>Responses with no named risk in risk taxonomies: 9.3 data, 9.7 steering, 10.5 provenance, 11.4 disciplines, 8.4 diffing.</li>
+</ul>
+<h3 id="4d-nodes-that-did-not-fit-a-topic-area-placed-in-x-or-a-catch-all">4d. Nodes that did not fit a topic area (placed in X or a catch-all)</h3>
+<table>
+<thead>
+<tr>
+<th>Node (taxonomy)</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entity, Intent, Timing and 9 values (MIT 2024)</td>
+<td>Attributes of a risk, not topics. They are cut axes; equal to project D5 and D6</td>
+</tr>
+<tr>
+<td>Alignment Cycle; Forward Alignment; Backward Alignment (Ji 2023)</td>
+<td>Lifecycle axis. Children map; the headers do not</td>
+</tr>
+<tr>
+<td>1.2.3 Boundaries of Alignment; 6, 6.1, 6.2 (Ji 2023)</td>
+<td>Scope and conclusion sections, not topics</td>
+</tr>
+<tr>
+<td>Chapter 1 Background; Chapter 2; Chapter 3 Risk management approaches (IASR 2026)</td>
+<td>Containers. Chapter 3 points at areas 7-12 but lists no nodes</td>
+</tr>
+<tr>
+<td>Miscellaneous (Anthropic 2025)</td>
+<td>Catch-all heading</td>
+</tr>
+<tr>
+<td>Training saints (Carlsmith 2023)</td>
+<td>The no-failure case. A reference class</td>
+</tr>
+<tr>
+<td>Labs: OpenAI, Google Deepmind, Anthropic, xAI, Meta, China, Others (Shallow 2025)</td>
+<td>Organisations, not topics. Placed at 12.5</td>
+</tr>
+<tr>
+<td>The "Neglected Approaches" Approach (Shallow 2025)</td>
+<td>Meta-method (find overlooked ideas). Placed at 12.4</td>
+</tr>
+<tr>
+<td>Other interpretability; Other evals; Other corrigibility (Shallow 2025)</td>
+<td>Residual buckets. Placed at the parent area (8, 7.3, 5.4)</td>
+</tr>
+<tr>
+<td>AI welfare and rights (MIT 7.5)</td>
+<td>No peer in any other taxonomy; given 2.8</td>
+</tr>
+<tr>
+<td>Copyright infringements (IASR 2025 paper)</td>
+<td>Fits no sub-area well; placed at 2.5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-cuts-differ-same-idea-different-slice">5. Cuts differ: same idea, different slice</h2>
+<p>Cut types and examples
+| Cut | Question it answers | Example taxonomies |
+|---|---|---|
+| Risk source | Who or what causes harm? | Hendrycks 2023 (misuse, race, organisation, rogue AI); GDM 2025 (misuse, misalignment, mistakes, structural); IASR 2026 (malicious use, malfunction, systemic); MIT causal |
+| Harm type | Who is hurt, how? | Weidinger 2021; MIT domain |
+| Mechanism | Why does it arise? | Goodhart 2018; Carlsmith 2023; Omohundro 2008 |
+| Problem list | What is unsolved? | Amodei 2016; Anwar 2024; Hendrycks 2021 |
+| Approach | What does the researcher do? | Shallow 2025; Anthropic 2025; AISI 2025 (by discipline) |
+| Lifecycle | When in the system's life? | Ji 2023 (forward/backward); Singapore 2025 (assess, develop, control) |</p>
+<p>Worked examples (same idea, where each source puts it)
+| Idea | Where placed, by source |
+|---|---|
+| Reward hacking (3.1) | Risk source: Hendrycks 2023 "Proxy Gaming" under Rogue AIs. Mechanism: Goodhart 2018 (4 variants). Problem list: Amodei 2016 "Avoiding Reward Hacking" under "wrong objective function"; Hendrycks 2021 "Objective Proxies Can Be Brittle". Approach: Shallow 2025 "Goal robustness: RL safety, Mild optimisation"; Singapore "Avoiding reward hacking and unintended consequences" under Specification. Lifecycle: Ji 2023 as a cause of misalignment (1.1.2) |
+| Deception / scheming (5.1) | Risk source: Hendrycks 2023 "Deception". Mechanism: Carlsmith "Schemers". Approach: Shallow 2025 split into "AI scheming evals", "Lie and deception detectors", "Chain of thought monitoring" in three different areas; Anthropic "Evaluating alignment". Harm: MIT 7.1. Malfunction: IASR "Loss of control" |
+| Scalable oversight (9.2) | Problem: Amodei "Objective too expensive to evaluate". Method in a lifecycle phase: Ji 2.4 (forward alignment). Own approach: Anthropic, Shallow "Make AI solve it". Part of control: Singapore 3.1.3. Model-level defence: GDM "Amplified oversight" |
+| Interpretability (8) | A tool inside monitoring: Hendrycks 2021 (Hidden Model Functionality), DeepMind 2018 (Assurance). A pillar of assurance: Ji 4.2. An area: Shallow "White-box safety". A discipline: AISI. A method of verification: Singapore 2.3.3. An enabler: GDM "Enabling stronger defenses". A gap: Anwar "Tools ... Absent or Lack Faithfulness" |
+| Distribution shift (4.1) | Problem: Amodei, DeepMind 2018 Robustness. Pillar: Ji "Learning under Distribution Shift". Mechanism-like: Carlsmith "Misgeneralized non-training-gamers". Absent in Shallow as a name; spread into Goal robustness |
+| Power concentration (2.7) | Misuse: Hendrycks 2023 "Concentration of Power" under Malicious Use. Harm: MIT 6.1. Race: Hendrycks "AI Race". Each puts it under a different cause |</p>
+<p>How cuts interact
+- Risk and harm cuts name the problem but not the fix. Approach cuts name the fix but hide the problem. Master areas 1-6 vs 7-12 keep both.
+- One approach node serves many problems. Shallow "Evals" holds scheming (5.1), sandbagging (5.1), WMD (1.1), deception (5.1) as sub-nodes. The risk is the leaf label, the approach is the parent.
+- A mechanism node is narrower than a problem node. Carlsmith splits one GDM node ("Misalignment") into 5 classes and 3 prerequisites.
+- The same word names different levels. "Robustness" is a problem group in Amodei/DeepMind/Hendrycks, one RICE goal in Ji, and a design step (2.2.2) in Singapore.
+- Lifecycle cuts reorder approach nodes by time, not topic. Ji puts "Safety Evaluations" in backward alignment; Singapore puts "Audit techniques and benchmarks" in risk assessment; Shallow puts both under Evals.</p>
+<hr />
+<h2 id="6-ambiguous-mappings-and-reasoning">6. Ambiguous mappings and reasoning</h2>
+<table>
+<thead>
+<tr>
+<th>Node (taxonomy)</th>
+<th>Mapped to</th>
+<th>Alternative</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goal Drift (Hendrycks 2023)</td>
+<td>5.3</td>
+<td>4.1</td>
+<td>Values change over time, not under shift. Project hint says BH2/M2; I follow the node text</td>
+</tr>
+<tr>
+<td>Concentration of Power (Hendrycks 2023)</td>
+<td>2.7</td>
+<td>1.5</td>
+<td>Listed under Malicious Use, but the harm is structural</td>
+</tr>
+<tr>
+<td>Evolutionary Pressures (Hendrycks 2023)</td>
+<td>2.7</td>
+<td>6.1</td>
+<td>Competitive pressure; also multi-agent selection (Hammond 2025)</td>
+</tr>
+<tr>
+<td>Preventing dangerous sub-agents (DeepMind 2018)</td>
+<td>5.5</td>
+<td>6.1, 5.6</td>
+<td>Names no mechanism; closest is agents creating agents</td>
+</tr>
+<tr>
+<td>Recovery (DeepMind 2018)</td>
+<td>4.2</td>
+<td>10.4</td>
+<td>Source places it under Robustness</td>
+</tr>
+<tr>
+<td>Adversarial Goodhart sub-types (Manheim 2018)</td>
+<td>3.1</td>
+<td>6.1</td>
+<td>Other agents exploit the metric; source treats it as Goodhart</td>
+</tr>
+<tr>
+<td>4.2 Objectives Difficult to Optimize (Hendrycks 2021)</td>
+<td>3.1</td>
+<td>4.1</td>
+<td>No fetched gloss; placed with its Alignment siblings</td>
+</tr>
+<tr>
+<td>3.3 Hidden Model Functionality (Hendrycks 2021)</td>
+<td>4.4</td>
+<td>7.2</td>
+<td>Backdoors (4.4) and Emergent Hazardous Capabilities (7.2) are its children; parent maps by child</td>
+</tr>
+<tr>
+<td>3.1 Anomaly Detection (Hendrycks 2021)</td>
+<td>10.2</td>
+<td>1</td>
+<td>Title says "Malicious Use", method is monitoring</td>
+</tr>
+<tr>
+<td>Reward-on-the-episode seekers (Carlsmith 2023)</td>
+<td>3.1</td>
+<td>5.1</td>
+<td>Project hint: BH1. They game training but have no beyond-episode goal</td>
+</tr>
+<tr>
+<td>Circuit Breaking (Ji 2023)</td>
+<td>4.3</td>
+<td>9.2, 10.3</td>
+<td>Listed under scalable oversight in source; function is attack resistance. Source placement is scalable oversight, so this is a judgement</td>
+</tr>
+<tr>
+<td>Cooperative Training (Ji 2023)</td>
+<td>6.3</td>
+<td>4.1</td>
+<td>Sits under Data Distribution Interventions; content is cooperation</td>
+</tr>
+<tr>
+<td>Human Values Verification (Ji 2023)</td>
+<td>3.4</td>
+<td>7.3</td>
+<td>Under Assurance; subject is values</td>
+</tr>
+<tr>
+<td>Safety-Performance Trade-offs (Anwar 2024)</td>
+<td>9.6</td>
+<td>8.6</td>
+<td>Alignment tax is a training cost; listed under science</td>
+</tr>
+<tr>
+<td>LLM-Systems Can Be Untrustworthy (Anwar 2024)</td>
+<td>4.5</td>
+<td>2.4</td>
+<td>No gloss beyond "reliability undermines trust"</td>
+</tr>
+<tr>
+<td>Capabilities Are Difficult to Estimate (Anwar 2024)</td>
+<td>7.2</td>
+<td>8.6</td>
+<td>Two readings: measure (7) or understand (8)</td>
+</tr>
+<tr>
+<td>MIT 2.2 AI system security vulnerabilities</td>
+<td>4.3, 4.4</td>
+<td>10.5</td>
+<td>Attacks on the model, not infrastructure</td>
+</tr>
+<tr>
+<td>MIT 7.2 AI possessing dangerous capabilities</td>
+<td>7.2</td>
+<td>1</td>
+<td>A property, evaluated at 7.2; harms sit at 1</td>
+</tr>
+<tr>
+<td>Safety post-training (GDM 2025, under Misuse)</td>
+<td>9.1</td>
+<td>10.3</td>
+<td>Model-level; GDM contrasts it with system-level safeguards</td>
+</tr>
+<tr>
+<td>Uncertainty (GDM 2025)</td>
+<td>4.5</td>
+<td>8</td>
+<td>Source calls it "Uncertainty estimation" (S note)</td>
+</tr>
+<tr>
+<td>Control evaluations (GDM 2025)</td>
+<td>7.3</td>
+<td>10.1</td>
+<td>A test of control, not control itself</td>
+</tr>
+<tr>
+<td>Emergent misalignment (Shallow 2025)</td>
+<td>9.4</td>
+<td>5.3, 4.1</td>
+<td>Source puts it in Model psychology</td>
+</tr>
+<tr>
+<td>Specs and constitutions (Shallow 2025)</td>
+<td>9.4</td>
+<td>3.4</td>
+<td>Method for instilling values</td>
+</tr>
+<tr>
+<td>Hyperstition studies (Shallow 2025)</td>
+<td>9.3</td>
+<td>2.3</td>
+<td>Training-data feedback loop</td>
+</tr>
+<tr>
+<td>Harm reduction for open weights (Shallow 2025)</td>
+<td>1.6</td>
+<td>4.4, 9.3</td>
+<td>Source places it in Goal robustness, which is a poor fit</td>
+</tr>
+<tr>
+<td>Heuristic explanations; Human inductive biases (Shallow 2025)</td>
+<td>8.1; 11.4</td>
+<td>11.3; 8.2</td>
+<td>Source places under Theory; cognitive-science link</td>
+</tr>
+<tr>
+<td>Monitoring concepts; Activation engineering (Shallow 2025)</td>
+<td>10.2; 9.7</td>
+<td>8.2</td>
+<td>Interpretability tools used for control</td>
+</tr>
+<tr>
+<td>Corrigibility (Shallow 2025, sub-group)</td>
+<td>5.4</td>
+<td>11.3</td>
+<td>Source puts it in Theory. Same split in Singapore 3.1.3</td>
+</tr>
+<tr>
+<td>Aligned to who? (Shallow 2025)</td>
+<td>3.4</td>
+<td>6.2</td>
+<td>Plural values vs. group alignment</td>
+</tr>
+<tr>
+<td>Control (Shallow, Singapore 3.1.3 "AGI and ASI control problem")</td>
+<td>10.1</td>
+<td>5.5</td>
+<td>Approach for loss of control</td>
+</tr>
+<tr>
+<td>Scalable oversight (Singapore 3.1.3)</td>
+<td>9.2</td>
+<td>10.1</td>
+<td>Same name as Anthropic, different parent</td>
+</tr>
+<tr>
+<td>Studying goals in systems (Singapore)</td>
+<td>8.1</td>
+<td>5.3</td>
+<td>Interpretability of goals</td>
+</tr>
+<tr>
+<td>Attributing model behaviours to training data (Singapore)</td>
+<td>8.4</td>
+<td>9.3</td>
+<td>Interpretability method</td>
+</tr>
+<tr>
+<td>Verifying methods with model organisms (Singapore)</td>
+<td>7.4</td>
+<td>7.3</td>
+<td>A test bed</td>
+</tr>
+<tr>
+<td>Agent authentication; Hardware-enabled mechanisms (Singapore)</td>
+<td>10.5</td>
+<td>6.4; 10.4</td>
+<td>Infrastructure</td>
+</tr>
+<tr>
+<td>Incident and emergency preparedness (Singapore)</td>
+<td>12.3</td>
+<td>10.4</td>
+<td>Under Conventional Intervention in source</td>
+</tr>
+<tr>
+<td>Information theory, Complexity, Probabilistic methods (AISI)</td>
+<td>11.4</td>
+<td>11.1</td>
+<td>Disciplines, not topics</td>
+</tr>
+<tr>
+<td>Empirical Investigations Into AI Monitoring and Red Teaming (AISI)</td>
+<td>10.2, 7.4</td>
+<td></td>
+<td>Two topics in one node</td>
+</tr>
+<tr>
+<td>Methods for Post-training and Elicitation (AISI)</td>
+<td>9.1, 7.2</td>
+<td></td>
+<td>Elicitation also serves capability evals</td>
+</tr>
+<tr>
+<td>Risks to human autonomy (IASR 2026)</td>
+<td>2.4</td>
+<td>2.3</td>
+<td>No gloss in source</td>
+</tr>
+<tr>
+<td>Reliability challenges (IASR 2026)</td>
+<td>4.5</td>
+<td>4.1</td>
+<td>Project hint: R3</td>
+</tr>
+<tr>
+<td>Societal Resilience Singapore 3.3 vs. IASR Ch3</td>
+<td>12.3; X</td>
+<td></td>
+<td>Singapore lists resilience as a node; IASR Ch3 is a container</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-reuse-of-the-projects-d1-m-codes">7. Reuse of the project's D1 / M codes</h2>
+<p>Legend (private file, not included): D1 approach: B1 iterative alignment, control, CoT monitoring, safeguards; B2 model psychology; B3 better data; B4 goal robustness; C white-box; D safety by construction; E make AI solve it; F theory; G multi-agent first; H evals. M mechanisms: M1 proxy optimisation; M2 underspecification and shift; M3 narrow-to-broad generalisation; M4 instrumental reasoning; M5 adversarial input or data; M6 multi-agent; M7 capability. Also D2 behaviours BH1-10, D5 risk sources R1-R4, D6 lifecycle L0-L5.</p>
+<h3 id="7a-d1-vs-master-areas">7a. D1 vs master areas</h3>
+<table>
+<thead>
+<tr>
+<th>D1</th>
+<th>Master</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>9.1, 9.7, 10.1-10.4, 8.5 (CoT)</td>
+<td>Conflict. B1 mixes training (iterative alignment) with runtime (control, safeguards, CoT monitoring). Master splits train (9) from runtime (10)</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>9.4</td>
+<td>Aligns</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>9.3 (+ 4.4 poisoning defence, 1.6)</td>
+<td>Aligns; poisoning defence is a problem (4.4) in master</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>3.1-3.3, 3.5, 4.1, 4.2</td>
+<td>Conflict. B4 joins specification (3) and generalisation (4). Master keeps them apart (the M1 / M2 split)</td>
+</tr>
+<tr>
+<td>C</td>
+<td>8.1-8.5 (+ 10.2 monitoring concepts, 9.7 steering)</td>
+<td>Aligns; some C leaves are control tools</td>
+</tr>
+<tr>
+<td>D</td>
+<td>11.1, 11.2, 11.5</td>
+<td>Aligns</td>
+</tr>
+<tr>
+<td>E</td>
+<td>9.2</td>
+<td>Aligns</td>
+</tr>
+<tr>
+<td>F</td>
+<td>11.3 (+ 5.2, 5.4 for behaviour theory, corrigibility)</td>
+<td>Partial. Master puts corrigibility topics on the problem side</td>
+</tr>
+<tr>
+<td>G</td>
+<td>6 (+ 3.4 Aligned to who?)</td>
+<td>Aligns</td>
+</tr>
+<tr>
+<td>H</td>
+<td>7</td>
+<td>Aligns; master adds 7.5-7.7 (system risk, infrastructure, validity)</td>
+</tr>
+<tr>
+<td>none</td>
+<td>1, 2, 12</td>
+<td>D1 has no home for misuse, societal harm, governance. Project hint says "outside D1" for these</td>
+</tr>
+<tr>
+<td>none</td>
+<td>10.5, 10.6 (ecosystem tracking, containment)</td>
+<td>Not in D1; Singapore 3.2 only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7b-m-codes-mechanism-vs-master">7b. M codes (mechanism) vs master</h3>
+<table>
+<thead>
+<tr>
+<th>M</th>
+<th>Master</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1</td>
+<td>3.1, 3.3</td>
+<td>Aligns (Goodhart 2018 maps to 3.1)</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>4.1, 3.4</td>
+<td>Aligns; underspecification also feeds 3.4</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>9.4, 4.1</td>
+<td>M3 is a mechanism; master has the methods side (persona)</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>5.1, 5.2</td>
+<td>Aligns (Carlsmith, Omohundro)</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>4.3, 4.4, 1.6</td>
+<td>Aligns</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>6.1</td>
+<td>Aligns</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>1 (dual-use), 7.2</td>
+<td>Capability is a property, so split between harm (1) and eval (7.2)</td>
+</tr>
+<tr>
+<td>none</td>
+<td>2 (societal and content harms)</td>
+<td>M codes cover only AI-system failure mechanisms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7c-other-codes">7c. Other codes</h3>
+<ul>
+<li>D5 R1 = master 1. R2 = 3, 4, 5. R3 = 4.5, 2.4 (mistakes, reliability). R4 = 2.7, 6.1. Master area 2 spans R1/R3/R4 by harm type, so it does not match one R code.</li>
+<li>D2 behaviours: BH1 = 3.1; BH2 = 4.1; BH3 = 9.4/5.3; BH4 = 5.1; BH5 = 7.3/5.1; BH6 = 10.2/8.5; BH7 = 2.4/3.1; BH8 = 5.2; BH9 = 6.1; BH10 = 3.2/4.2. D3: AT1 = 4.4; AT2 = 4.3; AT3 = 1.6; HZ1 = 7.2; HZ2 = 7.2/4.4.</li>
+<li>D6 lifecycle (L0-L5) is not an area. It sits in X, with Ji's cycle and MIT timing.</li>
+<li>Project hints I follow or change: followed Carlsmith, Goodhart, Omohundro hints. Changed: Hendrycks 2023 Goal Drift (hint BH2/M2, mine 5.3), Anwar Safety-Performance (hint B1, mine 9.6).</li>
+</ul>
+<hr />
+<h2 id="appendix-a-node-level-map-proof-that-each-node-maps">Appendix A. Node-level map (proof that each node maps)</h2>
+<p>Format: <code>master code: nodes</code>. Parent group nodes map to their children's area unless listed.</p>
+<p><strong>Omohundro 2008.</strong> 5.2: Goal clarification; Utility function preservation; Resource acquisition; rationality convergence; cognitive enhancement<em>; technological perfection</em>. 5.3: Self-improvement. 5.4: Self-protection; resistance to constraints on self-modification. 3.3: wireheading vulnerability.</p>
+<p><strong>Amodei 2016.</strong> 3: Wrong objective function. 3.1: Avoiding Reward Hacking. 3.2: Avoiding Side Effects. 9.2: Objective too expensive to evaluate frequently; Scalable Supervision. 4: Undesirable behaviour during learning. 4.2: Safe Exploration. 4.1: Distributional Shift.</p>
+<p><strong>DeepMind 2018.</strong> 3: Specification. 3.1: Ideal specification<em>; Design specification</em>; Revealed specification<em>; Specification gaming</em>. 3.2: Avoiding side-effects. 5.5: Preventing dangerous sub-agents. 4: Robustness. 4.3: Adversarial inputs. 4.1: Distributional shift; Cautious generalisation. 4.2: Safe exploration; Recovery. 10: Assurance. 10.2: Monitoring. 10.4: Enforcement.</p>
+<p><strong>Goodhart 2018.</strong> 3.1: Regressional Goodhart; Extremal Goodhart (Model Insufficiency, Change in Regime); Causal Goodhart (Shared Cause Intervention, Intermediary Intervention); Adversarial Goodhart (Adversarial Misalignment, Campbell's Law, Normal Cobra Effect, Non-Causal Cobra Effect). 3.3: Metric Manipulation.</p>
+<p><strong>Hendrycks 2021.</strong> 4: Robustness. 4.5: 2.1 Black Swan and Tail Risk Robustness; 3.2.1 Calibration. 4.3: 2.2 Adversarial Robustness. 10: Monitoring. 10.2: 3.1 Anomaly Detection. 8.3: 3.2 Representative Model Outputs; 3.2.2 Honest and Truthful. 4.4: 3.3 Hidden Model Functionality; 3.3.1 Backdoors. 7.2: 3.3.2 Emergent Hazardous Capabilities. 3: Alignment. 3.1: 4.1 Difficult to Specify; 4.2 Difficult to Optimize; 4.3 Proxies Brittle. 3.2: 4.4 Proxies Lead to Unintended Consequences. 12: Systemic Safety. 12.4: 5.1 ML for Cybersecurity; 5.2 Improved Epistemics and Decision Making.</p>
+<p><strong>Weidinger 2021.</strong> 2.1: Discrimination, Exclusion and Toxicity; Social stereotypes and unfair discrimination; Exclusionary norms; Toxic language; Lower performance for some languages and social groups; Promoting harmful stereotypes by implying gender or ethnic identity. 2.2: Information Hazards; Compromising privacy by leaking; by correctly inferring; Risks from leaking or correctly inferring sensitive information. 2.3: Misinformation Harms; Disseminating false or misleading information; Causing material harm (medicine, law); Leading users to perform unethical or illegal actions. 1: Malicious Uses. 1.3: Making disinformation cheaper; Facilitating fraud, scams and manipulation. 1.1/1.2: Assisting code generation for cyber attacks, weapons. 1.4: Illegitimate surveillance and censorship. 2.4: Human-Computer Interaction Harms; Anthropomorphising; Creating avenues for exploiting user trust. 2.5: Automation, access, and environmental harms (header); Increasing inequality and job quality; Undermining creative economies; Disparate access. 2.6: Environmental harms from operating LMs.</p>
+<p><strong>Carlsmith 2023.</strong> 5.1: Training gamers*; Schemers; Situational awareness. 3.1: Reward-on-the-episode seekers. 4.1: Misgeneralized non-training-gamers. 5.2: Beyond-episode goals; Power-motivated instrumental strategy. X: Model classes; Prerequisites for scheming; Training saints.</p>
+<p><strong>Hendrycks 2023.</strong> 1: Malicious Use. 1.1: Bioterrorism. 1.5: Unleashing AI Agents. 1.3: Persuasive AIs. 2.7: Concentration of Power; AI Race; Military AI Arms Race; Corporate AI Race; Evolutionary Pressures. 12.2: Organizational Risks; Accidents Are Hard to Avoid; Organizational Factors can Reduce the Chances of Catastrophe. 5.5: Rogue AIs. 3.1: Proxy Gaming. 5.3: Goal Drift. 5.2: Power-Seeking. 5.1: Deception.</p>
+<p><strong>Ji 2023.</strong> 5.5: 1.1.1 Risks of Misalignment. 3.1/4.1/7.2: 1.1.2 Causes (reward hacking, goal misgeneralization, dangerous capabilities). RICE: Robustness 4; Interpretability 8; Controllability 10.4; Ethicality 3.4. 9.1: 2 Learning from Feedback; 2.1; 2.2 (also 3.5); 2.3; 2.3.1; 2.3.2 RLHF. 9.2: 2.4; 2.4.1 RLxF; 2.4.2 IDA; 2.4.3 RRM; 2.4.4 Debate; 2.4.7 W2S. 3.5: 2.4.5 CIRL. 4.3: 2.4.6 Circuit Breaking; 3.3.1 Adversarial Training. 4.1: 3; 3.1; 3.2; 3.2.1; 3.2.2; 3.3. 6.3: 3.3.2 Cooperative Training. 7: 4 Assurance. 7.1: 4.1; 4.1.1; 4.1.2. 7.4: 4.1.3 Red Teaming. 7.7: 4.1.4 Safetywashing. 8: 4.2; 4.2.3. 8.1: 4.2.1 Intrinsic; 4.2.2 Post Hoc. 3.4: 4.3 Human Values Verification; 4.3.1; 4.3.2; 5.4; 5.4.1. 12.1: 5 Governance; 5.1; 5.2; 5.3; 5.3.1; 5.3.2 (also 1.6); 5.4.2. X: Alignment Cycle; Forward; Backward; 1.2.3; 6; 6.1; 6.2.</p>
+<p><strong>Anwar 2024.</strong> 8.6: Scientific Understanding (header); ICL Is Black-Box; Effects of Scale; Qualitative Understanding of Reasoning. 7.2: Capabilities Difficult to Estimate. 5.6: Agentic LLMs Pose Novel Risks. 6.1: Multi-Agent Safety Is Not Assured. 9.6: Development and Deployment Methods (header); Pretraining Produces Misaligned Models; Finetuning Methods Struggle; Safety-Performance Trade-offs. 7.7: LLM Evaluations Confounded and Biased. 8.5: Tools for Interpreting Absent or Unfaithful. 4.3: Jailbreaks and Prompt Injections. 4.4: Poisoning and Backdoors. 3.4: Values to Be Encoded Not Clear. 1: Dual-Use Capabilities. 4.5: LLM-Systems Can Be Untrustworthy. 2.5: Socioeconomic Impacts. 12.1: LLM Governance Is Lacking; Sociotechnical Challenges (header).</p>
+<p><strong>MIT 2024.</strong> X: Entity (AI, Human, Other); Intent (Intentional, Unintentional, Other); Timing (Pre-deployment, Post-deployment, Other). 2.1: 1 Discrimination and Toxicity; 1.1; 1.2; 1.3. 2.2: 2 Privacy and Security; 2.1. 4.3/4.4: 2.2. 2.3: 3 Misinformation; 3.1; 3.2. 1: 4 Malicious Actors; 4.1 (1.3/1.4); 4.2 (1.1/1.2); 4.3 (1.3). 2.4: 5 HCI; 5.1; 5.2. 2.5: 6 (header); 6.2; 6.3. 2.7: 6.1; 6.4. 12.1: 6.5. 2.6: 6.6. 5: 7 (header). 5.5: 7.1. 7.2: 7.2. 4.5: 7.3. 8: 7.4. 2.8: 7.5.</p>
+<p><strong>Anthropic 2025.</strong> 7.2: Evaluating capabilities. 7.3: Evaluating alignment. 8.1: Understanding model cognition. 9.4: persona node. 8.5: Chain-of-thought faithfulness. 10: AI control. 10.2: Behavioral monitoring; Activation monitoring; Anomaly detection. 9.2: Scalable oversight; Improving oversight despite systematic errors; Recursive oversight; Weak-to-strong and easy-to-hard. 8.3: Honesty. 4.3: Adversarial robustness; Realistic and differential benchmarks for jailbreaks. 10.3: Adaptive defenses. 9.5: Unlearning. 6.2: Learned governance for multi-agent alignment. X: Miscellaneous.</p>
+<p><strong>GDM 2025.</strong> 1: Misuse. 9.1: Safety post-training. 9.5: Capability suppression. 10.2: Monitoring (both). 10.3: Access restrictions. 10.5: Securing model weights; Security. 12.3: Societal readiness. 7.4: Misuse stress tests; Alignment stress tests. 7.2: Dangerous capability evaluations<em>. 5: Misalignment. 9.2: Amplified oversight. 9.4: Guiding model behavior. 4.1: Robust training. 4.5: Uncertainty; Mistakes. 11.2: Safer design patterns. 8.1: Interpretability. 7.3: Control evaluations. 7.5: Alignment safety cases</em>. 6.1: Structural risks.</p>
+<p><strong>Shallow Review 2025.</strong> 12.5: Labs; OpenAI; Google Deepmind; Anthropic; xAI; Meta; China; Others. Black-box (header, split below). 9.1: Iterative alignment; at post-train-time. 9.6: at pretrain-time. 9.2: Black-box make-AI-solve-it; Make AI solve it; Weak-to-strong generalization; Supervising AIs improving AIs; Debate. 9.4: Inoculation prompting; Model psychology; Model values; Character training; Emergent misalignment; Model specs and constitutions; Model psychopathology. 9.7: In-context learning; Steering; Activation engineering. 9.5: Capability removal: unlearning. 10.1: Control. 10.3: Safeguards. 10.2: Chain of thought monitoring; Monitoring concepts. 9.3: Better data; Data filtering; Hyperstition studies; Synthetic data; Data quality. 4.4: Data poisoning defense. 3.1: Goal robustness; Mild optimisation; RL safety. 3.5: Assistance games. 1.6: Harm reduction for open weights. 12.4: Neglected Approaches. 8: White-box safety; Other interpretability. 8.1: Reverse engineering; Sparse Coding; Causal Abstractions; Heuristic explanations. 8.2: Pragmatic interpretability; Representation structure and geometry; Concept-based interpretability. 8.3: Extracting latent knowledge; Lie and deception detectors. 8.4: Model diffing; Data attribution; Learning dynamics and developmental interpretability. 11.4: Human inductive biases. 11.1: Safety by construction; Guaranteed-Safe AI; Asymptotic guarantees. 11.2: Scientist AI. 11.5: Brainlike-AGI Safety. 8.5: AI explanations of AIs; LLM introspection training. 11.3: Theory; Agent foundations; Tiling agents; High-Actuation Spaces; Ontology Identification; Natural abstractions; The Learning-Theoretic Agenda. 5.4: Corrigibility; Other corrigibility. 5.2: Behavior alignment theory. 6.2: Multi-agent first; Aligning to context; Aligning to the social contract; Aligning what?. 6.3: Theory for aligning multiple AIs. 6.4: Tools for aligning multiple AIs. 3.4: Aligned to who?. 7: Evals. 7.1: AGI metrics. 7.2: Capability evals; Autonomy evals; WMD evals; Self-replication evals. 7.3: Situational awareness and self-awareness evals; Steganography evals; AI deception evals; AI scheming evals; Sandbagging evals; Other evals. 7.4: Various Redteams.</p>
+<p><strong>Singapore 2025.</strong> 7: 1 Risk Assessment. 7.1: 1.1 Audit techniques and benchmarks; 1.5 Metrology. 7.5: 1.2; 1.2.1 Field tests; 1.2.2 Prospective risk analysis; 1.4 System safety assessment. 7.6: 1.3 Secure evaluation infrastructure. 7.2/7.3: 1.6 Dangerous capability and propensity. 5.5/7.3: 1.7 Loss-of-control risk assessment. 3: 2.1 Specification and Validation; 2.1.1 Single-Stakeholder. 3.1: Avoiding reward hacking; Defining clear boundaries; Scalable methods to discover specification loopholes. 3.4: Conflicting and evolving preferences; 2.1.2 Multi-Stakeholder; Balancing competing preferences; Ethical and legal alignment. 7.4: Stress-testing specifications; Adversarial robustness testing; 2.3.4 model organisms. 9: 2.2 Design and implementation. 9.3: 2.2.1 Training data and pretraining. 4: 2.2.2 Robustness. 4.3: Robustness against harmful inputs; 2.3.1 Robustness testing. 1.6: Resistance against harmful tampering; Resistance to harmful distillation. 8.3: 2.2.3 Truthfulness and honesty. 9.5: 2.2.4 Targeted model editing; 2.2.5 Avoiding hazardous capabilities. 11.1: 2.2.6 Guaranteed safety by design; 2.3.2; Quantitative safety. 6.4: Evaluating robustness in multiagent contexts. 8: 2.3.3 Interpretability. 8.1: Mechanistic interpretability; Studying goals in systems. 8.5: Explainability; LLM chain-of-thought faithfulness and legibility. 8.4: Attributing model behaviours to training data. 10: 3 Control. 10.2: 3.1; 3.1.1; User monitoring; System state monitoring. 10.5: Hardware-enabled mechanisms (monitoring); 3.2 AI ecosystem monitoring; Tracing usage patterns; Data provenance; Model provenance; Agent authentication; Compute and hardware tracking; Logging infrastructure. 11.2: Designing modular, easily monitorable systems. 10.4: 3.1.2; Hardware-enabled (intervention); Off-switches; Override protocols. 12.3: Incident and emergency preparedness; 3.3 Societal resilience. 10.1: 3.1.3; Human-centric oversight. 9.2: Scalable oversight. 5.4: Corrigibility and agent foundations research. 10.6: Containment; Non-agentic AI systems as guardrails. 12.1: Assessing risk-management frameworks.</p>
+<p><strong>UK AISI 2025.</strong> 11.4: Information Theory and Cryptography; Computational Complexity Theory; Probabilistic Methods; Cognitive Science. 6.3: Economic Theory and Game Theory (also 11.4). 11.3: Learning Theory. 3.1: Evaluation and Guarantees in RL. 8: Interpretability. 7.1: Benchmark Design and Evaluation. 9.1: Methods for Post-training and Elicitation. 10.2/7.4: Empirical Investigations Into AI Monitoring and Red Teaming.</p>
+<p><strong>IASR 2026.</strong> X: Chapter 1; Chapter 2; Chapter 3. 1: Malicious Use. 1.3: AI-generated content and criminal activity; Influence and manipulation. 1.2: Cyberattacks. 1.1: Biological and chemical risks. 4: Malfunctions. 4.5: Reliability challenges. 5.5: Loss of control. 2: Systemic Risks. 2.5: Labour market impacts. 2.4: Risks to human autonomy.</p>
+<hr />
+<h2 id="appendix-b-the-51-papers-taxonomy-offered-section-5-mapped-to-master">Appendix B. The 51 papers: taxonomy offered (section 5) mapped to master</h2>
+<p>"none" = paper offers no taxonomy. Papers that match a taxonomy file are listed once there.</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Nodes offered</th>
+<th>Master</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Superintelligence:_Paths,_Dangers,_Strategies">Bostrom 2014</a></td>
+<td>orthogonality; instrumental convergence; treacherous turn; capability control; motivation selection; Oracles, Genies, Sovereigns, Tools</td>
+<td>5.2, 5.1, 10.1/10.6, 3.4/3.5, 11.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1606.06565">Amodei 2016</a></td>
+<td>as taxonomy file; reward-hacking sub-sources</td>
+<td>3.1, 3.2, 9.2, 4.1, 4.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1805.01109">Everitt 2018</a></td>
+<td>Value specification; Reliability; Corrigibility; Security; Safe learning; Intelligibility; Societal consequences</td>
+<td>3, 4/11.3, 5.4, 4.3, 4.1/4.2, 8, 12/2</td>
+</tr>
+<tr>
+<td><a href="https://vkrakovna.wordpress.com/2018/04/02/specification-gaming-examples-in-ai/">Krakovna 2018</a></td>
+<td>none (2020 follow-up: reward design, domain assumptions, tampering)</td>
+<td>3.1, 3.3</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1811.07871">Leike 2018</a></td>
+<td>challenges: amount of feedback; feedback distribution; reward hacking; unacceptable outcomes; reward-result gap</td>
+<td>9.1, 4.1, 3.1, 4.2, 3.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1803.04585">Manheim 2018</a></td>
+<td>as taxonomy file (plus Ignored Shared Cause, Ignored Intermediary, Ignored Additional Cause)</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1908.04734">Everitt 2019</a></td>
+<td>RF tampering (wireheading, feedback tampering); RF-input tampering</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1906.01820">Hubinger 2019</a></td>
+<td>outer / inner alignment; robust, pseudo-, deceptive alignment</td>
+<td>3.1, 4.1, 5.1</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Human_Compatible">Russell 2019</a></td>
+<td>three principles</td>
+<td>3.5, 3.4</td>
+</tr>
+<tr>
+<td><a href="https://deepmindsafetyresearch.medium.com/specification-gaming-the-flip-side-of-ai-ingenuity-c85bdb0deeb4">Krakovna 2020</a></td>
+<td>shaping; incomplete specification; learned reward; simulator bugs; tampering</td>
+<td>3.1, 3.3</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2006.04948">Critch 2020</a></td>
+<td>delegation types; Tier 1 risks 1a-1e; Tier 2 risks 2a-2d; research directions 1-29</td>
+<td>6/3.4; 6.1, 5.5, 2.7; 2.7, 2.5, 2.4, 2.3; 8, 4.5, 11.1, 3.5, 5.4, 6.x, 12.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2102.01685">Everitt 2021</a></td>
+<td>value of information; response incentive; value of control; instrumental control incentive</td>
+<td>11.3 (5.2 for control incentive)</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2103.14659">Kenton 2021</a></td>
+<td>misspecification (data, training, shift); deception; manipulation; harmful content; objective gaming</td>
+<td>3, 4.1, 5.1, 2.4, 2.1, 3.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2105.14111">Langosco 2021</a></td>
+<td>capability vs. goal generalisation failure</td>
+<td>4.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2109.13916">Hendrycks 2021</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://www.alignment.org/blog/arcs-first-technical-report-eliciting-latent-knowledge/">Christiano 2021</a></td>
+<td>direct translator; human simulator; strategy families</td>
+<td>8.3</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2112.04359">Weidinger 2021</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2201.03544">Pan 2022</a></td>
+<td>misweighting; ontological; scope</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2206.05862">Hendrycks 2022</a></td>
+<td>Robustness, Monitoring, Alignment, Systemic Safety; 8 hazards (weaponization, enfeeblement, eroded epistemics, proxy misspecification, value lock-in, emergent functionality, deception, power-seeking); strategies</td>
+<td>4, 10.2, 3, 12.4; 1, 2.4, 2.3, 3.1, 3.4, 7.2, 5.1, 5.2; 12.2/12.4</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2207.13243">Rauker 2022</a></td>
+<td>weights; neurons; subnetworks; representations (intrinsic, post hoc, hazard)</td>
+<td>8.1, 8.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2209.00626">Ngo 2022</a></td>
+<td>situationally-aware reward hacking; misaligned internal goals; power-seeking</td>
+<td>3.1/5.1; 4.1; 5.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2209.13085">Skalse 2022</a></td>
+<td>hackable / unhackable reward pairs</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2210.10760">Gao 2022</a></td>
+<td>none (uses Goodhart variants)</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2210.01790">Shah 2022</a></td>
+<td>specification gaming vs. goal misgeneralisation; ideal, design, revealed objective</td>
+<td>3.1, 4.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2302.10329">Chan 2023</a></td>
+<td>underspecification; directness; goal-directedness; long-term planning; delayed harms; collective disempowerment</td>
+<td>5.6; 2.7, 2.4</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2305.15324">Shevlane 2023</a></td>
+<td>dangerous capability evals (9); alignment evals (5)</td>
+<td>7.2, 7.3</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2306.12001">Hendrycks 2023</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2307.15217">Casper 2023</a></td>
+<td>challenges: feedback; reward model; policy; joint training</td>
+<td>9.1, 3.1, 4.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2308.14752">Park 2023</a></td>
+<td>deception examples; risks (malicious use, structural, loss of control); solutions</td>
+<td>5.1; 1.3, 2.3/2.4, 5.5; 12.1, 8.3, 10.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2310.17688">Bengio 2023</a></td>
+<td>oversight and honesty; robustness; interpretability; inclusive AI; emerging challenges; evals; risk assessment; resilience; governance (4)</td>
+<td>9.2/8.3, 4, 8, 3.4, 5.6, 7.2/7.3, 7.5, 12.3, 12.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2310.19852">Ji 2023</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2311.08379">Carlsmith 2023</a></td>
+<td>as taxonomy file (adds Goal-guarding schemers)</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td><a href="https://www.lesswrong.com/posts/zaaGsFBeDTpCsYHef/shallow-review-of-live-agendas-in-alignment-and-safety">Leech 2023</a></td>
+<td>Understand existing models; Control the thing; Make AI solve it; Theory; Labs</td>
+<td>7/8; 9/10/3; 9.2; 11/5; 12.5</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2312.06942">Greenblatt 2023</a></td>
+<td>trusted monitoring; defer to trusted; untrusted monitoring; trusted editing; upfront auditing</td>
+<td>10.1, 10.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2403.10462">Clymer 2024</a></td>
+<td>inability; control; trustworthiness; deference arguments</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2403.13793">Phuong 2024</a></td>
+<td>persuasion and deception; cyber; self-proliferation; self-reasoning</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2404.09932">Anwar 2024</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2404.14082">Bereska 2024</a></td>
+<td>features, circuits, motifs, superposition; observation, intervention, intrinsic</td>
+<td>8.1, 8.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2405.06624">Dalrymple 2024</a></td>
+<td>world model; safety specification; verifier (levels)</td>
+<td>11.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2408.12622">Slattery 2024</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://lilianweng.github.io/posts/2024-11-28-reward-hacking/">Weng 2024</a></td>
+<td>terminology; root causes; manifestations; detection</td>
+<td>3.1, 3.3, 10.2</td>
+</tr>
+<tr>
+<td><a href="https://www.lesswrong.com/posts/fAW6RXLKTLHC3WXkS/shallow-review-of-technical-ai-safety-2024">Leech 2024</a></td>
+<td>Understand existing models; Control the thing; Safety by design; Make AI solve it; Theory; Miscellaneous</td>
+<td>7/8; 9/10/3; 11; 9.2; 11.3/5.4; X</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2501.17805">Bengio 2025 (report)</a></td>
+<td>malicious use (4); malfunctions (reliability, bias, loss of control); systemic (6); open-weight</td>
+<td>1; 4.5, 2.1, 5.5; 2.5, 2.7, 2.6, 2.2, 2.5; 1.6</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2501.16496">Sharkey 2025</a></td>
+<td>methods; applications; socio-technical</td>
+<td>8.1/8.2; 10.2/8.3; 12.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2502.15657">Bengio 2025 (Scientist AI)</a></td>
+<td>dangerous behaviours; misaligned agency from reward maximisation; avoiding agency</td>
+<td>5.1/1.3/7.2/6.1; 3.1, 3.3, 5.2; 11.2</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2502.14143">Hammond 2025</a></td>
+<td>miscoordination; conflict; collusion; 7 risk factors</td>
+<td>6.1</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2504.12501">Lambert 2025</a></td>
+<td>over-optimisation; qualitative degradation; misalignment</td>
+<td>3.1, 2.4</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2504.01849">Shah 2025</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2507.11473">Korbak 2025</a></td>
+<td>why monitorable; what degrades it; research questions</td>
+<td>10.2, 8.5</td>
+</tr>
+<tr>
+<td><a href="https://www.lesswrong.com/posts/Wti4Wr7Cf5ma3FGWa/shallow-review-of-technical-ai-safety-2025-2">Leech 2025</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+<tr>
+<td><a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026">Bengio 2026</a></td>
+<td>as taxonomy file</td>
+<td>see Appendix A</td>
+</tr>
+</tbody>
+</table>
+<p>Paper-level notes
+- Twelve paper taxonomies are the same trees as the taxonomy files (Amodei, Manheim, Hendrycks 2021, Weidinger, Hendrycks 2023, Ji, Carlsmith, Anwar, Slattery, Shah, Leech 2025, Bengio 2026); the paper table confirms the node set.
+- Papers add nodes the files lack: Hubinger (mesa-optimiser classes), Everitt 2019 (tampering), Critch (Tier 1 and 2 risks), Bostrom (control methods). All map into 3-5 or 10-11.
+- Several papers have no taxonomy: Krakovna 2018, Gao 2022. Skalse 2022 is formal relations only.
+- Copyright infringements (Bengio 2025 report) has no good home; placed at 2.5.</p>
+<hr />
+<h2 id="bibliography">Bibliography</h2>
+<ol>
+<li><a id="ref-1"></a>Omohundro, S. (2008/2009). The Basic AI Drives. AGI-08 talk. <a href="https://selfawaresystems.com/2009/02/18/agi-08-talk-the-basic-ai-drives/">https://selfawaresystems.com/2009/02/18/agi-08-talk-the-basic-ai-drives/</a></li>
+<li><a id="ref-2"></a>Amodei, D. et al. (2016). Concrete Problems in AI Safety. arXiv:1606.06565. <a href="https://arxiv.org/abs/1606.06565">https://arxiv.org/abs/1606.06565</a></li>
+<li><a id="ref-3"></a>Ortega, P., Maini, V., DeepMind Safety Team (2018). Building safe artificial intelligence: specification, robustness, and assurance. <a href="https://deepmindsafetyresearch.medium.com/building-safe-artificial-intelligence-52f5f75058f1">https://deepmindsafetyresearch.medium.com/building-safe-artificial-intelligence-52f5f75058f1</a></li>
+<li><a id="ref-4"></a>Manheim, D., Garrabrant, S. (2018). Categorizing Variants of Goodhart's Law. arXiv:1803.04585. <a href="https://arxiv.org/abs/1803.04585">https://arxiv.org/abs/1803.04585</a></li>
+<li><a id="ref-5"></a>Hendrycks, D., Carlini, N., Schulman, J., Steinhardt, J. (2021). Unsolved Problems in ML Safety. arXiv:2109.13916. <a href="https://arxiv.org/abs/2109.13916">https://arxiv.org/abs/2109.13916</a></li>
+<li><a id="ref-6"></a>Weidinger, L. et al. (2021). Ethical and social risks of harm from Language Models. arXiv:2112.04359. <a href="https://arxiv.org/abs/2112.04359">https://arxiv.org/abs/2112.04359</a></li>
+<li><a id="ref-7"></a>Carlsmith, J. (2023). Scheming AIs. arXiv:2311.08379. <a href="https://arxiv.org/abs/2311.08379">https://arxiv.org/abs/2311.08379</a></li>
+<li><a id="ref-8"></a>Hendrycks, D., Mazeika, M., Woodside, T. (2023). An Overview of Catastrophic AI Risks. arXiv:2306.12001. <a href="https://arxiv.org/abs/2306.12001">https://arxiv.org/abs/2306.12001</a></li>
+<li><a id="ref-9"></a>Ji, J. et al. (2023). AI Alignment: A Comprehensive Survey. arXiv:2310.19852. <a href="https://arxiv.org/abs/2310.19852">https://arxiv.org/abs/2310.19852</a></li>
+<li><a id="ref-10"></a>Anwar, U. et al. (2024). Foundational Challenges in Assuring Alignment and Safety of LLMs. arXiv:2404.09932. <a href="https://arxiv.org/abs/2404.09932">https://arxiv.org/abs/2404.09932</a></li>
+<li><a id="ref-11"></a>Slattery, P. et al. (2024). The AI Risk Repository. arXiv:2408.12622. <a href="https://arxiv.org/abs/2408.12622">https://arxiv.org/abs/2408.12622</a></li>
+<li><a id="ref-12"></a>Anthropic Alignment Science (2025). Recommendations for Technical AI Safety Research Directions. <a href="https://alignment.anthropic.com/2025/recommended-directions/">https://alignment.anthropic.com/2025/recommended-directions/</a></li>
+<li><a id="ref-13"></a>Shah, R. et al. (2025). An Approach to Technical AGI Safety and Security. arXiv:2504.01849. <a href="https://arxiv.org/abs/2504.01849">https://arxiv.org/abs/2504.01849</a></li>
+<li><a id="ref-14"></a>Arb Research, Leech, G. et al. (2025). Shallow Review of Technical AI Safety, 2025. <a href="https://shallowreview.ai/">https://shallowreview.ai/</a> ; data: <a href="https://raw.githubusercontent.com/arb-consulting/shallow-review-2025/main/main-pipeline/data/taxonomy.yaml">https://raw.githubusercontent.com/arb-consulting/shallow-review-2025/main/main-pipeline/data/taxonomy.yaml</a></li>
+<li><a id="ref-15"></a>Bengio, Y. et al. (2025). The Singapore Consensus on Global AI Safety Research Priorities. arXiv:2506.20702. <a href="https://arxiv.org/abs/2506.20702">https://arxiv.org/abs/2506.20702</a></li>
+<li><a id="ref-16"></a>UK AI Security Institute (2025). The Alignment Project. <a href="https://alignmentproject.aisi.gov.uk/">https://alignmentproject.aisi.gov.uk/</a></li>
+<li><a id="ref-17"></a>Bengio, Y. et al. (2026). International AI Safety Report 2026. <a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026">https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026</a></li>
+<li><a id="ref-18"></a>Papers in Appendix B: URLs inline; metadata in <code>0110_research_papers__survey_taxonomy/00_INDEX.md</code>.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Robin Ranjit Singh Chauhan, Pathway Intelligence Inc. Mostly AI-generated, not fully human-reviewed.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

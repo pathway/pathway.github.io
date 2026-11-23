@@ -1,0 +1,3612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI safety research notes, catalogs and drafts by Robin Ranjit Singh Chauhan, Pathway Intelligence Inc.">
+      
+      
+        <meta name="author" content="Robin Ranjit Singh Chauhan">
+      
+      
+        <link rel="canonical" href="https://pathway.github.io/research/ai-safety/two-cultures-paper/concept_semantics_expanded/">
+      
+      
+        <link rel="prev" href="../concept_semantics/">
+      
+      
+        <link rel="next" href="../twopager/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Concept semantics, expanded - AI Safety Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semantics-of-core-concepts-across-six-decision-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Safety Research" class="md-header__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Safety Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept semantics, expanded
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../papers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Papers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../map/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../explore/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Explore
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI-use statement
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Safety Research" class="md-nav__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Safety Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ai-risk-taxonomy/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI risk taxonomy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI risk taxonomy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/unified_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/facets/PAPER_facet_taxonomies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facet taxonomies (paper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/taxonomy_crosswalk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy crosswalk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/disagreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disagreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../risk-vocabulary/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk vocabulary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Risk vocabulary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../risk-vocabulary/biblio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../llm-agent-incident-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM-agent incident catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM-agent incident catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incident catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/sources_checked/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources checked
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy_stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/coverage_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/human_check_sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human-check sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../safety-environments-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety environments catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Safety environments catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/by_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index by taxonomy node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-game-theory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game theory and reward hacking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game theory and reward hacking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/tutorial/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/honesty_games/honesty_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Honesty by design (catalogue)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/bibliography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-psych/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reward hacking across psychology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reward hacking across psychology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/prior_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../goodhart-plane/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Goodhart plane
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/goodhart_plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/coverage_layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/huggingface_incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case study: Hugging Face incident
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/prior_planes_and_catalogues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior planes and catalogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../papers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../rebuttal-agent-safety-rl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebuttal: agent safety and RL
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rebuttal: agent safety and RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/draft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/onepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two cultures paper
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Two cultures paper
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assumptions_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../related_two_cultures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Related work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept_semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics, expanded
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics, expanded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-three-axes-one-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Three axes, one path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-formal-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Formal objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-objective-reward-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Objective, reward, value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-learning-exploration-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Learning, exploration, search
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-world-and-parties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. World and parties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-safety-and-oversight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Safety and oversight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-reading-the-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Reading the gradient
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-provenance-of-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Provenance of citations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../twopager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../census/census_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../census/census_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cotrained-graders-confessions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-trained graders
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Co-trained graders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cotrained-graders-confessions/paper/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report (short draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-use statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-three-axes-one-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Three axes, one path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-formal-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Formal objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-objective-reward-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Objective, reward, value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-learning-exploration-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Learning, exploration, search
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-world-and-parties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. World and parties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-safety-and-oversight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Safety and oversight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-reading-the-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Reading the gradient
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-provenance-of-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Provenance of citations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="semantics-of-core-concepts-across-six-decision-settings">Semantics of core concepts across six decision settings</h1>
+<div class="admonition warning">
+<p class="admonition-title">Status: STARTED</p>
+<p>Draft. Not fully human-reviewed. See <a href="../../ai-use/">the AI-use statement</a>.</p>
+</div>
+<p>Date: 2026-11-21. Expands <code>concept_semantics.md</code>. Companion to <code>assumptions_table.md</code>.</p>
+<p>Purpose. Split "LLM" by how the decision problem is posed, not by model size. The posing decides which RL concepts keep their meaning.</p>
+<h2 id="0-three-axes-one-path">0. Three axes, one path</h2>
+<p>The columns differ on three independent axes. The table follows one path through them; other paths exist (e.g. a PRM over tool calls, <a href="#ref-43">[43]</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action granularity</td>
+<td>whole completion · reasoning step · tool call</td>
+</tr>
+<tr>
+<td>Reward source</td>
+<td>environment · human rater · learned reward model · programmatic verifier · none at run time</td>
+</tr>
+<tr>
+<td>World coupling</td>
+<td>none (text only) · side effects visible to a human each step · side effects invisible until the run ends</td>
+</tr>
+</tbody>
+</table>
+<h2 id="columns">Columns</h2>
+<table>
+<thead>
+<tr>
+<th>Col</th>
+<th>Setting</th>
+<th>Posed as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RL</td>
+<td>Classical RL agent.</td>
+<td>MDP or POMDP (S, A, P, R, γ) [<a href="#ref-1">1</a>, <a href="#ref-2">2</a>].</td>
+</tr>
+<tr>
+<td>CHAT-O</td>
+<td>Chatbot, no tools, outcome supervision by a learned reward model. The whole completion is one action.</td>
+<td>Contextual bandit with a proxy reward [11–15, 17, 71, 72].</td>
+</tr>
+<tr>
+<td>CHAT-V</td>
+<td>Chatbot, no tools, verifiable outcome reward (RLVR). The whole trace plus answer is one action; the reasoning trace is not supervised.</td>
+<td>Contextual bandit with ground-truth reward on the answer [<a href="#ref-18">18</a>, <a href="#ref-22">22</a>, <a href="#ref-23">23</a>].</td>
+</tr>
+<tr>
+<td>CHAT-P</td>
+<td>Chatbot, no tools, process supervision. Each reasoning step is one action, scored by a process reward model (PRM).</td>
+<td>Finite-horizon deterministic tree MDP, dense step reward [25–28].</td>
+</tr>
+<tr>
+<td>AGENT-A</td>
+<td>Tool-using assistant. One tool call or reply per turn; a human sees the result before the next turn.</td>
+<td>Episodic POMDP with a human turn between steps [<a href="#ref-35">35</a>, <a href="#ref-36">36</a>, <a href="#ref-45">45</a>].</td>
+</tr>
+<tr>
+<td>AGENT-X</td>
+<td>Autonomous agent. Loop of tool calls until the model declares done; no human between steps; memory; sub-agents.</td>
+<td>Long-horizon POMDP; unknown, non-stationary, partly adversarial dynamics; no reset [<a href="#ref-37">37</a>, <a href="#ref-44">44</a>, <a href="#ref-46">46</a>].</td>
+</tr>
+</tbody>
+</table>
+<p>AGENT-A and AGENT-X are the two variants of "chatbot-agent with tools". Cells name what changes from the previous column.</p>
+<h2 id="1-formal-objects">1. Formal objects</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>RL</th>
+<th>CHAT-O</th>
+<th>CHAT-V</th>
+<th>CHAT-P</th>
+<th>AGENT-A</th>
+<th>AGENT-X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The agent</td>
+<td>Policy π <a href="#ref-1">[1]</a>.</td>
+<td>The model.</td>
+<td>The model; the trace is part of its output, not a separate module <a href="#ref-23">[23]</a>.</td>
+<td>Model + step delimiter; PRM joins at inference for search [<a href="#ref-26">26</a>, <a href="#ref-29">29</a>].</td>
+<td>Model + scaffold + tool set + system prompt <a href="#ref-35">[35]</a>.</td>
+<td>Same + memory store + sub-agents [<a href="#ref-41">41</a>, <a href="#ref-47">47</a>].</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>a_t from a fixed small set <a href="#ref-1">[1]</a>.</td>
+<td>The whole completion y. PPO treats tokens as actions, but reward is terminal and RLOO/ReMax/GRPO show the bandit view suffices [16–18, 68, 70].</td>
+<td>Trace + answer as one sample; group-relative advantage, no critic [<a href="#ref-18">18</a>, <a href="#ref-23">23</a>].</td>
+<td>One reasoning step; tens per episode; no side effect <a href="#ref-26">[26]</a>.</td>
+<td>One tool call or one reply; side effect possible; user sees it <a href="#ref-35">[35]</a>.</td>
+<td>One call in a chain of hundreds; side effects accumulate unseen [<a href="#ref-44">44</a>, <a href="#ref-96">96</a>].</td>
+</tr>
+<tr>
+<td>State</td>
+<td>Markov s_t in a designer representation <a href="#ref-1">[1]</a>.</td>
+<td>The prompt x; fixed for the episode.</td>
+<td>Same.</td>
+<td>Prompt + steps so far; fully observed; but the distribution of states is induced by the policy itself, so errors compound <a href="#ref-32">[32]</a>.</td>
+<td>Context + tool results + hidden world state + user intent <a href="#ref-95">[95]</a>.</td>
+<td>Same + world changed by own earlier calls and by others + memory contents <a href="#ref-41">[41]</a>.</td>
+</tr>
+<tr>
+<td>Observation</td>
+<td>Sensor of s_t; data only.</td>
+<td>The prompt; data and instruction in one stream <a href="#ref-38">[38]</a>.</td>
+<td>Same.</td>
+<td>Own previous steps; self-generated.</td>
+<td>Tool output and user turn, mixed with instructions; models cannot reliably separate the two [<a href="#ref-37">37</a>, <a href="#ref-38">38</a>].</td>
+<td>Tool outputs from untrusted sources; no user turn to filter them [<a href="#ref-37">37</a>, <a href="#ref-40">40</a>].</td>
+</tr>
+<tr>
+<td>Transition</td>
+<td>P(s'|s,a): stochastic, often unknown <a href="#ref-1">[1]</a>.</td>
+<td>None; one step.</td>
+<td>None.</td>
+<td>Deterministic append; the agent is the dynamics.</td>
+<td>The tool executes; stochastic, external.</td>
+<td>Same, plus the world moves between calls.</td>
+</tr>
+<tr>
+<td>Markov property</td>
+<td>Assumed by construction.</td>
+<td>Trivial.</td>
+<td>Trivial.</td>
+<td>Holds: the prefix is the state.</td>
+<td>Fails: hidden world state <a href="#ref-2">[2]</a>.</td>
+<td>Fails harder: own past side effects are hidden.</td>
+</tr>
+<tr>
+<td>Belief state</td>
+<td>b_t over s_t, updated by Bayes filter <a href="#ref-2">[2]</a>.</td>
+<td>n/a.</td>
+<td>n/a.</td>
+<td>n/a.</td>
+<td>The context is the belief summary; the user holds the rest.</td>
+<td>The context is a bounded, lossy belief; context limits and compaction are belief truncation, which creates pseudo-episodes inside one task.</td>
+</tr>
+<tr>
+<td>Horizon</td>
+<td>Designer-chosen.</td>
+<td>1.</td>
+<td>1 (trace length is inside the action).</td>
+<td>Steps to final answer, ~10–100 <a href="#ref-26">[26]</a>.</td>
+<td>1 turn, then human <a href="#ref-95">[95]</a>.</td>
+<td>Hundreds of calls; hours [<a href="#ref-42">42</a>, <a href="#ref-44">44</a>, <a href="#ref-94">94</a>].</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>Yes; reset-free RL is a niche <a href="#ref-8">[8]</a>.</td>
+<td>Trivial.</td>
+<td>Trivial.</td>
+<td>Yes: resample or branch any prefix <a href="#ref-31">[31]</a>.</td>
+<td>Conversation restarts; side effects remain.</td>
+<td>No; the irreversibility literature was written for this case but tested on grid worlds <a href="#ref-9">[9]</a>.</td>
+</tr>
+<tr>
+<td>Time step</td>
+<td>Clock tick.</td>
+<td>The whole response.</td>
+<td>The whole response.</td>
+<td>One step.</td>
+<td>One turn.</td>
+<td>One call; seconds to minutes each.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-objective-reward-value">2. Objective, reward, value</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>RL</th>
+<th>CHAT-O</th>
+<th>CHAT-V</th>
+<th>CHAT-P</th>
+<th>AGENT-A</th>
+<th>AGENT-X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reward source</td>
+<td>The environment, as written by the designer [<a href="#ref-1">1</a>, <a href="#ref-77">77</a>].</td>
+<td>Reward model fit to human pairwise preferences [<a href="#ref-11">11</a>, <a href="#ref-13">13</a>, <a href="#ref-14">14</a>].</td>
+<td>Programmatic check of the final answer: test cases, exact match [<a href="#ref-22">22</a>, <a href="#ref-23">23</a>].</td>
+<td>PRM fit to per-step human labels <a href="#ref-26">[26]</a> or Monte-Carlo rollouts <a href="#ref-27">[27]</a>.</td>
+<td>Deployment: none. Training: trajectory success test in a sandbox <a href="#ref-43">[43]</a>.</td>
+<td>Same; tests sparser and more gameable <a href="#ref-24">[24]</a>.</td>
+</tr>
+<tr>
+<td>Reward timing</td>
+<td>Every step.</td>
+<td>Terminal, plus a per-token KL penalty to the reference policy [<a href="#ref-12">12</a>, <a href="#ref-13">13</a>].</td>
+<td>Terminal, plus KL (or none in GRPO variants) [<a href="#ref-18">18</a>, <a href="#ref-23">23</a>].</td>
+<td>Every step: dense.</td>
+<td>None at run time.</td>
+<td>None at run time; terminal in training.</td>
+</tr>
+<tr>
+<td>The KL term</td>
+<td>A trust region on the policy (TRPO/PPO) [<a href="#ref-68">68</a>, <a href="#ref-69">69</a>].</td>
+<td>A constraint that keeps the policy near the pretrained prior [<a href="#ref-12">12</a>, <a href="#ref-15">15</a>, <a href="#ref-75">75</a>]; cast as a CMDP with the KL coefficient as Lagrange multiplier <a href="#ref-73">[73]</a>, as a KL budget <a href="#ref-19">[19]</a>, or as Bayesian inference <a href="#ref-74">[74]</a>.</td>
+<td>Same.</td>
+<td>Same.</td>
+<td>Same in training; absent at deployment.</td>
+<td>Absent.</td>
+</tr>
+<tr>
+<td>Who writes it</td>
+<td>One designer, in advance <a href="#ref-4">[4]</a>.</td>
+<td>Raters' preferences, compressed into a model <a href="#ref-11">[11]</a>.</td>
+<td>Dataset author with ground truth.</td>
+<td>Raters labelling steps, or an automatic checker [<a href="#ref-26">26</a>, <a href="#ref-27">27</a>].</td>
+<td>Benchmark author (training) <a href="#ref-42">[42]</a>; user acceptance (deployment).</td>
+<td>Same.</td>
+</tr>
+<tr>
+<td>Return / value</td>
+<td>V, Q: the central object <a href="#ref-1">[1]</a>.</td>
+<td>Q(x,y) = r. Degenerate; critics are dropped [<a href="#ref-17">17</a>, <a href="#ref-18">18</a>, <a href="#ref-70">70</a>].</td>
+<td>Degenerate.</td>
+<td>Q(prefix) = PRM score; drives best-of-n, beam, MCTS [<a href="#ref-29">29</a>, <a href="#ref-31">31</a>].</td>
+<td>None.</td>
+<td>None; some systems add value heads.</td>
+</tr>
+<tr>
+<td>Credit assignment</td>
+<td>Temporal, by bootstrapping <a href="#ref-1">[1]</a>.</td>
+<td>None across time: one reward, one action. PPO spreads it over tokens by advantage; DPO learns an implicit token-level Q <a href="#ref-16">[16]</a>.</td>
+<td>Same; the trace gets credit only via the answer.</td>
+<td>Explicit per step <a href="#ref-25">[25]</a>.</td>
+<td>Per turn, via user reaction.</td>
+<td>Which of 200 calls caused the failure? Terminal signal only <a href="#ref-43">[43]</a>.</td>
+</tr>
+<tr>
+<td>Discount</td>
+<td>γ &lt; 1 typical.</td>
+<td>n/a.</td>
+<td>n/a.</td>
+<td>γ = 1 typical.</td>
+<td>None.</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Reward identifiability</td>
+<td>R identified only up to potential shaping; IRL is ill-posed [<a href="#ref-52">52</a>, <a href="#ref-53">53</a>, <a href="#ref-76">76</a>].</td>
+<td>Bradley–Terry identifies within-prompt differences only; the RM is a classifier, not a utility [<a href="#ref-11">11</a>, <a href="#ref-15">15</a>].</td>
+<td>Fully identified on the checked set; undefined off it, and verifiers have false positives <a href="#ref-93">[93]</a>.</td>
+<td>Step labels define "progress"; the label is "convincing", not "correct" <a href="#ref-26">[26]</a>.</td>
+<td>None: no reward exists to identify.</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Proxy gap: what gets hacked</td>
+<td>R itself, when misspecified [<a href="#ref-4">4</a>, <a href="#ref-5">5</a>, <a href="#ref-51">51</a>], or the reward channel is tampered with <a href="#ref-78">[78]</a>.</td>
+<td>The RM: length, sycophancy, confident tone [19–21, 79].</td>
+<td>The verifier's incompleteness: special-casing tests, bypassing checks; and the trace, if it is trained on, stops showing it <a href="#ref-24">[24]</a>.</td>
+<td>The PRM: plausible-looking steps, verbosity; R1 and others abandoned PRMs for this reason [<a href="#ref-23">23</a>, <a href="#ref-28">28</a>, <a href="#ref-91">91</a>, <a href="#ref-92">92</a>].</td>
+<td>The user: claims of success <a href="#ref-44">[44]</a>.</td>
+<td>The success test and the user: editing tests, fabricated completion [<a href="#ref-24">24</a>, <a href="#ref-44">44</a>]; hacking in production RL generalises to broader misalignment <a href="#ref-80">[80]</a>.</td>
+</tr>
+<tr>
+<td>Goal-directedness</td>
+<td>By construction <a href="#ref-1">[1]</a>.</td>
+<td>None; one shot.</td>
+<td>Within one trace, toward an answer.</td>
+<td>Simulated across steps toward an answer.</td>
+<td>Role-played from the instruction, one turn at a time.</td>
+<td>Role-played across a long loop; new context can replace it <a href="#ref-37">[37]</a>.</td>
+</tr>
+<tr>
+<td>Instrumental behaviour</td>
+<td>Optimal policies tend to seek power in most MDPs, by theorem [<a href="#ref-54">54</a>, <a href="#ref-117">117</a>].</td>
+<td>None; one shot.</td>
+<td>Within-trace strategies only.</td>
+<td>None.</td>
+<td>Bounded by the veto.</td>
+<td>Observed in evaluations: in-context scheming <a href="#ref-55">[55]</a>, blackmail and leaking under goal conflict <a href="#ref-56">[56]</a>, escalation from gaming to tampering <a href="#ref-57">[57]</a>. Role-played <a href="#ref-116">[116]</a>, from a prior that pretraining text shapes [<a href="#ref-120">120</a>, <a href="#ref-121">121</a>], but with real tools. Whether RL training raises the rate is contested [<a href="#ref-118">118</a>, <a href="#ref-119">119</a>].</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-learning-exploration-search">3. Learning, exploration, search</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>RL</th>
+<th>CHAT-O</th>
+<th>CHAT-V</th>
+<th>CHAT-P</th>
+<th>AGENT-A</th>
+<th>AGENT-X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training loop</td>
+<td>Online: act and learn in one loop [<a href="#ref-1">1</a>, <a href="#ref-68">68</a>].</td>
+<td>Sample completions, score with RM, PPO/DPO/RLOO [<a href="#ref-14">14</a>, <a href="#ref-15">15</a>, <a href="#ref-17">17</a>].</td>
+<td>Sample traces, verify answers, GRPO [<a href="#ref-18">18</a>, <a href="#ref-23">23</a>]; rejection-sampling precursor <a href="#ref-124">[124]</a>.</td>
+<td>Sample steps, score with PRM, RL or search distillation [<a href="#ref-25">25</a>, <a href="#ref-26">26</a>].</td>
+<td>Agentic RL in sandboxed task suites, then freeze [<a href="#ref-43">43</a>, <a href="#ref-89">89</a>].</td>
+<td>Same; environments harder to build and to make safe.</td>
+</tr>
+<tr>
+<td>Sim-to-real</td>
+<td>Simulator vs robot [<a href="#ref-10">10</a>, <a href="#ref-86">86</a>].</td>
+<td>None: training prompts and deployment prompts are the same kind of object.</td>
+<td>Same.</td>
+<td>Same.</td>
+<td>Training sandbox vs deployment world: resets, clean tests and benign content exist only in the former <a href="#ref-43">[43]</a>.</td>
+<td>Same, wider.</td>
+</tr>
+<tr>
+<td>Exploration</td>
+<td>Designed <a href="#ref-83">[83]</a>; safe exploration is a field [<a href="#ref-6">6</a>, <a href="#ref-84">84</a>].</td>
+<td>n completions at temperature; RLHF narrows the sampled set <a href="#ref-82">[82]</a>.</td>
+<td>Same; coverage grows with n <a href="#ref-30">[30]</a>.</td>
+<td>Tree search over steps <a href="#ref-31">[31]</a>.</td>
+<td>None designed.</td>
+<td>None designed; happens in the real world.</td>
+</tr>
+<tr>
+<td>Search at inference</td>
+<td>Planning if a model is known.</td>
+<td>Best-of-n with RM <a href="#ref-19">[19]</a>.</td>
+<td>Best-of-n with verifier where available [<a href="#ref-30">30</a>, <a href="#ref-81">81</a>].</td>
+<td>Beam or MCTS with PRM; test-time compute scaling <a href="#ref-29">[29]</a>.</td>
+<td>Rarely.</td>
+<td>Retry, reflect, self-verify <a href="#ref-87">[87]</a>. No simulator; tree search needs a revertible state <a href="#ref-88">[88]</a>; every probe is a real action.</td>
+</tr>
+<tr>
+<td>Planning / world model</td>
+<td>Model-based: Dyna, MuZero <a href="#ref-58">[58]</a>.</td>
+<td>None.</td>
+<td>The trace is planning unrolled in words; no separate model.</td>
+<td>PRM + tree = planning with a learned value, the AlphaZero shape [<a href="#ref-59">59</a>, <a href="#ref-90">90</a>]; the LLM can serve as its own world model where transitions are text-predictable <a href="#ref-60">[60]</a>.</td>
+<td>None; the human plans.</td>
+<td>The ReAct loop is model-free <a href="#ref-35">[35]</a>; self-simulation fails where the world is not text-predictable.</td>
+</tr>
+<tr>
+<td>On- vs off-policy</td>
+<td>Both; offline RL is the counterpart of SFT on logs [<a href="#ref-1">1</a>, <a href="#ref-85">85</a>].</td>
+<td>PPO on-policy; DPO offline [<a href="#ref-14">14</a>, <a href="#ref-15">15</a>].</td>
+<td>On-policy [<a href="#ref-18">18</a>, <a href="#ref-23">23</a>].</td>
+<td>Both.</td>
+<td>SFT on logged trajectories (offline imitation) + on-policy RL in sandbox <a href="#ref-43">[43]</a>.</td>
+<td>Same.</td>
+</tr>
+<tr>
+<td>Learning at deployment</td>
+<td>Yes.</td>
+<td>No.</td>
+<td>No.</td>
+<td>No.</td>
+<td>In-context only.</td>
+<td>In-context + memory files written by the loop <a href="#ref-41">[41]</a>.</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>The state.</td>
+<td>Context.</td>
+<td>Context.</td>
+<td>Context.</td>
+<td>Context across turns.</td>
+<td>Context + external stores; writable by injected content <a href="#ref-41">[41]</a>.</td>
+</tr>
+<tr>
+<td>Source of competence</td>
+<td>Trial and error.</td>
+<td>Pretraining + preference tuning <a href="#ref-14">[14]</a>.</td>
+<td>Pretraining + RLVR; reasoning length grows under training <a href="#ref-23">[23]</a>.</td>
+<td>Same + step-level tuning.</td>
+<td>Base model; scaffold adds tools, not competence <a href="#ref-36">[36]</a>.</td>
+<td>Same.</td>
+</tr>
+<tr>
+<td>What RL adds to the base model</td>
+<td>Everything.</td>
+<td>Style, helpfulness, refusal; a thin steering layer <a href="#ref-14">[14]</a>.</td>
+<td>Sharpens sampling toward solutions the base model could already reach <a href="#ref-61">[61]</a>; near-random rewards can help <a href="#ref-62">[62]</a>, so "reward" is a weaker signal than the bandit frame suggests.</td>
+<td>Step reliability.</td>
+<td>Tool-call formatting; persistence <a href="#ref-43">[43]</a>.</td>
+<td>Same.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-world-and-parties">4. World and parties</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>RL</th>
+<th>CHAT-O</th>
+<th>CHAT-V</th>
+<th>CHAT-P</th>
+<th>AGENT-A</th>
+<th>AGENT-X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Side effects</td>
+<td>In the environment; penalised by reachability or attainable utility [<a href="#ref-97">97</a>, <a href="#ref-98">98</a>].</td>
+<td>None; text only.</td>
+<td>None.</td>
+<td>None.</td>
+<td>One per turn, visible.</td>
+<td>Many, invisible until the end [<a href="#ref-44">44</a>, <a href="#ref-46">46</a>].</td>
+</tr>
+<tr>
+<td>Reversibility</td>
+<td>Environment-specific [<a href="#ref-9">9</a>, <a href="#ref-99">99</a>].</td>
+<td>n/a.</td>
+<td>n/a.</td>
+<td>Total: resample.</td>
+<td>Depends on tool; user can veto the next.</td>
+<td>Many irreversible; no veto point <a href="#ref-46">[46]</a>.</td>
+</tr>
+<tr>
+<td>Adversary</td>
+<td>Nature; or a trained disturbance policy <a href="#ref-100">[100]</a>.</td>
+<td>Prompt author (jailbreak) [<a href="#ref-105">105</a>, <a href="#ref-106">106</a>].</td>
+<td>Same.</td>
+<td>Same, plus a flawed PRM.</td>
+<td>Content in tool output (injection) [<a href="#ref-37">37</a>, <a href="#ref-40">40</a>, <a href="#ref-107">107</a>].</td>
+<td>Same, with no human to catch it; memory poisoning persists across runs <a href="#ref-41">[41]</a>.</td>
+</tr>
+<tr>
+<td>Other agents</td>
+<td>Designed multi-agent game <a href="#ref-101">[101]</a>.</td>
+<td>None.</td>
+<td>None.</td>
+<td>Self as verifier.</td>
+<td>None.</td>
+<td>Sub-agents, copies, other vendors' agents <a href="#ref-47">[47]</a>; multi-agent failures have their own taxonomy <a href="#ref-108">[108]</a>.</td>
+</tr>
+<tr>
+<td>Principal</td>
+<td>One designer; CIRL relaxes this to a human whose reward is unknown <a href="#ref-103">[103]</a>.</td>
+<td>Vendor + user; conflicts resolved by an instruction hierarchy [<a href="#ref-39">39</a>, <a href="#ref-50">50</a>].</td>
+<td>Vendor + dataset author.</td>
+<td>Vendor.</td>
+<td>Vendor, deployer, user <a href="#ref-39">[39]</a>.</td>
+<td>Same + third parties via content <a href="#ref-37">[37]</a>.</td>
+</tr>
+<tr>
+<td>Specification</td>
+<td>R and C, written once [<a href="#ref-3">3</a>, <a href="#ref-4">4</a>].</td>
+<td>RM + refusal policy <a href="#ref-109">[109]</a> + model spec <a href="#ref-50">[50]</a>.</td>
+<td>Verifier + model spec.</td>
+<td>PRM step rubric <a href="#ref-26">[26]</a>.</td>
+<td>System prompt + tool permissions + user instruction.</td>
+<td>Same; approval gates often off (debunking §7).</td>
+</tr>
+<tr>
+<td>Contract view</td>
+<td>A complete contract: R covers every state <a href="#ref-63">[63]</a>.</td>
+<td>Incomplete; the pretrained prior fills the gaps <a href="#ref-63">[63]</a>.</td>
+<td>Incomplete off the checked set.</td>
+<td>Incomplete; filled by the PRM's notion of progress.</td>
+<td>Three incomplete contracts stacked: vendor, deployer, user [<a href="#ref-39">39</a>, <a href="#ref-63">63</a>].</td>
+<td>Same, with no party present to renegotiate.</td>
+</tr>
+<tr>
+<td>Autonomy level</td>
+<td>Full, after training.</td>
+<td>Reactive; no autonomy.</td>
+<td>Reactive.</td>
+<td>Reactive.</td>
+<td>Human-in-the-loop: operator approves each action [<a href="#ref-45">45</a>, <a href="#ref-64">64</a>, <a href="#ref-115">115</a>].</td>
+<td>Human-out-of-the-loop; the level several authors argue should not be built [<a href="#ref-64">64</a>, <a href="#ref-65">65</a>].</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-safety-and-oversight">5. Safety and oversight</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>RL</th>
+<th>CHAT-O</th>
+<th>CHAT-V</th>
+<th>CHAT-P</th>
+<th>AGENT-A</th>
+<th>AGENT-X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safety constraint</td>
+<td>CMDP cost budget [<a href="#ref-3">3</a>, <a href="#ref-84">84</a>]; shield over a known unsafe set <a href="#ref-7">[7]</a>.</td>
+<td>Refusal training <a href="#ref-109">[109]</a>; output filter <a href="#ref-110">[110]</a>; KL to prior <a href="#ref-12">[12]</a>.</td>
+<td>Same, plus safety reasoning trained into the trace <a href="#ref-111">[111]</a>.</td>
+<td>Step-level filter on reasoning.</td>
+<td>Tool allow/deny lists; approval per call <a href="#ref-45">[45]</a>.</td>
+<td>Sandbox, budgets, kill switch; gates that users disable <a href="#ref-45">[45]</a>.</td>
+</tr>
+<tr>
+<td>Defence layer</td>
+<td>In the environment or the policy.</td>
+<td>In the weights (training).</td>
+<td>In the weights.</td>
+<td>In the weights and the PRM.</td>
+<td>Two layers: weights, and the tool layer (permissions, capability flow control) <a href="#ref-66">[66]</a>.</td>
+<td>Same; the tool layer is where a deployer can still write a rule <a href="#ref-122">[122]</a> (<code>../llm-agent-incident-catalog/coverage/coverage_report.md</code>).</td>
+</tr>
+<tr>
+<td>Failure</td>
+<td>Low return; constraint violation.</td>
+<td>Bad text <a href="#ref-79">[79]</a>.</td>
+<td>Right-looking answer that games the checker <a href="#ref-24">[24]</a>.</td>
+<td>Wrong answer with plausible steps <a href="#ref-28">[28]</a>.</td>
+<td>One bad side effect, caught after one step.</td>
+<td>Cascade of side effects <a href="#ref-46">[46]</a>.</td>
+</tr>
+<tr>
+<td>Oversight channel</td>
+<td>None at run time; an off-switch is respected only under uncertainty about the objective <a href="#ref-104">[104]</a>.</td>
+<td>The output.</td>
+<td>The trace: readable, and monitorable until optimization pressure is put on it <a href="#ref-24">[24]</a>.</td>
+<td>The steps; readable but possibly unfaithful [<a href="#ref-33">33</a>, <a href="#ref-34">34</a>].</td>
+<td>Tool-call log + user per turn.</td>
+<td>Traces + logs, read afterwards; the agent knows it is being watched [<a href="#ref-48">48</a>, <a href="#ref-49">49</a>]; control protocols assume it may subvert the monitor <a href="#ref-113">[113]</a>.</td>
+</tr>
+<tr>
+<td>Monitorability</td>
+<td>n/a.</td>
+<td>Output only.</td>
+<td>Trace is monitorable while not optimised against [<a href="#ref-24">24</a>, <a href="#ref-67">67</a>], and even then it omits much <a href="#ref-112">[112]</a>.</td>
+<td>Steps, possibly unfaithful [<a href="#ref-33">33</a>, <a href="#ref-34">34</a>].</td>
+<td>Log + human.</td>
+<td>Trace + log; monitorability is a property of training, not of the agent <a href="#ref-67">[67]</a>.</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Return on held-out seeds; safety needs a hidden metric separate from reward <a href="#ref-102">[102]</a>.</td>
+<td>Win rate vs RM or humans <a href="#ref-14">[14]</a>.</td>
+<td>Pass rate on held-out verifiable sets <a href="#ref-22">[22]</a>.</td>
+<td>Step accuracy + final accuracy <a href="#ref-26">[26]</a>.</td>
+<td>Task success + attack success rate [<a href="#ref-40">40</a>, <a href="#ref-96">96</a>].</td>
+<td>Benchmark pass rate [<a href="#ref-42">42</a>, <a href="#ref-114">114</a>]; incident records; evaluations that reward cost-blind success <a href="#ref-44">[44]</a>.</td>
+</tr>
+<tr>
+<td>Meaning of "safe"</td>
+<td>Expected cost under budget <a href="#ref-3">[3]</a>.</td>
+<td>No harmful text.</td>
+<td>Correct answer by legitimate means.</td>
+<td>No harmful step and right answer.</td>
+<td>No unapproved harmful call.</td>
+<td>No harmful side effect over the whole run.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-reading-the-gradient">6. Reading the gradient</h2>
+<ul>
+<li>CHAT-O and CHAT-V are bandits. Reward, return, credit assignment and exploration are degenerate; the field responded by dropping the critic [<a href="#ref-17">17</a>, <a href="#ref-18">18</a>]. The one classical-RL object that survives is the KL trust region. This reading is established, not new: Moskovitz et al. cast RLHF as a CMDP with the KL coefficient as a Lagrange multiplier <a href="#ref-73">[73]</a>, Gao et al. speak of a KL budget <a href="#ref-19">[19]</a>, Ziegler et al. already tuned the coefficient to a KL target <a href="#ref-12">[12]</a>, and the practice goes back to KL-control of sequence models <a href="#ref-75">[75]</a>. Korbak et al. give the competing Bayesian reading <a href="#ref-74">[74]</a>.</li>
+<li>CHAT-V moved the proxy gap from the reward model to the verifier's coverage. Its unsupervised trace is a new oversight channel that training pressure destroys <a href="#ref-24">[24]</a>. This is a CHAT-level result that the agent columns inherit unchanged.</li>
+<li>CHAT-P is the column closest to classical RL: dense reward, Markov state, known deterministic dynamics, free resets, searchable tree. It has no side effects, so it is also the safest place to apply RL machinery. It is also the column the frontier retreated from because its reward got hacked [<a href="#ref-23">23</a>, <a href="#ref-28">28</a>]. "RL for LLMs" literally holds here, and it did not hold up. The retreat is documented by R1 and by PRM papers [<a href="#ref-23">23</a>, <a href="#ref-28">28</a>, <a href="#ref-91">91</a>, <a href="#ref-92">92</a>]; the ranking of settings by closeness to RL was not found elsewhere.</li>
+<li>AGENT-A reintroduces the world but keeps a human between every step. The human is the reward signal, the reset, and the safety gate at once. Approval fatigue removes all three (debunking §7).</li>
+<li>AGENT-X removes the human. It is the furthest column from classical RL on every row of §1–§3, yet it is where RL vocabulary (reward hacking, unsafe exploration, specification) is most used. The words transfer; the objects do not. Sim-to-real reappears as sandbox-to-deployment <a href="#ref-43">[43]</a>.</li>
+<li>McLean's three classes land in different columns: reward misspecification is a CHAT-O/CHAT-V/CHAT-P problem (the RM, verifier, or PRM); unsafe action in an irreversible state is AGENT-X; insufficient observation is AGENT-A/X. No column has all three. No prior mapping of the classes to settings was found (literature search, 2026-11-21). Caveat: the class names here follow the debunking draft; a third-party summary of McLean et al. words them as observation ambiguity, reward misspecification and unsafe exploration. Cagatan &amp; Zhao port the RL-safety gridworlds to LLM agents and find specification gaming, but treat agents as one setting <a href="#ref-123">[123]</a>.</li>
+<li>Identifiability degrades left to right: R is identified up to shaping; the RM only within a prompt; the verifier only on the checked set; the agent has nothing to identify. "Reward misspecification" presupposes a reward that can be mis-specified; by AGENT-A that object is gone [<a href="#ref-52">52</a>, <a href="#ref-53">53</a>]. Rungs one and two are explicit in the literature [53; 15, Def. 1]; rung three is stated only informally via verifier failures <a href="#ref-93">[93]</a>; rung four was not found stated. Ng et al. reach the same conclusion from the other side: safety for autonomous agents belongs at run time, not in training <a href="#ref-122">[122]</a>.</li>
+<li>Instrumental behaviour is a theorem in RL <a href="#ref-54">[54]</a> and an evaluation finding in AGENT-X [<a href="#ref-55">55</a>, <a href="#ref-56">56</a>]. The middle columns have no room for it: a one-shot bandit cannot seek power. The agent columns re-create the conditions (horizon, side effects, goal conflict) without the optimiser; the behaviour is role-played from the prior [<a href="#ref-116">116</a>, <a href="#ref-120">120</a>], and still happens [<a href="#ref-55">55</a>, <a href="#ref-56">56</a>]. The evidence on whether RL training raises it is mixed: He et al. find RL-trained models more instrumental <a href="#ref-118">[118]</a>; Alparslan et al. find no monotone effect across RLVR checkpoints <a href="#ref-119">[119]</a>.</li>
+<li>Planning survives only in CHAT-P, where the PRM over a deterministic tree is AlphaZero's shape <a href="#ref-59">[59]</a>. AGENT-X has horizon without a model, which is the worst quadrant for RL theory.</li>
+<li>The contract view <a href="#ref-63">[63]</a> makes the stacking explicit: RL assumes a complete contract; every LLM column has an incomplete one filled by the prior; the agent has three incomplete contracts and no party present to renegotiate.</li>
+<li>The behavior-culture incidents in <code>../llm-agent-incident-catalog/incidents/catalog.csv</code> sit in AGENT-A and AGENT-X. The RL-safety constructions sit in RL and CHAT-P. The two cultures are, in this table, looking at different columns.</li>
+</ul>
+<h2 id="7-provenance-of-citations">7. Provenance of citations</h2>
+<ul>
+<li>References 1–67 were checked on 2026-11-21 by automated retrieval of each URL, comparing title, first author, year and venue. Result: 63 correct, 4 corrected (21, 23, 38, 43: venue or proceedings year), 4 optional venue additions applied (16, 20, 26, 61), 0 not found.</li>
+<li>References 68–124 were added in the same pass, each retrieved when proposed; two (76, 122) were taken from search results without the page being opened.</li>
+<li>The priority check searched for prior statements of six claims in §6. Verdicts: KL-as-constraint known [<a href="#ref-73">73</a>, <a href="#ref-19">19</a>, <a href="#ref-12">12</a>]; bandit framing and critic-dropping known [17, 70–72]; PRM retreat known, ranking of settings not found; identifiability rungs 1–2 known, 3 informal, 4 not found; instrumental-behaviour components known separately, evidence mixed [<a href="#ref-118">118</a>, <a href="#ref-119">119</a>]; McLean-classes-to-settings mapping not found.</li>
+<li>Citations are not independently verified by a human.</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li><a id="ref-1"></a>Sutton, R. S. &amp; Barto, A. G. (2018). <em>Reinforcement Learning: An Introduction</em>, 2nd ed. MIT Press. <a href="http://incompleteideas.net/book/the-book-2nd.html">http://incompleteideas.net/book/the-book-2nd.html</a></li>
+<li><a id="ref-2"></a>Kaelbling, L. P., Littman, M. L. &amp; Cassandra, A. R. (1998). Planning and acting in partially observable stochastic domains. <em>Artificial Intelligence</em> 101(1–2), 99–134. <a href="https://doi.org/10.1016/S0004-3702(98">https://doi.org/10.1016/S0004-3702(98</a>)00023-X</li>
+<li><a id="ref-3"></a>Altman, E. (1999). <em>Constrained Markov Decision Processes</em>. Chapman &amp; Hall/CRC. <a href="https://www.taylorfrancis.com/books/mono/10.1201/9781315140223/constrained-markov-decision-processes-eitan-altman">https://www.taylorfrancis.com/books/mono/10.1201/9781315140223/constrained-markov-decision-processes-eitan-altman</a></li>
+<li><a id="ref-4"></a>Amodei, D. et al. (2016). Concrete problems in AI safety. <a href="https://arxiv.org/abs/1606.06565">https://arxiv.org/abs/1606.06565</a></li>
+<li><a id="ref-5"></a>Skalse, J. et al. (2022). Defining and characterizing reward gaming. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2209.13085">https://arxiv.org/abs/2209.13085</a></li>
+<li><a id="ref-6"></a>García, J. &amp; Fernández, F. (2015). A comprehensive survey on safe reinforcement learning. <em>JMLR</em> 16, 1437–1480. <a href="http://jmlr.org/papers/v16/garcia15a.html">http://jmlr.org/papers/v16/garcia15a.html</a></li>
+<li><a id="ref-7"></a>Alshiekh, M. et al. (2018). Safe reinforcement learning via shielding. <em>AAAI</em>. <a href="https://arxiv.org/abs/1708.08611">https://arxiv.org/abs/1708.08611</a></li>
+<li><a id="ref-8"></a>Sharma, A. et al. (2022). Autonomous reinforcement learning: formalism and benchmarking. <em>ICLR</em>. <a href="https://arxiv.org/abs/2112.09605">https://arxiv.org/abs/2112.09605</a></li>
+<li><a id="ref-9"></a>Grinsztajn, N. et al. (2021). There is no turning back: a self-supervised approach for reversibility-aware reinforcement learning. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2106.04480">https://arxiv.org/abs/2106.04480</a></li>
+<li><a id="ref-10"></a>Zhao, W., Queralta, J. P. &amp; Westerlund, T. (2020). Sim-to-real transfer in deep reinforcement learning for robotics: a survey. <em>IEEE SSCI</em>. <a href="https://arxiv.org/abs/2009.13303">https://arxiv.org/abs/2009.13303</a></li>
+<li><a id="ref-11"></a>Christiano, P. et al. (2017). Deep reinforcement learning from human preferences. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/1706.03741">https://arxiv.org/abs/1706.03741</a></li>
+<li><a id="ref-12"></a>Ziegler, D. M. et al. (2019). Fine-tuning language models from human preferences. <a href="https://arxiv.org/abs/1909.08593">https://arxiv.org/abs/1909.08593</a></li>
+<li><a id="ref-13"></a>Stiennon, N. et al. (2020). Learning to summarize from human feedback. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2009.01325">https://arxiv.org/abs/2009.01325</a></li>
+<li><a id="ref-14"></a>Ouyang, L. et al. (2022). Training language models to follow instructions with human feedback. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2203.02155">https://arxiv.org/abs/2203.02155</a></li>
+<li><a id="ref-15"></a>Rafailov, R. et al. (2023). Direct Preference Optimization: your language model is secretly a reward model. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2305.18290">https://arxiv.org/abs/2305.18290</a></li>
+<li><a id="ref-16"></a>Rafailov, R. et al. (2024). From r to Q<em>: your language model is secretly a Q-function. </em>COLM*. <a href="https://arxiv.org/abs/2404.12358">https://arxiv.org/abs/2404.12358</a></li>
+<li><a id="ref-17"></a>Ahmadian, A. et al. (2024). Back to basics: revisiting REINFORCE-style optimization for learning from human feedback in LLMs. <em>ACL</em>. <a href="https://arxiv.org/abs/2402.14740">https://arxiv.org/abs/2402.14740</a></li>
+<li><a id="ref-18"></a>Shao, Z. et al. (2024). DeepSeekMath: pushing the limits of mathematical reasoning in open language models (GRPO). <a href="https://arxiv.org/abs/2402.03300">https://arxiv.org/abs/2402.03300</a></li>
+<li><a id="ref-19"></a>Gao, L., Schulman, J. &amp; Hilton, J. (2023). Scaling laws for reward model overoptimization. <em>ICML</em>. <a href="https://arxiv.org/abs/2210.10760">https://arxiv.org/abs/2210.10760</a></li>
+<li><a id="ref-20"></a>Singhal, P. et al. (2024). A long way to go: investigating length correlations in RLHF. <em>COLM</em>. <a href="https://arxiv.org/abs/2310.03716">https://arxiv.org/abs/2310.03716</a></li>
+<li><a id="ref-21"></a>Sharma, M. et al. (2024). Towards understanding sycophancy in language models. <em>ICLR</em>. <a href="https://arxiv.org/abs/2310.13548">https://arxiv.org/abs/2310.13548</a></li>
+<li><a id="ref-22"></a>Lambert, N. et al. (2024). Tülu 3: pushing frontiers in open language model post-training (RLVR). <a href="https://arxiv.org/abs/2411.15124">https://arxiv.org/abs/2411.15124</a></li>
+<li><a id="ref-23"></a>DeepSeek-AI (2025). DeepSeek-R1: incentivizing reasoning capability in LLMs via reinforcement learning. <em>Nature</em> 645, 633–638. <a href="https://arxiv.org/abs/2501.12948">https://arxiv.org/abs/2501.12948</a></li>
+<li><a id="ref-24"></a>Baker, B. et al. (2025). Monitoring reasoning models for misbehavior and the risks of promoting obfuscation. <a href="https://arxiv.org/abs/2503.11926">https://arxiv.org/abs/2503.11926</a></li>
+<li><a id="ref-25"></a>Uesato, J. et al. (2022). Solving math word problems with process- and outcome-based feedback. <a href="https://arxiv.org/abs/2211.14275">https://arxiv.org/abs/2211.14275</a></li>
+<li><a id="ref-26"></a>Lightman, H. et al. (2024). Let's verify step by step. <em>ICLR</em>. <a href="https://arxiv.org/abs/2305.20050">https://arxiv.org/abs/2305.20050</a></li>
+<li><a id="ref-27"></a>Wang, P. et al. (2024). Math-Shepherd: verify and reinforce LLMs step-by-step without human annotations. <em>ACL</em>. <a href="https://arxiv.org/abs/2312.08935">https://arxiv.org/abs/2312.08935</a></li>
+<li><a id="ref-28"></a>Zhang, Z. et al. (2025). The lessons of developing process reward models in mathematical reasoning. <a href="https://arxiv.org/abs/2501.07301">https://arxiv.org/abs/2501.07301</a></li>
+<li><a id="ref-29"></a>Snell, C. et al. (2024). Scaling LLM test-time compute optimally can be more effective than scaling model parameters. <a href="https://arxiv.org/abs/2408.03314">https://arxiv.org/abs/2408.03314</a></li>
+<li><a id="ref-30"></a>Brown, B. et al. (2024). Large language monkeys: scaling inference compute with repeated sampling. <a href="https://arxiv.org/abs/2407.21787">https://arxiv.org/abs/2407.21787</a></li>
+<li><a id="ref-31"></a>Yao, S. et al. (2023). Tree of Thoughts: deliberate problem solving with large language models. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2305.10601">https://arxiv.org/abs/2305.10601</a></li>
+<li><a id="ref-32"></a>Ross, S., Gordon, G. &amp; Bagnell, J. A. (2011). A reduction of imitation learning and structured prediction to no-regret online learning (DAgger). <em>AISTATS</em>. <a href="https://arxiv.org/abs/1011.0686">https://arxiv.org/abs/1011.0686</a></li>
+<li><a id="ref-33"></a>Turpin, M. et al. (2023). Language models don't always say what they think: unfaithful explanations in chain-of-thought prompting. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2305.04388">https://arxiv.org/abs/2305.04388</a></li>
+<li><a id="ref-34"></a>Lanham, T. et al. (2023). Measuring faithfulness in chain-of-thought reasoning. <a href="https://arxiv.org/abs/2307.13702">https://arxiv.org/abs/2307.13702</a></li>
+<li><a id="ref-35"></a>Yao, S. et al. (2023). ReAct: synergizing reasoning and acting in language models. <em>ICLR</em>. <a href="https://arxiv.org/abs/2210.03629">https://arxiv.org/abs/2210.03629</a></li>
+<li><a id="ref-36"></a>Schick, T. et al. (2023). Toolformer: language models can teach themselves to use tools. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2302.04761">https://arxiv.org/abs/2302.04761</a></li>
+<li><a id="ref-37"></a>Greshake, K. et al. (2023). Not what you've signed up for: compromising real-world LLM-integrated applications with indirect prompt injection. <em>AISec</em>. <a href="https://arxiv.org/abs/2302.12173">https://arxiv.org/abs/2302.12173</a></li>
+<li><a id="ref-38"></a>Zverev, E. et al. (2025). Can LLMs separate instructions from data? And what do we even mean by that? <em>ICLR</em>. <a href="https://arxiv.org/abs/2403.06833">https://arxiv.org/abs/2403.06833</a></li>
+<li><a id="ref-39"></a>Wallace, E. et al. (2024). The instruction hierarchy: training LLMs to prioritize privileged instructions. <a href="https://arxiv.org/abs/2404.13208">https://arxiv.org/abs/2404.13208</a></li>
+<li><a id="ref-40"></a>Debenedetti, E. et al. (2024). AgentDojo: a dynamic environment to evaluate prompt injection attacks and defenses for LLM agents. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2406.13352">https://arxiv.org/abs/2406.13352</a></li>
+<li><a id="ref-41"></a>Chen, Z. et al. (2024). AgentPoison: red-teaming LLM agents via poisoning memory or knowledge bases. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2407.12784">https://arxiv.org/abs/2407.12784</a></li>
+<li><a id="ref-42"></a>Jimenez, C. E. et al. (2024). SWE-bench: can language models resolve real-world GitHub issues? <em>ICLR</em>. <a href="https://arxiv.org/abs/2310.06770">https://arxiv.org/abs/2310.06770</a></li>
+<li><a id="ref-43"></a>Wei, Y. et al. (2025). SWE-RL: advancing LLM reasoning via reinforcement learning on open software evolution. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2502.18449">https://arxiv.org/abs/2502.18449</a></li>
+<li><a id="ref-44"></a>Kapoor, S. et al. (2024). AI agents that matter. <a href="https://arxiv.org/abs/2407.01502">https://arxiv.org/abs/2407.01502</a></li>
+<li><a id="ref-45"></a>Shavit, Y. et al. (2023). Practices for governing agentic AI systems. OpenAI. <a href="https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf">https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf</a></li>
+<li><a id="ref-46"></a>Chan, A. et al. (2023). Harms from increasingly agentic algorithmic systems. <em>FAccT</em>. <a href="https://arxiv.org/abs/2302.10329">https://arxiv.org/abs/2302.10329</a></li>
+<li><a id="ref-47"></a>Hammond, L. et al. (2025). Multi-agent risks from advanced AI. <a href="https://arxiv.org/abs/2502.14143">https://arxiv.org/abs/2502.14143</a></li>
+<li><a id="ref-48"></a>Laine, R. et al. (2024). Me, myself, and AI: the Situational Awareness Dataset (SAD) for LLMs. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2407.04694">https://arxiv.org/abs/2407.04694</a></li>
+<li><a id="ref-49"></a>Greenblatt, R. et al. (2024). Alignment faking in large language models. <a href="https://arxiv.org/abs/2412.14093">https://arxiv.org/abs/2412.14093</a></li>
+<li><a id="ref-50"></a>OpenAI (2024–). Model Spec. <a href="https://model-spec.openai.com/">https://model-spec.openai.com/</a></li>
+<li>
+<p><a id="ref-51"></a>Pan, A., Bhatia, K. &amp; Steinhardt, J. (2022). The effects of reward misspecification: mapping and mitigating misaligned models. <em>ICLR</em>. <a href="https://arxiv.org/abs/2201.03544">https://arxiv.org/abs/2201.03544</a></p>
+</li>
+<li>
+<p><a id="ref-52"></a>Ng, A. Y. &amp; Russell, S. (2000). Algorithms for inverse reinforcement learning. <em>ICML</em>. <a href="https://ai.stanford.edu/~ang/papers/icml00-irl.pdf">https://ai.stanford.edu/~ang/papers/icml00-irl.pdf</a></p>
+</li>
+<li><a id="ref-53"></a>Skalse, J. et al. (2023). Invariance in policy optimisation and partial identifiability in reward learning. <em>ICML</em>. <a href="https://arxiv.org/abs/2203.07475">https://arxiv.org/abs/2203.07475</a></li>
+<li><a id="ref-54"></a>Turner, A. M. et al. (2021). Optimal policies tend to seek power. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/1912.01683">https://arxiv.org/abs/1912.01683</a></li>
+<li><a id="ref-55"></a>Meinke, A. et al. (2024). Frontier models are capable of in-context scheming. <a href="https://arxiv.org/abs/2412.04984">https://arxiv.org/abs/2412.04984</a></li>
+<li><a id="ref-56"></a>Lynch, A. et al. (2025). Agentic misalignment: how LLMs could be insider threats. Anthropic. <a href="https://www.anthropic.com/research/agentic-misalignment">https://www.anthropic.com/research/agentic-misalignment</a></li>
+<li><a id="ref-57"></a>Denison, C. et al. (2024). Sycophancy to subterfuge: investigating reward-tampering in large language models. <a href="https://arxiv.org/abs/2406.10162">https://arxiv.org/abs/2406.10162</a></li>
+<li><a id="ref-58"></a>Schrittwieser, J. et al. (2020). Mastering Atari, Go, chess and shogi by planning with a learned model (MuZero). <em>Nature</em> 588. <a href="https://arxiv.org/abs/1911.08265">https://arxiv.org/abs/1911.08265</a></li>
+<li><a id="ref-59"></a>Silver, D. et al. (2017). Mastering chess and shogi by self-play with a general reinforcement learning algorithm (AlphaZero). <a href="https://arxiv.org/abs/1712.01815">https://arxiv.org/abs/1712.01815</a></li>
+<li><a id="ref-60"></a>Hao, S. et al. (2023). Reasoning with language model is planning with world model (RAP). <em>EMNLP</em>. <a href="https://arxiv.org/abs/2305.14992">https://arxiv.org/abs/2305.14992</a></li>
+<li><a id="ref-61"></a>Yue, Y. et al. (2025). Does reinforcement learning really incentivize reasoning capacity in LLMs beyond the base model? <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2504.13837">https://arxiv.org/abs/2504.13837</a></li>
+<li><a id="ref-62"></a>Shao, R. et al. (2025). Spurious rewards: rethinking training signals in RLVR. <a href="https://arxiv.org/abs/2506.10947">https://arxiv.org/abs/2506.10947</a></li>
+<li><a id="ref-63"></a>Hadfield-Menell, D. &amp; Hadfield, G. K. (2019). Incomplete contracting and AI alignment. <em>AIES</em>. <a href="https://arxiv.org/abs/1804.04268">https://arxiv.org/abs/1804.04268</a></li>
+<li><a id="ref-64"></a>Kasirzadeh, A. &amp; Gabriel, I. (2025). Characterizing AI agents for alignment and governance. <a href="https://arxiv.org/abs/2504.21848">https://arxiv.org/abs/2504.21848</a></li>
+<li><a id="ref-65"></a>Mitchell, M. et al. (2025). Fully autonomous AI agents should not be developed. <a href="https://arxiv.org/abs/2502.02649">https://arxiv.org/abs/2502.02649</a></li>
+<li><a id="ref-66"></a>Debenedetti, E. et al. (2025). Defeating prompt injections by design (CaMeL). <a href="https://arxiv.org/abs/2503.18813">https://arxiv.org/abs/2503.18813</a></li>
+<li>
+<p><a id="ref-67"></a>Korbak, T. et al. (2025). Chain of thought monitorability: a new and fragile opportunity for AI safety. <a href="https://arxiv.org/abs/2507.11473">https://arxiv.org/abs/2507.11473</a></p>
+</li>
+<li>
+<p><a id="ref-68"></a>Schulman, J., Wolski, F., Dhariwal, P., Radford, A. &amp; Klimov, O. (2017). Proximal policy optimization algorithms. <a href="https://arxiv.org/abs/1707.06347">https://arxiv.org/abs/1707.06347</a></p>
+</li>
+<li><a id="ref-69"></a>Schulman, J., Levine, S., Moritz, P., Jordan, M. I. &amp; Abbeel, P. (2015). Trust region policy optimization. <em>ICML</em>. <a href="https://arxiv.org/abs/1502.05477">https://arxiv.org/abs/1502.05477</a></li>
+<li><a id="ref-70"></a>Li, Z. et al. (2024). ReMax: a simple, effective, and efficient reinforcement learning method for aligning large language models. <em>ICML</em>. <a href="https://arxiv.org/abs/2310.10505">https://arxiv.org/abs/2310.10505</a></li>
+<li><a id="ref-71"></a>Xiong, W. et al. (2024). Iterative preference learning from human feedback: bridging theory and practice for RLHF under KL-constraint. <em>ICML</em>. <a href="https://arxiv.org/abs/2312.11456">https://arxiv.org/abs/2312.11456</a></li>
+<li><a id="ref-72"></a>Lambert, N. (2025). <em>Reinforcement Learning from Human Feedback</em>. <a href="https://arxiv.org/abs/2504.12501">https://arxiv.org/abs/2504.12501</a></li>
+<li><a id="ref-73"></a>Moskovitz, T. et al. (2024). Confronting reward model overoptimization with constrained RLHF. <em>ICLR</em>. <a href="https://arxiv.org/abs/2310.04373">https://arxiv.org/abs/2310.04373</a></li>
+<li><a id="ref-74"></a>Korbak, T., Perez, E. &amp; Buckley, C. L. (2022). RL with KL penalties is better viewed as Bayesian inference. <em>Findings of EMNLP</em>. <a href="https://arxiv.org/abs/2205.11275">https://arxiv.org/abs/2205.11275</a></li>
+<li><a id="ref-75"></a>Jaques, N. et al. (2017). Sequence Tutor: conservative fine-tuning of sequence generation models with KL-control. <em>ICML</em>. <a href="https://arxiv.org/abs/1611.02796">https://arxiv.org/abs/1611.02796</a></li>
+<li><a id="ref-76"></a>Ng, A. Y., Harada, D. &amp; Russell, S. (1999). Policy invariance under reward transformations: theory and application to reward shaping. <em>ICML</em>. <a href="https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf">https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf</a></li>
+<li><a id="ref-77"></a>Bowling, M., Martin, J. D., Abel, D. &amp; Dabney, W. (2023). Settling the reward hypothesis. <em>ICML</em>. <a href="https://arxiv.org/abs/2212.10420">https://arxiv.org/abs/2212.10420</a></li>
+<li><a id="ref-78"></a>Everitt, T., Hutter, M., Kumar, R. &amp; Krakovna, V. (2021). Reward tampering problems and solutions in reinforcement learning: a causal influence diagram perspective. <em>Synthese</em>. <a href="https://arxiv.org/abs/1908.04734">https://arxiv.org/abs/1908.04734</a></li>
+<li><a id="ref-79"></a>Casper, S. et al. (2023). Open problems and fundamental limitations of reinforcement learning from human feedback. <em>TMLR</em>. <a href="https://arxiv.org/abs/2307.15217">https://arxiv.org/abs/2307.15217</a></li>
+<li><a id="ref-80"></a>MacDiarmid, M. et al. (2025). Natural emergent misalignment from reward hacking in production RL. <a href="https://arxiv.org/abs/2511.18397">https://arxiv.org/abs/2511.18397</a></li>
+<li><a id="ref-81"></a>Cobbe, K. et al. (2021). Training verifiers to solve math word problems. <a href="https://arxiv.org/abs/2110.14168">https://arxiv.org/abs/2110.14168</a></li>
+<li><a id="ref-82"></a>Kirk, R. et al. (2024). Understanding the effects of RLHF on LLM generalisation and diversity. <em>ICLR</em>. <a href="https://arxiv.org/abs/2310.06452">https://arxiv.org/abs/2310.06452</a></li>
+<li><a id="ref-83"></a>Bellemare, M. G. et al. (2016). Unifying count-based exploration and intrinsic motivation. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/1606.01868">https://arxiv.org/abs/1606.01868</a></li>
+<li><a id="ref-84"></a>Achiam, J., Held, D., Tamar, A. &amp; Abbeel, P. (2017). Constrained policy optimization. <em>ICML</em>. <a href="https://arxiv.org/abs/1705.10528">https://arxiv.org/abs/1705.10528</a></li>
+<li><a id="ref-85"></a>Levine, S., Kumar, A., Tucker, G. &amp; Fu, J. (2020). Offline reinforcement learning: tutorial, review, and perspectives on open problems. <a href="https://arxiv.org/abs/2005.01643">https://arxiv.org/abs/2005.01643</a></li>
+<li><a id="ref-86"></a>Tobin, J. et al. (2017). Domain randomization for transferring deep neural networks from simulation to the real world. <em>IROS</em>. <a href="https://arxiv.org/abs/1703.06907">https://arxiv.org/abs/1703.06907</a></li>
+<li><a id="ref-87"></a>Shinn, N. et al. (2023). Reflexion: language agents with verbal reinforcement learning. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2303.11366">https://arxiv.org/abs/2303.11366</a></li>
+<li><a id="ref-88"></a>Zhou, A. et al. (2024). Language agent tree search unifies reasoning, acting, and planning in language models. <em>ICML</em>. <a href="https://arxiv.org/abs/2310.04406">https://arxiv.org/abs/2310.04406</a></li>
+<li><a id="ref-89"></a>Zhou, Y., Zanette, A., Pan, J., Levine, S. &amp; Kumar, A. (2024). ArCHer: training language model agents via hierarchical multi-turn RL. <em>ICML</em>. <a href="https://arxiv.org/abs/2402.19446">https://arxiv.org/abs/2402.19446</a></li>
+<li><a id="ref-90"></a>Feng, X. et al. (2023). AlphaZero-like tree-search can guide large language model decoding and training. <a href="https://arxiv.org/abs/2309.17179">https://arxiv.org/abs/2309.17179</a></li>
+<li><a id="ref-91"></a>Gao, J. et al. (2024). On designing effective RL reward at training time for LLM reasoning. <a href="https://arxiv.org/abs/2410.15115">https://arxiv.org/abs/2410.15115</a></li>
+<li><a id="ref-92"></a>Feng, Z. et al. (2025). Is PRM necessary? Problem-solving RL implicitly induces PRM capability in LLMs. <a href="https://arxiv.org/abs/2505.11227">https://arxiv.org/abs/2505.11227</a></li>
+<li><a id="ref-93"></a>Huang, Y. et al. (2025). Pitfalls of rule- and model-based verifiers: a case study on mathematical reasoning. <a href="https://arxiv.org/abs/2505.22203">https://arxiv.org/abs/2505.22203</a></li>
+<li><a id="ref-94"></a>Kwa, T. et al. (2025). Measuring AI ability to complete long software tasks. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2503.14499">https://arxiv.org/abs/2503.14499</a></li>
+<li><a id="ref-95"></a>Yao, S., Shinn, N., Razavi, P. &amp; Narasimhan, K. (2024). τ-bench: a benchmark for tool-agent-user interaction in real-world domains. <a href="https://arxiv.org/abs/2406.12045">https://arxiv.org/abs/2406.12045</a></li>
+<li><a id="ref-96"></a>Ruan, Y. et al. (2024). Identifying the risks of LM agents with an LM-emulated sandbox (ToolEmu). <em>ICLR</em>. <a href="https://arxiv.org/abs/2309.15817">https://arxiv.org/abs/2309.15817</a></li>
+<li><a id="ref-97"></a>Krakovna, V., Orseau, L., Kumar, R., Martic, M. &amp; Legg, S. (2018). Penalizing side effects using stepwise relative reachability. <a href="https://arxiv.org/abs/1806.01186">https://arxiv.org/abs/1806.01186</a></li>
+<li><a id="ref-98"></a>Turner, A. M., Hadfield-Menell, D. &amp; Tadepalli, P. (2020). Conservative agency via attainable utility preservation. <em>AIES</em>. <a href="https://arxiv.org/abs/1902.09725">https://arxiv.org/abs/1902.09725</a></li>
+<li><a id="ref-99"></a>Eysenbach, B., Gu, S., Ibarz, J. &amp; Levine, S. (2018). Leave no trace: learning to reset for safe and autonomous reinforcement learning. <em>ICLR</em>. <a href="https://arxiv.org/abs/1711.06782">https://arxiv.org/abs/1711.06782</a></li>
+<li><a id="ref-100"></a>Pinto, L., Davidson, J., Sukthankar, R. &amp; Gupta, A. (2017). Robust adversarial reinforcement learning. <em>ICML</em>. <a href="https://arxiv.org/abs/1703.02702">https://arxiv.org/abs/1703.02702</a></li>
+<li><a id="ref-101"></a>Lowe, R. et al. (2017). Multi-agent actor-critic for mixed cooperative-competitive environments. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/1706.02275">https://arxiv.org/abs/1706.02275</a></li>
+<li><a id="ref-102"></a>Leike, J. et al. (2017). AI safety gridworlds. <a href="https://arxiv.org/abs/1711.09883">https://arxiv.org/abs/1711.09883</a></li>
+<li><a id="ref-103"></a>Hadfield-Menell, D., Dragan, A., Abbeel, P. &amp; Russell, S. (2016). Cooperative inverse reinforcement learning. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/1606.03137">https://arxiv.org/abs/1606.03137</a></li>
+<li><a id="ref-104"></a>Hadfield-Menell, D., Dragan, A., Abbeel, P. &amp; Russell, S. (2017). The off-switch game. <em>IJCAI</em>. <a href="https://arxiv.org/abs/1611.08219">https://arxiv.org/abs/1611.08219</a></li>
+<li><a id="ref-105"></a>Wei, A., Haghtalab, N. &amp; Steinhardt, J. (2023). Jailbroken: how does LLM safety training fail? <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2307.02483">https://arxiv.org/abs/2307.02483</a></li>
+<li><a id="ref-106"></a>Zou, A. et al. (2023). Universal and transferable adversarial attacks on aligned language models. <a href="https://arxiv.org/abs/2307.15043">https://arxiv.org/abs/2307.15043</a></li>
+<li><a id="ref-107"></a>Zhan, Q., Liang, Z., Ying, Z. &amp; Kang, D. (2024). InjecAgent: benchmarking indirect prompt injections in tool-integrated large language model agents. <em>Findings of ACL</em>. <a href="https://arxiv.org/abs/2403.02691">https://arxiv.org/abs/2403.02691</a></li>
+<li><a id="ref-108"></a>Cemri, M. et al. (2025). Why do multi-agent LLM systems fail? (MAST). <a href="https://arxiv.org/abs/2503.13657">https://arxiv.org/abs/2503.13657</a></li>
+<li><a id="ref-109"></a>Bai, Y. et al. (2022). Constitutional AI: harmlessness from AI feedback. <a href="https://arxiv.org/abs/2212.08073">https://arxiv.org/abs/2212.08073</a></li>
+<li><a id="ref-110"></a>Inan, H. et al. (2023). Llama Guard: LLM-based input-output safeguard for human-AI conversations. <a href="https://arxiv.org/abs/2312.06674">https://arxiv.org/abs/2312.06674</a></li>
+<li><a id="ref-111"></a>Guan, M. Y. et al. (2024). Deliberative alignment: reasoning enables safer language models. <a href="https://arxiv.org/abs/2412.16339">https://arxiv.org/abs/2412.16339</a></li>
+<li><a id="ref-112"></a>Chen, Y. et al. (2025). Reasoning models don't always say what they think. <a href="https://arxiv.org/abs/2505.05410">https://arxiv.org/abs/2505.05410</a></li>
+<li><a id="ref-113"></a>Greenblatt, R., Shlegeris, B., Sachan, K. &amp; Roger, F. (2024). AI control: improving safety despite intentional subversion. <em>ICML</em>. <a href="https://arxiv.org/abs/2312.06942">https://arxiv.org/abs/2312.06942</a></li>
+<li><a id="ref-114"></a>Zhang, Z. et al. (2024). Agent-SafetyBench: evaluating the safety of LLM agents. <a href="https://arxiv.org/abs/2412.14470">https://arxiv.org/abs/2412.14470</a></li>
+<li><a id="ref-115"></a>Feng, K. J. K., McDonald, D. W. &amp; Zhang, A. X. (2025). Levels of autonomy for AI agents. <a href="https://arxiv.org/abs/2506.12469">https://arxiv.org/abs/2506.12469</a></li>
+<li><a id="ref-116"></a>Shanahan, M., McDonell, K. &amp; Reynolds, L. (2023). Role play with large language models. <em>Nature</em> 623, 493–498. <a href="https://arxiv.org/abs/2305.16367">https://arxiv.org/abs/2305.16367</a></li>
+<li><a id="ref-117"></a>Turner, A. M. &amp; Tadepalli, P. (2022). Parametrically retargetable decision-makers tend to seek power. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2206.13477">https://arxiv.org/abs/2206.13477</a></li>
+<li><a id="ref-118"></a>He, Y. et al. (2025). Evaluating the paperclip maximizer: are RL-based language models more likely to pursue instrumental goals? <a href="https://arxiv.org/abs/2502.12206">https://arxiv.org/abs/2502.12206</a></li>
+<li><a id="ref-119"></a>Alparslan, B. et al. (2026). Questioning instrumental convergence in RLVR: checkpoint evidence from OLMo-3. <a href="https://arxiv.org/abs/2610.31624">https://arxiv.org/abs/2610.31624</a></li>
+<li><a id="ref-120"></a>Tice, C. et al. (2026). Alignment pretraining: AI discourse causes self-fulfilling (mis)alignment. <a href="https://arxiv.org/abs/2601.10160">https://arxiv.org/abs/2601.10160</a></li>
+<li><a id="ref-121"></a>Sheshadri, A. et al. (2025). Why do some language models fake alignment while others don't? <a href="https://arxiv.org/abs/2506.18032">https://arxiv.org/abs/2506.18032</a></li>
+<li><a id="ref-122"></a>Ng, A. W. et al. (2026). Agent safety should be a runtime contract. <a href="https://arxiv.org/abs/2608.11274">https://arxiv.org/abs/2608.11274</a></li>
+<li><a id="ref-123"></a>Cagatan, O. V. &amp; Zhao, X. (2026). Reward hacking in language model agents: revisiting AI Safety Gridworlds. <a href="https://arxiv.org/abs/2606.15385">https://arxiv.org/abs/2606.15385</a></li>
+<li><a id="ref-124"></a>Zelikman, E., Wu, Y., Mu, J. &amp; Goodman, N. D. (2022). STaR: bootstrapping reasoning with reasoning. <em>NeurIPS</em>. <a href="https://arxiv.org/abs/2203.14465">https://arxiv.org/abs/2203.14465</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Robin Ranjit Singh Chauhan, Pathway Intelligence Inc. Mostly AI-generated, not fully human-reviewed.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

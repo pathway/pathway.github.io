@@ -1,0 +1,3100 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI safety research notes, catalogs and drafts by Robin Ranjit Singh Chauhan, Pathway Intelligence Inc.">
+      
+      
+        <meta name="author" content="Robin Ranjit Singh Chauhan">
+      
+      
+        <link rel="canonical" href="https://pathway.github.io/research/ai-safety/risk-vocabulary/analysis/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../terms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Analysis - AI Safety Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#risk-vocabulary-how-the-standards-define-the-terms-where-they-conflict-and-what-an-ai-risk-taxonomy-should-adopt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Safety Research" class="md-header__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Safety Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../papers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Papers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../map/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../explore/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Explore
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ai-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  AI-use statement
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Safety Research" class="md-nav__button md-logo" aria-label="AI Safety Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Safety Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ai-risk-taxonomy/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI risk taxonomy
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI risk taxonomy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/unified_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unified taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/facets/PAPER_facet_taxonomies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facet taxonomies (paper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/taxonomy_crosswalk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy crosswalk
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/disagreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disagreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-risk-taxonomy/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk vocabulary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Risk vocabulary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-core-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The core chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-where-the-fields-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Where the fields conflict
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Where the fields conflict">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-risk-has-three-definitions-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 "Risk" has three definitions in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hazard-a-source-or-a-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 "Hazard": a source or a state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-threat-three-senses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 "Threat": three senses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-threat-model-the-ai-safety-sense-is-not-the-security-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 "Threat model": the AI-safety sense is not the security sense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-failure-mode-fmea-fits-the-ai-safety-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 "Failure mode": FMEA fits the AI-safety usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-mitigation-control-countermeasure-all-act-on-risk-research-does-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 "Mitigation", "control", "countermeasure": all act on risk; research does not
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-harm-versus-consequence-versus-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 "Harm" versus "consequence" versus "loss"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-terms-with-no-standard-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Terms with no standard equivalent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mapping-to-the-seven-facets-of-the-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mapping to the seven facets of the taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vocabulary-adopted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Vocabulary adopted
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../llm-agent-incident-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM-agent incident catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM-agent incident catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Incident catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/incidents/sources_checked/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources checked
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/taxonomy/taxonomy_stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/coverage_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm-agent-incident-catalog/coverage/human_check_sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human-check sample
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../safety-environments-catalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety environments catalog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Safety environments catalog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../safety-environments-catalog/by_taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index by taxonomy node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-game-theory/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game theory and reward hacking
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game theory and reward hacking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Short survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/tutorial/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/honesty_games/honesty_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Honesty by design (catalogue)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-game-theory/bibliography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bibliography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reward-hacking-psych/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reward hacking across psychology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reward hacking across psychology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reward-hacking-psych/prior_work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../goodhart-plane/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Goodhart plane
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/goodhart_plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Goodhart plane
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/coverage_layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coverage layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/huggingface_incident/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case study: Hugging Face incident
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../goodhart-plane/prior_planes_and_catalogues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prior planes and catalogues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../papers/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../rebuttal-agent-safety-rl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebuttal: agent safety and RL
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rebuttal: agent safety and RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/draft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rebuttal-agent-safety-rl/onepager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../two-cultures-paper/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two cultures paper
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Two cultures paper
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/framing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/assumptions_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/related_two_cultures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Related work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/concept_semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/concept_semantics_expanded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept semantics, expanded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/twopager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-pager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/census/census_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two-cultures-paper/census/census_tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation census tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cotrained-graders-confessions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-trained graders
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Co-trained graders
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cotrained-graders-confessions/paper/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report (short draft)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-use statement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-core-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The core chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-where-the-fields-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Where the fields conflict
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Where the fields conflict">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-risk-has-three-definitions-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 "Risk" has three definitions in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hazard-a-source-or-a-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 "Hazard": a source or a state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-threat-three-senses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 "Threat": three senses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-threat-model-the-ai-safety-sense-is-not-the-security-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 "Threat model": the AI-safety sense is not the security sense
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-failure-mode-fmea-fits-the-ai-safety-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 "Failure mode": FMEA fits the AI-safety usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-mitigation-control-countermeasure-all-act-on-risk-research-does-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 "Mitigation", "control", "countermeasure": all act on risk; research does not
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-harm-versus-consequence-versus-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 "Harm" versus "consequence" versus "loss"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-terms-with-no-standard-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Terms with no standard equivalent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mapping-to-the-seven-facets-of-the-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Mapping to the seven facets of the taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vocabulary-adopted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Vocabulary adopted
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="risk-vocabulary-how-the-standards-define-the-terms-where-they-conflict-and-what-an-ai-risk-taxonomy-should-adopt">Risk vocabulary: how the standards define the terms, where they conflict, and what an AI-risk taxonomy should adopt</h1>
+<p>2026-11-21 (v1). Sources are numbered as in <code>biblio.md</code>; every quoted definition is in <code>terms.md</code> with clause and URL (quotes over 250 characters are shortened there and here; follow the URL for the full text). 38 sources, 195 definitions, 102 terms. Paywalled texts (ISO 31000 clause 3 proper, ISO Guide 73, ISO/IEC 23894 and 22989, IEC 60812) were not read; ISO wording comes via the EU Agency for Railways reproduction [5] and the NIST glossary [26], FMEA wording via Wikipedia [38]. Most text was generated by Claude (Anthropic) under Robin Chauhan's direction; not fully human-reviewed.</p>
+<h2 id="1-the-core-chain">1. The core chain</h2>
+<p>Risk management, safety engineering and security all describe the same chain, with different words at each link:</p>
+<pre><code>risk source / hazard / threat  --&gt;  event (top event, accident)  --&gt;  consequence / harm / loss
+        |                                   |                                |
+   vulnerability, exposure             likelihood                       severity
+                                  risk = f(likelihood, severity)   over the set of scenarios
+   controls / barriers / mitigations act on any link
+</code></pre>
+<ul>
+<li><strong>Risk source</strong>: "Element (action, sub-activity, component, system, event, etc.) which alone or in combination with other elements has the potential to give rise to some specified consequences" (SRA [6] 1.14).</li>
+<li><strong>Hazard</strong>: "A risk source where the potential consequences relate to harm" (SRA [6] 1.9); "Hazard, therefore, simply exists as a source. Risk includes the likelihood of conversion of that source into actual delivery of loss" (Kaplan and Garrick [1] 2.2); Def Stan: "An item, event, activity, or situation with the potential to cause: injury, ill-health, or death; damage..." [19].</li>
+<li><strong>Event</strong>: "Occurrence or change of a particular set of circumstances" (ISO 31000 [5]). Bow-tie <strong>top event</strong>: the moment the hazard is released [28]. <strong>Accident</strong>: "any undesired or unplanned event or condition that results in what stakeholders consider to be a loss" (Leveson [7]).</li>
+<li><strong>Consequence / harm / loss</strong>: consequence is neutral, "Outcome of an event affecting objectives" (ISO [5]); harm is people-centred, "Physical or psychological injury or damage" (SRA [6] 1.8), "Adverse impact on people" (Def Stan [19]); loss is stakeholder-relative, "something of value to stakeholders ... any other loss that is unacceptable" (Leveson [7]). NIST AI RMF widens harm to "individuals, groups, communities, organizations, society, the environment, and the planet" [22].</li>
+<li><strong>Likelihood</strong> "Chance of something happening" (ISO [5]); <strong>severity</strong> "A measure of the degree of harm" (Def Stan [19]).</li>
+<li><strong>Risk</strong>, three families of definition (section 2).</li>
+<li><strong>Control</strong> "Measure that maintains and/or modifies risk" (ISO [5]); <strong>mitigation</strong> "A decision, action, or practice intended to reduce the level of risk" (NIST [26]); <strong>barrier</strong> prevention or recovery control on the bow-tie [28]; <strong>countermeasure</strong> (security) [32].</li>
+</ul>
+<h2 id="2-where-the-fields-conflict">2. Where the fields conflict</h2>
+<h3 id="21-risk-has-three-definitions-in-use">2.1 "Risk" has three definitions in use</h3>
+<ol>
+<li><strong>Likelihood times severity.</strong> "Combination of the likelihood of harm and the severity of that harm" (Def Stan 00-56 [19]); "the combination of the probability of an occurrence of harm and the severity of that harm" (EU AI Act Art. 3(2) [25]); "composite measure of an event's probability of occurring and the magnitude or degree of the consequences" (NIST AI RMF [22]); SP 800-30's "function of (i) the adverse impacts ... and (ii) the likelihood" [26].</li>
+<li><strong>Effect of uncertainty on objectives</strong> (ISO 31000 [5], Guide 73 via [26]). Direction-neutral; the SRA glossary lists seven qualitative variants and treats the ISO form as one of them [6] 1.1.</li>
+<li><strong>A set of scenarios.</strong> Kaplan and Garrick: risk "is" the set of triplets (scenario, likelihood, consequence) [1] 3.1. Leveson goes further and defines risk by "the effectiveness of the controls used to enforce safe system behavior" [7].</li>
+</ol>
+<p>For AI the regulatory texts (EU, NIST) use family 1. The AI-risk taxonomy proposed here (seven facets, section 3) is a family-3 object: the facets are the components of the triplet, and a risk is a row.</p>
+<h3 id="22-hazard-a-source-or-a-state">2.2 "Hazard": a source or a state</h3>
+<p>Most sources make a hazard a <strong>source</strong> of harm ([1] [6] [19] [26] [28]). Leveson makes it a <strong>system state</strong>: "a system state or set of conditions that, together with a particular set of worst-case environmental conditions, will lead to a loss" [7]. The AI-safety papers that borrow the word, Hendrycks 2021 [12] and 2023 [20], use it without defining it; "inherent model hazards" and "systemic hazards" [12] fit the source reading, while a misaligned model in deployment would be a Leveson-hazard (a state).</p>
+<h3 id="23-threat-three-senses">2.3 "Threat": three senses</h3>
+<ul>
+<li>Safety: a synonym for risk source, "commonly used in relation to security applications" (SRA [6] 1.18).</li>
+<li>Security: "Any circumstance or event with the potential to adversely impact organizational operations ... through an information system via unauthorized access, destruction, disclosure..." (NIST SP 800-30 [26] [33]); also an adversary's intent (SRA second sense [6]).</li>
+<li>Bow-tie: "A possible direct cause that will potentially release a hazard by producing a top event" [28], a cause on the left of the diagram.</li>
+</ul>
+<h3 id="24-threat-model-the-ai-safety-sense-is-not-the-security-sense">2.4 "Threat model": the AI-safety sense is not the security sense</h3>
+<ul>
+<li>Security: "a structured representation of all the information that affects the security of an application" (OWASP [37]); threat modeling is "a form of risk assessment that models aspects of the attack and defense sides" (NIST SP 800-53 [35]) and answers four questions, "What are we working on? What can go wrong? What are we going to do about it? Did we do a good enough job?" (Manifesto [10]). It is a <strong>whole-system analysis</strong>, not one story.</li>
+<li>AI safety: Kenton et al.'s review [14] builds each threat model from a "development model" and a "risk model" but gives no definition sentence; usage in the field is one <strong>path from a cause to a catastrophe</strong>. The standards' word for that object is <strong>scenario</strong> (Kaplan and Garrick [1]), <strong>loss scenario</strong> (Leveson [7]) or a <strong>bow-tie pathway</strong> [28].</li>
+<li>Consequence for the taxonomy: the <code>threat_models</code> facet is a set of loss scenarios. The name is kept because the field uses it, but the facet must say which sense is meant, and must not be read as a security threat model.</li>
+</ul>
+<h3 id="25-failure-mode-fmea-fits-the-ai-safety-usage">2.5 "Failure mode": FMEA fits the AI-safety usage</h3>
+<p>FMEA: "The specific manner or way by which a failure occurs in terms of failure of the part, component, function, equipment, subsystem, or system under investigation" [38]; failure is "The loss of a function under stated conditions" [38]. Def Stan: "An unintended behaviour of a product, service or system which could be hazardous in the broader system context" [19]. AI-safety terms fit this well: specification gaming "satisfies the literal specification of an objective without achieving the intended outcome" [9]; reward hacking, "optimizing an imperfect proxy reward function leads to poor performance according to the true reward function" [17]; goal misgeneralization, "a specific form of robustness failure ... competently pursues an undesired goal" [16]. Scheming is defined by motive, "perform well in training ... in order to gain power later" [18], which is a failure mode of the training process in Def Stan's "unintended behaviour" sense. Under Leveson, several of these would instead be hazards (states) and the failure mode would be the unsafe control action that produced them [7].</p>
+<h3 id="26-mitigation-control-countermeasure-all-act-on-risk-research-does-not">2.6 "Mitigation", "control", "countermeasure": all act on risk; research does not</h3>
+<p>Every definition requires the thing to <strong>modify risk</strong> ([5] [26] [28] [32]). Interpretability research, agent-foundations theory and lists of organisations do not modify risk; they are enablers or inputs to controls. A facet that holds them cannot be called mitigations without stretching every standard. The ISO-neutral word for the whole response side is <strong>risk treatment</strong>, "process to modify risk" (Guide 73 via [26]); the bow-tie splits controls into <strong>prevention</strong> (left of the top event) and <strong>recovery</strong> (right) [28], which maps onto the AI distinction between training-time methods and deployment-time control.</p>
+<h3 id="27-harm-versus-consequence-versus-loss">2.7 "Harm" versus "consequence" versus "loss"</h3>
+<p>Safety standards reserve <strong>harm</strong> for people ([6] [19]); <strong>consequence</strong> is neutral and can be positive ([5]); <strong>loss</strong> is anything stakeholders value ([7]). The AI literature says harm for all of these, and NIST AI RMF endorses the wide use [22]. The EU AI Act's <strong>serious incident</strong> [25] Art. 3(49) and <strong>systemic risk</strong> [25] Art. 3(65) are consequence-side legal terms with specific triggers (death, infrastructure disruption, fundamental rights; reach in the Union market).</p>
+<h3 id="28-terms-with-no-standard-equivalent">2.8 Terms with no standard equivalent</h3>
+<ul>
+<li><strong>Dangerous capability</strong>: only a fragment in Shevlane et al. [23]; no standard defines it. Nearest standard notion: the energy or material in a hazard (SRA's hazard note: "energy (e.g., explosion, fire), material (toxic or eco-toxic)" [6] 1.9). A capability is what a hazard is made of.</li>
+<li><strong>Propensity</strong>: "the propensity of models to apply their capabilities for harm" [23]. Nearest standard notion: the likelihood component conditional on the capability existing, or vulnerability in the SRA sense, "risk conditional on the occurrence of a risk source" [6] 1.19.</li>
+<li><strong>Alignment / misalignment</strong>: "A is trying to do what H wants it to do" (Christiano [4]); systems that "pursue unintended goals" [16]; goals "in conflict ... with human interests" [15]. These are safety properties and their absence; the STPA word for the property is <strong>system-level constraint</strong>, "the system conditions or behaviors that need to be satisfied to prevent hazards" [7].</li>
+<li><strong>Safety case</strong> is the one AI term that matches its standard exactly: Def Stan "A structured argument, supported by a body of evidence that provides a compelling, comprehensible and valid case that a [system] is safe for a given application in a given environment" [19]; Clymer et al. "a structured rationale that a system is unlikely to cause significant harm if it is deployed to a particular setting" [24].</li>
+</ul>
+<h2 id="3-mapping-to-the-seven-facets-of-the-taxonomy">3. Mapping to the seven facets of the taxonomy</h2>
+<table>
+<thead>
+<tr>
+<th>Facet</th>
+<th>Standard term adopted</th>
+<th>Source</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>harms</td>
+<td>harm / consequence</td>
+<td>[6] 1.8, [19], [5]</td>
+<td>people-centred "harm" in the standards; this facet uses the NIST AI RMF wide sense [22] and states so</td>
+</tr>
+<tr>
+<td>risk_sources</td>
+<td>risk source; hazard when the consequence is harm</td>
+<td>[6] 1.14, 1.9</td>
+<td>the misuse / misalignment / mistakes / structural split is a classification of risk sources by agent and intent</td>
+</tr>
+<tr>
+<td>failure_modes</td>
+<td>failure mode (FMEA)</td>
+<td>[38], [19]</td>
+<td>Leveson would call several of these hazards (states); noted, not adopted</td>
+</tr>
+<tr>
+<td>threat_models</td>
+<td>scenario; loss scenario</td>
+<td>[1] 3.1, [7]</td>
+<td>not the security sense of threat model [37] [35]; the facet must state this</td>
+</tr>
+<tr>
+<td>capabilities</td>
+<td>(none); component of a hazard</td>
+<td>[6] 1.9 note</td>
+<td>field term "dangerous capability" kept [23]</td>
+</tr>
+<tr>
+<td>safety_properties</td>
+<td>system-level constraint; safety requirement</td>
+<td>[7], [19]</td>
+<td>alignment [4] is one such property</td>
+</tr>
+<tr>
+<td>responses (was mitigations)</td>
+<td>risk treatment; control; risk assessment; barrier</td>
+<td>[26], [5], [6] 2.6, [28]</td>
+<td><em>mitigations</em> is a misnomer for research content; the facet is named responses and each node is tagged control, assessment or enabler (section 4)</td>
+</tr>
+<tr>
+<td>risk (not a facet)</td>
+<td>set of (scenario, likelihood, consequence)</td>
+<td>[1]; family 1 for regulators [19] [25] [22]</td>
+<td>a risk register row</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-vocabulary-adopted">4. Vocabulary adopted</h2>
+<ul>
+<li><strong>Risk</strong>: a triplet (scenario, likelihood, consequence) after Kaplan and Garrick [1]; reported to regulators as likelihood times severity [25] [22]. Never a facet or a tree node.</li>
+<li><strong>Harm</strong>: adverse effect on people, groups, society, environment (wide sense, [22]); the harms facet.</li>
+<li><strong>Risk source</strong>: SRA 1.14 [6]; hazard when harm is the consequence.</li>
+<li><strong>Failure mode</strong>: FMEA sense [38].</li>
+<li><strong>Threat model</strong>: used in the AI-safety sense of a loss scenario [7] [1]; flagged wherever used.</li>
+<li><strong>Dangerous capability</strong>: field term [23]; a hazard component.</li>
+<li><strong>Safety property</strong>: a system-level constraint [7].</li>
+<li><strong>Response</strong> (replacing <em>mitigation</em> as the facet name): anything on the response side, the standards' <em>risk treatment</em> [26] widened to include assessment and enabling work. Within it, <strong>control</strong> = modifies risk ([5]); <strong>assessment</strong> = risk identification, analysis and evaluation ([6] 2.6, [26]); <strong>enabler</strong> = research or infrastructure that does not itself modify risk (no standard term).</li>
+<li><strong>Safety case</strong>: Def Stan [19] and Clymer [24], which agree.</li>
+</ul>
+<h2 id="5-limits">5. Limits</h2>
+<ul>
+<li>ISO text is second-hand ([5] via the EU Agency for Railways; Guide 73 via NIST [26]); IEC 60812 via Wikipedia [38]; GSN v3 was not read, so no GSN definition.</li>
+<li>Several AI-safety definitions are from abstracts only (Hubinger [8], Hendrycks 2023 [20], International Report [29]); Kenton [14] has no definition sentence; the Bostrom quote [2] lacks its subject.</li>
+<li>A few quotes may differ slightly from the page text, because some pages were read in summarised form. Clause numbers were recorded where visible.</li>
+<li>Not covered: actuarial and financial risk vocabulary; ISO/IEC 23894 (AI risk management) and 22989 (AI concepts), both paywalled; MITRE ATT&amp;CK/ATLAS (not obtained).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Robin Ranjit Singh Chauhan, Pathway Intelligence Inc. Mostly AI-generated, not fully human-reviewed.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
