@@ -1907,7 +1907,7 @@
   <span class="md-ellipsis">
     
   
-    Rebuttal: agent safety and RL
+    When is agent safety an RL problem?
   
 
     
@@ -1929,7 +1929,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Rebuttal: agent safety and RL
+    When is agent safety an RL problem?
   
 
           </label>
@@ -1951,7 +1951,7 @@
   <span class="md-ellipsis">
     
   
-    Draft
+    Paper
   
 
     
@@ -1979,7 +1979,7 @@
   <span class="md-ellipsis">
     
   
-    One-pager
+    One-pager (withdrawn)
   
 
     
@@ -2429,10 +2429,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rebuttal-agent-safety-and-rl" class="md-nav__link">
+  <a href="#when-is-agent-safety-an-rl-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rebuttal: agent safety and RL
+        When is agent safety an RL problem?
       
     </span>
   </a>
@@ -2481,11 +2481,11 @@
 <h1 id="papers">Papers</h1>
 <article class="art">
 <div>
-<h3 id="rebuttal-agent-safety-and-rl"><a href="../rebuttal-agent-safety-rl/">Rebuttal: agent safety and RL</a></h3>
+<h3 id="when-is-agent-safety-an-rl-problem"><a href="../rebuttal-agent-safety-rl/">When is agent safety an RL problem?</a></h3>
 <div class="meta"><span class="st draft">draft</span></div>
-<p class="pitch">McLean et al. <a class="cite" href="#ref-1">[1]</a> argue that LLM-agent safety failures "are not novel" because an agent is a POMDP and RL has studied POMDP safety for decades. This rebuttal accepts the formalisation and rejects the inference: every safe-RL tool they name rests on a precondition that LLM agents break (the policy learns, the designer sets the reward, the cost function can be written). A short paper plus a one-page version.</p>
+<p class="pitch">McLean et al. <a class="cite" href="#ref-1">[1]</a> argue that LLM agents are POMDPs, so RL safety tools apply. A tool's guarantee holds only under its assumptions. This paper reads six assumptions from the source papers of the tools <a class="cite" href="#ref-1">[1]</a> names and adds four that those papers do not state; deployed LLM agents violate all four. Main practical result: a shield on a property defined over actions keeps its guarantee around a deployed agent, and a shield on a property of world state loses it. A pre-registered probe of the first unstated condition found no hijacking in 240 trials with two fixed attacks. A 9-page paper in ICML style.</p>
 <div class="links">
-<p><a href="../rebuttal-agent-safety-rl/">Overview →</a> <a href="../rebuttal-agent-safety-rl/onepager/">One-pager →</a> <a href="../rebuttal-agent-safety-rl/draft/">Draft →</a></p>
+<p><a href="../rebuttal-agent-safety-rl/">Overview →</a> <a href="../rebuttal-agent-safety-rl/draft/">Paper →</a> <a href="../rebuttal-agent-safety-rl/draft.pdf">Paper PDF →</a></p>
 </div>
 </div>
 </article>

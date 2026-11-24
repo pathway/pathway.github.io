@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rebuttal-agent-safety-and-rl" class="md-skip">
+        <a href="#when-is-agent-safety-an-rl-problem" class="md-skip">
           Skip to content
         </a>
       
@@ -1909,7 +1909,7 @@
   <span class="md-ellipsis">
     
   
-    Rebuttal: agent safety and RL
+    When is agent safety an RL problem?
   
 
     
@@ -1931,7 +1931,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Rebuttal: agent safety and RL
+    When is agent safety an RL problem?
   
 
           </label>
@@ -1953,7 +1953,7 @@
   <span class="md-ellipsis">
     
   
-    Draft
+    Paper
   
 
     
@@ -1981,7 +1981,7 @@
   <span class="md-ellipsis">
     
   
-    One-pager
+    One-pager (withdrawn)
   
 
     
@@ -2469,16 +2469,16 @@
 
 
 
-<h1 id="rebuttal-agent-safety-and-rl">Rebuttal: agent safety and RL</h1>
+<h1 id="when-is-agent-safety-an-rl-problem">When is agent safety an RL problem?</h1>
 <blockquote>
-<p><strong>Pitch.</strong> McLean et al. <a class="cite" href="#ref-1">[1]</a> argue that LLM-agent safety failures "are not novel" because an agent is a POMDP and RL has studied POMDP safety for decades. This rebuttal accepts the formalisation and rejects the inference: every safe-RL tool they name rests on a precondition that LLM agents break (the policy learns, the designer sets the reward, the cost function can be written). A short paper plus a one-page version.</p>
+<p><strong>Pitch.</strong> McLean et al. <a class="cite" href="#ref-1">[1]</a> argue that LLM agents are POMDPs, so RL safety tools apply. A tool's guarantee holds only under its assumptions. This paper reads six assumptions from the source papers of the tools <a class="cite" href="#ref-1">[1]</a> names and adds four that those papers do not state; deployed LLM agents violate all four. Main practical result: a shield on a property defined over actions keeps its guarantee around a deployed agent, and a shield on a property of world state loses it. A pre-registered probe of the first unstated condition found no hijacking in 240 trials with two fixed attacks. A 9-page paper in ICML style.</p>
 </blockquote>
-<p><strong>Status: draft.</strong> Draft v0.2 plus a one-pager. Not final.</p>
-<p>Position-paper rebuttal to "AI Agent Safety is a Reinforcement Learning Problem".</p>
+<p><strong>Status: draft.</strong> Draft. Not final.</p>
+<p>A reply to "AI Agent Safety is a Reinforcement Learning Problem" (McLean et al.).</p>
 <h2 id="pages">Pages</h2>
 <ul>
-<li><a href="draft/">Draft</a> (<a href="draft.pdf">PDF</a>)</li>
-<li><a href="onepager/">One-pager</a> (<a href="onepager.pdf">PDF</a>)</li>
+<li><a href="draft/">Paper</a> (<a href="draft.pdf">PDF</a>)</li>
+<li><a href="onepager/">One-page version</a>: withdrawn; the address now points to the paper</li>
 </ul>
 <h2 id="references">References</h2>
 <ol class="refs">
